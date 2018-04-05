@@ -1,0 +1,14 @@
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\obj\Debug\ImageOrganizer.DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\obj\Debug\ImageOrganizer.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\ImageOrganizer.DataAccess.dll.config
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\ImageOrganizer.DataAccess.dll
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\ImageOrganizer.DataAccess.pdb
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\EntityFramework.dll
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\ImageOrganizer.Model.dll
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\ImageOrganizer.Model.pdb
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\EntityFramework.xml
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\obj\Debug\ImageOrganizer.DataAccess.dll
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\obj\Debug\ImageOrganizer.DataAccess.pdb
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\obj\Debug\ImageOrganizer.DataAccess.csproj.CopyComplete

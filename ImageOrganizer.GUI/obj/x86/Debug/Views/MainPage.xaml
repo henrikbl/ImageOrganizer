@@ -1,0 +1,63 @@
+﻿<Page x:Class="ImageOrganizer.GUI.Views.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
+      xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:controls="using:Template10.Controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:ImageOrganizer.GUI.Views"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:vm="using:ImageOrganizer.GUI.ViewModels" mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:MainPageViewModel x:ConnectionId='1' x:Name="ViewModel" />
+    </Page.DataContext>
+
+    <RelativePanel x:ConnectionId='2' x:Name="mainLayout" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <controls:PageHeader x:ConnectionId='3' x:Name="pageHeader" Content="Image-organizer"
+                             Background="LightSeaGreen"
+                             HorizontalContentAlignment="Center"
+                             RelativePanel.AlignLeftWithPanel="True"
+                             RelativePanel.AlignRightWithPanel="True"
+                             RelativePanel.AlignTopWithPanel="True" />
+
+        <!--This panel contains the side menu-->
+        <RelativePanel x:ConnectionId='4' x:Name="menu"
+                       RelativePanel.AlignLeftWithPanel="True"
+                       RelativePanel.Below="pageHeader"
+                       RelativePanel.AlignBottomWithPanel="True"
+                       BorderBrush="Black"
+                       BorderThickness="1">
+
+            <TextBlock x:ConnectionId='7' x:Name="TestBlock"
+                       Text="TestBlock 1"
+                       Margin="8,8,0,0"/>
+            
+            <TextBlock x:ConnectionId='8' x:Name="TestBlock2"
+                       Text="TestBlock 2"
+                       Margin="8,8,0,0"
+                       RelativePanel.RightOf="TestBlock"/>
+            
+        </RelativePanel>
+        
+        <!--This panel contains the image viewing with navigation-->
+        <RelativePanel x:ConnectionId='5' x:Name="imageView"
+                       RelativePanel.RightOf="menu"
+                       RelativePanel.Below="pageHeader"
+                       RelativePanel.AlignRightWithPanel="True"
+                       RelativePanel.AlignBottomWithPanel="True">
+
+            <Image x:ConnectionId='6' x:Name="imageBlock"
+                   RelativePanel.AlignBottomWithPanel="True"
+                   RelativePanel.AlignTopWithPanel="True"
+                   RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True"
+                   Margin="50,100,50,100"/>
+
+        </RelativePanel>
+
+    </RelativePanel>
+
+</Page>
+
