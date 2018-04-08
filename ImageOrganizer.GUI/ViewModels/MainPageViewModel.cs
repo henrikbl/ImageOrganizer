@@ -10,5 +10,9 @@ namespace ImageOrganizer.GUI.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
+        public string testString1 = "Changed text";
+        public string testString2 = "Hello world";
+
+        public string testImage = "/Assets/ExampleImage.png";
     }
 }

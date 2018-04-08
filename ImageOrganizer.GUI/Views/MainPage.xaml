@@ -5,7 +5,7 @@
       xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
       xmlns:controls="using:Template10.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="using:ImageOrganizer.GUI.Views"
+      xmlns:local="using:ImageOrganizer.GUI"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:ImageOrganizer.GUI.ViewModels" mc:Ignorable="d">
 
@@ -13,9 +13,25 @@
         <vm:MainPageViewModel x:Name="ViewModel" />
     </Page.DataContext>
 
-    <RelativePanel x:Name="mainLayout" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <local:SampleData x:Name="DesignTimeData"/>
+        <TextBlock
+            x:Name="TestViewSource1"
+            Text="{x:Bind ViewModel.testString1}"/>
 
-        <controls:PageHeader x:Name="pageHeader" Content="Image-organizer"
+        <TextBlock
+            x:Name="TestViewSource2"
+            Text="{x:Bind ViewModel.testString2}"/>
+
+        <Image
+            x:Name="TestImageViewSource"
+            Source="{x:Bind ViewModel.testImage}"/>
+    </Page.Resources>
+
+    <RelativePanel x:Name="mainLayout" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+                   d:DataContext="{StaticResource DesignTimeData}">
+
+        <controls:PageHeader x:Name="pageHeader" Content="Organizer"
                              Background="LightSeaGreen"
                              HorizontalContentAlignment="Center"
                              RelativePanel.AlignLeftWithPanel="True"
@@ -28,15 +44,15 @@
                        RelativePanel.Below="pageHeader"
                        RelativePanel.AlignBottomWithPanel="True"
                        BorderBrush="Black"
-                       BorderThickness="1">
+                       BorderThickness="1"
+                       Padding="8">
 
-            <TextBlock x:Name="TestBlock"
-                       Text="TestBlock 1"
-                       Margin="8,8,0,0"/>
+            <TextBlock x:Name="TestBlock" 
+                       Text="{Binding Source={StaticResource TestViewSource1}, Path=Text}"/>
             
             <TextBlock x:Name="TestBlock2"
-                       Text="TestBlock 2"
-                       Margin="8,8,0,0"
+                       Text="{Binding Source={StaticResource TestViewSource2}, Path=Text}"
+                       Margin="8,0,0,0"
                        RelativePanel.RightOf="TestBlock"/>
             
         </RelativePanel>
@@ -49,6 +65,8 @@
                        RelativePanel.AlignBottomWithPanel="True">
 
             <Image x:Name="imageBlock"
+                   Source="{Binding Source={StaticResource TestImageViewSource}, Path=Source}"
+                   Stretch="Uniform"
                    RelativePanel.AlignBottomWithPanel="True"
                    RelativePanel.AlignTopWithPanel="True"
                    RelativePanel.AlignLeftWithPanel="True"

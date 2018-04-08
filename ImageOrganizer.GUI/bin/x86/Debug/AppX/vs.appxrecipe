@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>F52023FF7DA1877E15B2565186F78A5C63374B023DA4E0E6AE26DB05BD6664A3</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>AFB0C91D64ED7D426E729424AF1CC99B2EF1874B77749AB16A00C1A5A7D8AE01</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>6906cf59-d9f6-4de4-90fb-cd8b07875b8e_1.0.0.0_x86__8zmgqd0netmce</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>6906cf59-d9f6-4de4-90fb-cd8b07875b8e_8zmgqd0netmce!App</RegisteredUserModeAppID>
     <RegisteredPackageID>6906cf59-d9f6-4de4-90fb-cd8b07875b8e</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-05T17:55:37.353</Modified>
+      <Modified>2018-04-08T16:45:07.009</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\ImageOrganizer.GUI.exe">
       <PackagePath>entrypoint\ImageOrganizer.GUI.exe</PackagePath>
-      <Modified>2018-04-05T17:54:45.467</Modified>
+      <Modified>2018-04-08T16:44:10.756</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -511,9 +511,9 @@
       <PackagePath>Template10Library.dll</PackagePath>
       <Modified>2016-10-17T09:42:00.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2018-04-05T16:59:29.759</Modified>
+    <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\Assets\ExampleImage.png">
+      <PackagePath>Assets\ExampleImage.png</PackagePath>
+      <Modified>2018-04-08T15:36:36.970</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -549,9 +549,13 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2018-04-05T16:59:29.759</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2018-04-05T16:59:29.759</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\ImageOrganizer.GUI.xr.xml">
       <PackagePath>ImageOrganizer.GUI.xr.xml</PackagePath>
-      <Modified>2018-04-05T17:54:45.269</Modified>
+      <Modified>2018-04-08T16:36:38.413</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -592,11 +596,11 @@
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-05T17:55:35.938</Modified>
+      <Modified>2018-04-08T16:45:06.325</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\Core\ImageOrganizer.GUI.exe">
       <PackagePath>ImageOrganizer.GUI.exe</PackagePath>
-      <Modified>2018-04-05T17:55:37.348</Modified>
+      <Modified>2018-04-08T16:45:07.001</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

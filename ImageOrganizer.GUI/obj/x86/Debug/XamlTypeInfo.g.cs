@@ -204,7 +204,7 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[34];
+            _typeNameTable = new string[35];
             _typeNameTable[0] = "Template10.Common.BootStrapper";
             _typeNameTable[1] = "Windows.UI.Xaml.Application";
             _typeNameTable[2] = "Template10.Common.StateItems";
@@ -229,18 +229,19 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             _typeNameTable[21] = "Template10.Mvvm.BindableBase";
             _typeNameTable[22] = "Template10.Common.IDispatcherWrapper";
             _typeNameTable[23] = "Template10.Common.IStateItems";
-            _typeNameTable[24] = "Template10.Controls.PageHeader";
-            _typeNameTable[25] = "Windows.UI.Xaml.Controls.CommandBar";
-            _typeNameTable[26] = "Template10.Behaviors.EllipsisBehavior.Visibilities";
-            _typeNameTable[27] = "Windows.UI.Xaml.Visibility";
-            _typeNameTable[28] = "Windows.UI.Xaml.Controls.Symbol";
-            _typeNameTable[29] = "Windows.UI.Xaml.Controls.Frame";
-            _typeNameTable[30] = "Double";
-            _typeNameTable[31] = "ImageOrganizer.GUI.Views.MainPage";
-            _typeNameTable[32] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[33] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[24] = "ImageOrganizer.GUI.SampleData";
+            _typeNameTable[25] = "Template10.Controls.PageHeader";
+            _typeNameTable[26] = "Windows.UI.Xaml.Controls.CommandBar";
+            _typeNameTable[27] = "Template10.Behaviors.EllipsisBehavior.Visibilities";
+            _typeNameTable[28] = "Windows.UI.Xaml.Visibility";
+            _typeNameTable[29] = "Windows.UI.Xaml.Controls.Symbol";
+            _typeNameTable[30] = "Windows.UI.Xaml.Controls.Frame";
+            _typeNameTable[31] = "Double";
+            _typeNameTable[32] = "ImageOrganizer.GUI.Views.MainPage";
+            _typeNameTable[33] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[34] = "Windows.UI.Xaml.Controls.UserControl";
 
-            _typeTable = new global::System.Type[34];
+            _typeTable = new global::System.Type[35];
             _typeTable[0] = typeof(global::Template10.Common.BootStrapper);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Application);
             _typeTable[2] = typeof(global::Template10.Common.StateItems);
@@ -265,16 +266,17 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             _typeTable[21] = typeof(global::Template10.Mvvm.BindableBase);
             _typeTable[22] = typeof(global::Template10.Common.IDispatcherWrapper);
             _typeTable[23] = typeof(global::Template10.Common.IStateItems);
-            _typeTable[24] = typeof(global::Template10.Controls.PageHeader);
-            _typeTable[25] = typeof(global::Windows.UI.Xaml.Controls.CommandBar);
-            _typeTable[26] = typeof(global::Template10.Behaviors.EllipsisBehavior.Visibilities);
-            _typeTable[27] = typeof(global::Windows.UI.Xaml.Visibility);
-            _typeTable[28] = typeof(global::Windows.UI.Xaml.Controls.Symbol);
-            _typeTable[29] = typeof(global::Windows.UI.Xaml.Controls.Frame);
-            _typeTable[30] = typeof(global::System.Double);
-            _typeTable[31] = typeof(global::ImageOrganizer.GUI.Views.MainPage);
-            _typeTable[32] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[33] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[24] = typeof(global::ImageOrganizer.GUI.SampleData);
+            _typeTable[25] = typeof(global::Template10.Controls.PageHeader);
+            _typeTable[26] = typeof(global::Windows.UI.Xaml.Controls.CommandBar);
+            _typeTable[27] = typeof(global::Template10.Behaviors.EllipsisBehavior.Visibilities);
+            _typeTable[28] = typeof(global::Windows.UI.Xaml.Visibility);
+            _typeTable[29] = typeof(global::Windows.UI.Xaml.Controls.Symbol);
+            _typeTable[30] = typeof(global::Windows.UI.Xaml.Controls.Frame);
+            _typeTable[31] = typeof(global::System.Double);
+            _typeTable[32] = typeof(global::ImageOrganizer.GUI.Views.MainPage);
+            _typeTable[33] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[34] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -313,8 +315,9 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
         private object Activate_3_Dictionary() { return new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object>(); }
         private object Activate_16_ModalDialog() { return new global::Template10.Controls.ModalDialog(); }
         private object Activate_19_MainPageViewModel() { return new global::ImageOrganizer.GUI.ViewModels.MainPageViewModel(); }
-        private object Activate_24_PageHeader() { return new global::Template10.Controls.PageHeader(); }
-        private object Activate_31_MainPage() { return new global::ImageOrganizer.GUI.Views.MainPage(); }
+        private object Activate_24_SampleData() { return new global::ImageOrganizer.GUI.SampleData(); }
+        private object Activate_25_PageHeader() { return new global::Template10.Controls.PageHeader(); }
+        private object Activate_32_MainPage() { return new global::ImageOrganizer.GUI.Views.MainPage(); }
         private void MapAdd_2_StateItems(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -494,9 +497,16 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 24:   //  Template10.Controls.PageHeader
+            case 24:   //  ImageOrganizer.GUI.SampleData
+                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_24_SampleData;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 25:   //  Template10.Controls.PageHeader
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.CommandBar"));
-                userType.Activator = Activate_24_PageHeader;
+                userType.Activator = Activate_25_PageHeader;
                 userType.AddMemberName("EllipsisVisibility");
                 userType.AddMemberName("PrimaryCommandsVisibility");
                 userType.AddMemberName("BackButtonVisibility");
@@ -509,11 +519,11 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 25:   //  Windows.UI.Xaml.Controls.CommandBar
+            case 26:   //  Windows.UI.Xaml.Controls.CommandBar
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 26:   //  Template10.Behaviors.EllipsisBehavior.Visibilities
+            case 27:   //  Template10.Behaviors.EllipsisBehavior.Visibilities
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Visible", global::Template10.Behaviors.EllipsisBehavior.Visibilities.Visible);
                 userType.AddEnumValue("Collapsed", global::Template10.Behaviors.EllipsisBehavior.Visibilities.Collapsed);
@@ -521,34 +531,34 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 27:   //  Windows.UI.Xaml.Visibility
+            case 28:   //  Windows.UI.Xaml.Visibility
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 28:   //  Windows.UI.Xaml.Controls.Symbol
+            case 29:   //  Windows.UI.Xaml.Controls.Symbol
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 29:   //  Windows.UI.Xaml.Controls.Frame
+            case 30:   //  Windows.UI.Xaml.Controls.Frame
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 30:   //  Double
+            case 31:   //  Double
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 31:   //  ImageOrganizer.GUI.Views.MainPage
+            case 32:   //  ImageOrganizer.GUI.Views.MainPage
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_31_MainPage;
+                userType.Activator = Activate_32_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 32:   //  Windows.UI.Xaml.Controls.Page
+            case 33:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 33:   //  Windows.UI.Xaml.Controls.UserControl
+            case 34:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
