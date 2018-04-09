@@ -7,7 +7,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:ImageOrganizer.GUI"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:vm="using:ImageOrganizer.GUI.ViewModels" mc:Ignorable="d">
+      xmlns:vm="using:ImageOrganizer.GUI.ViewModels"
+      xmlns:converters="using:Template10.Converters" mc:Ignorable="d">
 
     <Page.DataContext>
         <vm:MainPageViewModel x:Name="ViewModel" />
@@ -15,17 +16,6 @@
 
     <Page.Resources>
         <local:SampleData x:Name="DesignTimeData"/>
-        <TextBlock
-            x:Name="TestViewSource1"
-            Text="{x:Bind ViewModel.testString1}"/>
-
-        <TextBlock
-            x:Name="TestViewSource2"
-            Text="{x:Bind ViewModel.testString2}"/>
-
-        <Image
-            x:Name="TestImageViewSource"
-            Source="{x:Bind ViewModel.testImage}"/>
     </Page.Resources>
 
     <RelativePanel x:Name="mainLayout" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
@@ -48,10 +38,10 @@
                        Padding="8">
 
             <TextBlock x:Name="TestBlock" 
-                       Text="{Binding Source={StaticResource TestViewSource1}, Path=Text}"/>
+                       Text="{Binding testString1}"/>
             
             <TextBlock x:Name="TestBlock2"
-                       Text="{Binding Source={StaticResource TestViewSource2}, Path=Text}"
+                       Text="{Binding testString2}"
                        Margin="8,0,0,0"
                        RelativePanel.RightOf="TestBlock"/>
             
@@ -64,14 +54,18 @@
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.AlignBottomWithPanel="True">
 
-            <Image x:Name="imageBlock"
-                   Source="{Binding Source={StaticResource TestImageViewSource}, Path=Source}"
-                   Stretch="Uniform"
+            <FlipView x:Name="imageBlock" ItemsSource="{Binding PictureList}"
                    RelativePanel.AlignBottomWithPanel="True"
                    RelativePanel.AlignTopWithPanel="True"
                    RelativePanel.AlignLeftWithPanel="True"
                    RelativePanel.AlignRightWithPanel="True"
-                   Margin="50,100,50,100"/>
+                   Margin="50,100,50,100">
+                <FlipView.ItemTemplate>
+                    <DataTemplate>
+                        <Image Source="{Binding FileDirectory}" Stretch="Uniform"/>
+                    </DataTemplate>
+                </FlipView.ItemTemplate>
+            </FlipView>
 
         </RelativePanel>
 

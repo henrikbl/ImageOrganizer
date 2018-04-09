@@ -145,6 +145,12 @@
       <Version>9.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageOrganizer.Model\ImageOrganizer.Model.csproj">
+      <Project>{4A04E6E1-F8AE-4FF1-A257-B59AD4DF7A93}</Project>
+      <Name>ImageOrganizer.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

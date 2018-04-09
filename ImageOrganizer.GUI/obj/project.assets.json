@@ -2205,6 +2205,20 @@
         "build": {
           "build/uap10.0/Template10.targets": {}
         }
+      },
+      "ImageOrganizer.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.0",
+        "dependencies": {
+          "Microsoft.NETCore": "5.0.0",
+          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0.15063/win10-arm": {
@@ -4493,6 +4507,20 @@
         },
         "build": {
           "build/uap10.0/Template10.targets": {}
+        }
+      },
+      "ImageOrganizer.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.0",
+        "dependencies": {
+          "Microsoft.NETCore": "5.0.0",
+          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
         }
       }
     },
@@ -6819,6 +6847,20 @@
         "build": {
           "build/uap10.0/Template10.targets": {}
         }
+      },
+      "ImageOrganizer.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.0",
+        "dependencies": {
+          "Microsoft.NETCore": "5.0.0",
+          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0.15063/win10-x64": {
@@ -9116,6 +9158,20 @@
         },
         "build": {
           "build/uap10.0/Template10.targets": {}
+        }
+      },
+      "ImageOrganizer.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.0",
+        "dependencies": {
+          "Microsoft.NETCore": "5.0.0",
+          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
         }
       }
     },
@@ -11451,6 +11507,20 @@
         "build": {
           "build/uap10.0/Template10.targets": {}
         }
+      },
+      "ImageOrganizer.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.0",
+        "dependencies": {
+          "Microsoft.NETCore": "5.0.0",
+          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0.15063/win10-x86": {
@@ -13748,6 +13818,20 @@
         },
         "build": {
           "build/uap10.0/Template10.targets": {}
+        }
+      },
+      "ImageOrganizer.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.0",
+        "dependencies": {
+          "Microsoft.NETCore": "5.0.0",
+          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
         }
       }
     },
@@ -16082,6 +16166,20 @@
         },
         "build": {
           "build/uap10.0/Template10.targets": {}
+        }
+      },
+      "ImageOrganizer.Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETPlatform,Version=v5.0",
+        "dependencies": {
+          "Microsoft.NETCore": "5.0.0",
+          "Microsoft.NETCore.Portable.Compatibility": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ImageOrganizer.Model.dll": {}
         }
       }
     }
@@ -22313,10 +22411,16 @@
         "template10.1.1.12.nupkg.sha512",
         "template10.nuspec"
       ]
+    },
+    "ImageOrganizer.Model/1.0.0": {
+      "type": "project",
+      "path": "../ImageOrganizer.Model/project.json",
+      "msbuildProject": "../ImageOrganizer.Model/ImageOrganizer.Model.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.15063": [
+      "ImageOrganizer.Model >= 1.0.0",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.3",
       "Microsoft.Xaml.Behaviors.Uwp.Managed >= 1.1.0",
       "Newtonsoft.Json >= 9.0.1",
@@ -22356,7 +22460,11 @@
       },
       "frameworks": {
         "uap10.0.15063": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\hen_b\\Documents\\Henrik\\Skole\\6.semester\\dotNet\\Projects\\MyProject\\ImageOrganizer\\ImageOrganizer.Model\\ImageOrganizer.Model.csproj": {
+              "projectPath": "C:\\Users\\hen_b\\Documents\\Henrik\\Skole\\6.semester\\dotNet\\Projects\\MyProject\\ImageOrganizer\\ImageOrganizer.Model\\ImageOrganizer.Model.csproj"
+            }
+          }
         }
       }
     },
