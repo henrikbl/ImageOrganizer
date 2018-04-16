@@ -29,7 +29,7 @@ namespace ImageOrganizer.Model
         /// <value>
         /// The file directory.
         /// </value>
-        public string FileDirectory { get; set; }
+        public string FilePath { get; set; }
 
         /// <summary>
         /// Gets or sets the groups.

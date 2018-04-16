@@ -29,14 +29,15 @@ namespace ImageOrganizer.GUI
                 {
                     PictureId = 1,
                     Title = "Image 1",
-                    FileDirectory = "/Assets/ExampleImage.png"
+                    FilePath = "/Assets/ExampleImage.png"
+
                 },
 
                 new Picture()
                 {
                     PictureId = 2,
                     Title = "Image 2",
-                    FileDirectory = "/Assets/StoreLogo.png"
+                    FilePath = "/Assets/StoreLogo.png"
                 }
             };
 

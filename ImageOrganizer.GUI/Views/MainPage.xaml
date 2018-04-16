@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
       xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:behaviors="using:Template10.Behaviors"
       xmlns:controls="using:Template10.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:ImageOrganizer.GUI"
@@ -29,7 +30,7 @@
                              RelativePanel.AlignTopWithPanel="True" />
 
         <!--This panel contains the side menu-->
-        <RelativePanel x:Name="menu"
+        <RelativePanel x:Name="Menu"
                        RelativePanel.AlignLeftWithPanel="True"
                        RelativePanel.Below="pageHeader"
                        RelativePanel.AlignBottomWithPanel="True"
@@ -44,12 +45,28 @@
                        Text="{Binding testString2}"
                        Margin="8,0,0,0"
                        RelativePanel.RightOf="TestBlock"/>
-            
+
+            <TextBox x:Name="FolderPath"
+                Text="{Binding PathToFolder}"
+                RelativePanel.Below="TestBlock"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                Margin="0,8,0,0"
+                Width="200"/>
+
+            <Button x:Name="BrowseForFolder"
+                    Content="Browse"
+                    Command="{x:Bind ViewModel.FindFolderCommand}"
+                    RelativePanel.AlignRightWithPanel="True"
+                    RelativePanel.Below="FolderPath"
+                    Margin="8,8,0,0"/>
+
+
         </RelativePanel>
         
         <!--This panel contains the image viewing with navigation-->
         <RelativePanel x:Name="imageView"
-                       RelativePanel.RightOf="menu"
+                       RelativePanel.RightOf="Menu"
                        RelativePanel.Below="pageHeader"
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.AlignBottomWithPanel="True">
@@ -62,7 +79,7 @@
                    Margin="50,100,50,100">
                 <FlipView.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding FileDirectory}" Stretch="Uniform"/>
+                        <Image Source="{Binding FilePath}" Stretch="Uniform"/>
                     </DataTemplate>
                 </FlipView.ItemTemplate>
             </FlipView>

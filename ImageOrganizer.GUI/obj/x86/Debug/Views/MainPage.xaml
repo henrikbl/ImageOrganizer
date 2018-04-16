@@ -1,8 +1,9 @@
-﻿<Page x:Class="ImageOrganizer.GUI.Views.MainPage"
+﻿<Page x:ConnectionId='1' x:Class="ImageOrganizer.GUI.Views.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:Core="using:Microsoft.Xaml.Interactions.Core"
       xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:behaviors="using:Template10.Behaviors"
       xmlns:controls="using:Template10.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:ImageOrganizer.GUI"
@@ -11,17 +12,17 @@
       xmlns:converters="using:Template10.Converters" mc:Ignorable="d">
 
     <Page.DataContext>
-        <vm:MainPageViewModel x:ConnectionId='1' x:Name="ViewModel" />
+        <vm:MainPageViewModel x:ConnectionId='2' x:Name="ViewModel" />
     </Page.DataContext>
 
     <Page.Resources>
-        <local:SampleData x:ConnectionId='2' x:Name="DesignTimeData"/>
+        <local:SampleData x:ConnectionId='3' x:Name="DesignTimeData"/>
     </Page.Resources>
 
-    <RelativePanel x:ConnectionId='3' x:Name="mainLayout" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
+    <RelativePanel x:ConnectionId='4' x:Name="mainLayout" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
                    d:DataContext="{StaticResource DesignTimeData}">
 
-        <controls:PageHeader x:ConnectionId='4' x:Name="pageHeader" Content="Organizer"
+        <controls:PageHeader x:ConnectionId='5' x:Name="pageHeader" Content="Organizer"
                              Background="LightSeaGreen"
                              HorizontalContentAlignment="Center"
                              RelativePanel.AlignLeftWithPanel="True"
@@ -29,7 +30,7 @@
                              RelativePanel.AlignTopWithPanel="True" />
 
         <!--This panel contains the side menu-->
-        <RelativePanel x:ConnectionId='5' x:Name="menu"
+        <RelativePanel x:ConnectionId='6' x:Name="Menu"
                        RelativePanel.AlignLeftWithPanel="True"
                        RelativePanel.Below="pageHeader"
                        RelativePanel.AlignBottomWithPanel="True"
@@ -37,24 +38,40 @@
                        BorderThickness="1"
                        Padding="8">
 
-            <TextBlock x:ConnectionId='8' x:Name="TestBlock" 
+            <TextBlock x:ConnectionId='9' x:Name="TestBlock" 
                        Text="{Binding testString1}"/>
             
-            <TextBlock x:ConnectionId='9' x:Name="TestBlock2"
+            <TextBlock x:ConnectionId='10' x:Name="TestBlock2"
                        Text="{Binding testString2}"
                        Margin="8,0,0,0"
                        RelativePanel.RightOf="TestBlock"/>
-            
+
+            <TextBox x:ConnectionId='11' x:Name="FolderPath"
+                Text="{Binding PathToFolder}"
+                RelativePanel.Below="TestBlock"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignRightWithPanel="True"
+                Margin="0,8,0,0"
+                Width="200"/>
+
+            <Button x:ConnectionId='12' x:Name="BrowseForFolder"
+                    Content="Browse"
+                                                                  
+                    RelativePanel.AlignRightWithPanel="True"
+                    RelativePanel.Below="FolderPath"
+                    Margin="8,8,0,0"/>
+
+
         </RelativePanel>
         
         <!--This panel contains the image viewing with navigation-->
-        <RelativePanel x:ConnectionId='6' x:Name="imageView"
-                       RelativePanel.RightOf="menu"
+        <RelativePanel x:ConnectionId='7' x:Name="imageView"
+                       RelativePanel.RightOf="Menu"
                        RelativePanel.Below="pageHeader"
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.AlignBottomWithPanel="True">
 
-            <FlipView x:ConnectionId='7' x:Name="imageBlock" ItemsSource="{Binding PictureList}"
+            <FlipView x:ConnectionId='8' x:Name="imageBlock" ItemsSource="{Binding PictureList}"
                    RelativePanel.AlignBottomWithPanel="True"
                    RelativePanel.AlignTopWithPanel="True"
                    RelativePanel.AlignLeftWithPanel="True"
@@ -62,7 +79,7 @@
                    Margin="50,100,50,100">
                 <FlipView.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding FileDirectory}" Stretch="Uniform"/>
+                        <Image Source="{Binding FilePath}" Stretch="Uniform"/>
                     </DataTemplate>
                 </FlipView.ItemTemplate>
             </FlipView>

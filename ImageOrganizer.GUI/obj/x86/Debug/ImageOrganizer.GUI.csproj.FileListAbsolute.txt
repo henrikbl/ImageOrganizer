@@ -225,3 +225,13 @@ C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\Image
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\obj\x86\Debug\ImageOrganizer.GUI.csprojResolveAssemblyReference.cache
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\ImageOrganizer.Model.dll
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\ImageOrganizer.Model.pdb
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\System.Console.dll
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\System.ComponentModel.Primitives.dll
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\System.ComponentModel.TypeConverter.dll
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\System.Runtime.Serialization.Formatters.dll
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\obj\x86\Debug\FxResources.System.Console.SR.resw
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\obj\x86\Debug\FxResources.System.ComponentModel.Primitives.SR.resw
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\obj\x86\Debug\FxResources.System.ComponentModel.TypeConverter.SR.resw
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\obj\x86\Debug\FxResources.System.Runtime.InteropServices.RuntimeInformation.SR.resw
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\obj\x86\Debug\FxResources.System.Runtime.Serialization.Formatters.SR.resw

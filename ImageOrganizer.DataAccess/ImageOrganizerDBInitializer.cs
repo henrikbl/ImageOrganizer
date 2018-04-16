@@ -17,8 +17,8 @@ namespace ImageOrganizer.DataAccess
         /// <param name="context">The context to seed.</param>
         protected override void Seed(ImageOrganizerContext context)
         {
-            var Picture1 = context.Pictures.Add(new Picture() { Title = "Vacation", FileDirectory = @"C:\documents\test1" });
-            var Picture2 = context.Pictures.Add(new Picture() { Title = "My friend", FileDirectory = @"C:\images" });
+            var Picture1 = context.Pictures.Add(new Picture() { Title = "Vacation", FilePath = @"C:\documents\test1" });
+            var Picture2 = context.Pictures.Add(new Picture() { Title = "My friend", FilePath = @"C:\images" });
 
             context.Groups.Add(new Group() { Name = "Places", Pictures = new List<Picture>() { Picture1 } });
             context.Groups.Add(new Group() { Name = "People", Pictures = new List<Picture>() { Picture2 } });
