@@ -3,7 +3,6 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Template10.Mvvm;
-using Template10.Services.NavigationService;
 using Windows.UI.Xaml.Navigation;
 using System.Collections.ObjectModel;
 using ImageOrganizer.Model;
@@ -13,16 +12,14 @@ using Windows.Storage;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Windows.Storage.Search;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.Storage.Streams;
 
 namespace ImageOrganizer.GUI.ViewModels
 {
 
     public class MainPageViewModel : ViewModelBase, INotifyPropertyChanged
     {
-        public string testString1 { get; set; }
-        public string testString2 { get; set; }
 
         private string _PathToFolder;
         public string PathToFolder
@@ -38,22 +35,26 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
+        ObservableCollection<Group> groupList;
+        public ObservableCollection<Group> GroupList { get { return groupList; } set { Set(ref groupList, value); } }
+
         ObservableCollection<Picture> pictureList;
         public ObservableCollection<Picture> PictureList { get { return pictureList; } set { Set( ref pictureList, value); } }
 
 
-        //Test with storagefiles
-        ObservableCollection<StorageFile> storeFiles;
-        public ObservableCollection<StorageFile> StorageFiles { get { return storeFiles; } set { if (storeFiles != value) { storeFiles = value; NotifyPropertyChanged(); } } }
+        //Mapping images with bitmap created from storagefiles.
+        ObservableCollection<BitmapImage> images;
+        public ObservableCollection<BitmapImage> Images { get { return images; } set { if (images != value) { images = value; NotifyPropertyChanged(); } } }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public MainPageViewModel()
         {
-            testString1 = "Changed text";
-            testString2 = "Hello world";
 
-            _PathToFolder = "Path to folder";
+            _PathToFolder = "Directory";
+
+            Images = new ObservableCollection<BitmapImage>();
+            //AddGroupsToGroupListAsync();
 
             PictureList = new ObservableCollection<Picture>()
             {
@@ -71,6 +72,26 @@ namespace ImageOrganizer.GUI.ViewModels
                     FilePath = "/Assets/StoreLogo.png"
                 }
             };
+        }
+
+
+       /* public async Task AddGroupsToGroupListAsync()
+        {
+            GroupList = new ObservableCollection<Group>(await DataSource.Groups.Instance.getGroups());
+        } */
+
+        public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
+        {
+            if(GroupList == null)
+            {
+                GroupList = new ObservableCollection<Group>(await DataSource.Groups.Instance.getGroups());
+            }
+            
+            if(state.Any())
+            {
+
+            }
+            await Task.CompletedTask;
         }
 
         public ICommand FindFolderCommand { get { return new FindFolderCommand(async ()=> await FindFolderAsync()); }}
@@ -92,7 +113,7 @@ namespace ImageOrganizer.GUI.ViewModels
                 StorageFileQueryResult sfqr = folder.CreateFileQueryWithOptions(options);
 
                 IReadOnlyList<StorageFile> picture_files = await sfqr.GetFilesAsync();
-                createPictureListFromFolder(picture_files);
+                await createPictureListFromFolderAsync(picture_files);
 
                 Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList.AddOrReplace("PickedFolderToken", folder);
                 PathToFolder = folder.Path;
@@ -101,19 +122,34 @@ namespace ImageOrganizer.GUI.ViewModels
         }
 
         // creates a list of pictures for viewing.
-        public void createPictureListFromFolder(IReadOnlyList<StorageFile> files)
+        public async Task createPictureListFromFolderAsync(IReadOnlyList<StorageFile> files)
         {
             PictureList.Clear();
+            //Images.Clear();
 
             foreach(var f in files)
             {
-                StorageFiles = new ObservableCollection<StorageFile>();
-                StorageFiles.Add(f);
-               /* Picture p = new Picture();
+               // StorageFiles = new ObservableCollection<StorageFile>();
+               // StorageFiles.Add(f);
+                Picture p = new Picture();
                 p.Title = f.DisplayName.ToString();
                 p.FilePath = f.Path;
-                PictureList.Add(p); */
+                PictureList.Add(p);
+
+                BitmapImage img = await RetrieveImageAsync(f);
+                Images.Add(img);
             }
+        }
+
+        // Converts bitmapimage from a storagefile.
+        public async Task<BitmapImage> RetrieveImageAsync(StorageFile file)
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            FileRandomAccessStream stream = (FileRandomAccessStream)await file.OpenAsync(FileAccessMode.Read);
+
+            bitmapImage.SetSource(stream);
+
+            return bitmapImage;
         }
 
         // method for updating UI elements using INotifyPropertyChanged
@@ -152,31 +188,6 @@ namespace ImageOrganizer.GUI.ViewModels
         public void Execute(object parameter)
         {
             this._action();
-        }
-    }
-
-    /*
-     * 
-     * Converters
-     * 
-     */
-
-    // Converter for changing uri to bitmap.
-    public class UriToImageConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, string language)
-        {
-            if(value != null)
-            {
-                string picturePath = value as string;
-                return new BitmapImage(new Uri(picturePath));
-            }
-            return null;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, string language)
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -38,17 +38,8 @@
                        BorderThickness="1"
                        Padding="8">
 
-            <TextBlock x:Name="TestBlock" 
-                       Text="{Binding testString1}"/>
-            
-            <TextBlock x:Name="TestBlock2"
-                       Text="{Binding testString2}"
-                       Margin="8,0,0,0"
-                       RelativePanel.RightOf="TestBlock"/>
-
-            <TextBox x:Name="FolderPath"
+            <TextBlock x:Name="FolderPath"
                 Text="{Binding PathToFolder}"
-                RelativePanel.Below="TestBlock"
                 RelativePanel.AlignLeftWithPanel="True"
                 RelativePanel.AlignRightWithPanel="True"
                 Margin="0,8,0,0"
@@ -60,7 +51,16 @@
                     RelativePanel.AlignRightWithPanel="True"
                     RelativePanel.Below="FolderPath"
                     Margin="8,8,0,0"/>
+            <RelativePanel x:Name="AddPicturePanel"
+                           RelativePanel.AlignBottomWithPanel="True">
 
+                <ComboBox x:Name="ChooseGroupMenu"
+                          ItemsSource="{x:Bind ViewModel.GroupList}"
+                          DisplayMemberPath="Name"
+                          Margin="0,0,0,100"
+                          PlaceholderText="Choose a group" />
+
+            </RelativePanel>
 
         </RelativePanel>
         
@@ -71,7 +71,8 @@
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.AlignBottomWithPanel="True">
 
-            <FlipView x:Name="imageBlock" ItemsSource="{Binding PictureList}"
+            <FlipView x:Name="imageBlock" ItemsSource="{Binding Images}"
+                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                    RelativePanel.AlignBottomWithPanel="True"
                    RelativePanel.AlignTopWithPanel="True"
                    RelativePanel.AlignLeftWithPanel="True"
@@ -79,7 +80,10 @@
                    Margin="50,100,50,100">
                 <FlipView.ItemTemplate>
                     <DataTemplate>
-                        <Image Source="{Binding FilePath}" Stretch="Uniform"/>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="{Binding PictureList.Title}" TextAlignment="Center"/>
+                            <Image Source="{Binding}" />
+                        </StackPanel>
                     </DataTemplate>
                 </FlipView.ItemTemplate>
             </FlipView>

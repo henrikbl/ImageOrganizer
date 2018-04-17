@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using ImageOrganizer.Model;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace ImageOrganizer.GUI.DataSource
     {
         public static Groups Instance { get; } = new Groups();
 
-        private const string baseUri = "";
+        private const string baseUri = "http://localhost:55850/api/";
 
         private HttpClient client;
 
@@ -25,12 +26,12 @@ namespace ImageOrganizer.GUI.DataSource
         }
         
         // Retrieve list of groups from the database.
-        public async Task<Groups[]> getGroups()
+        public async Task<Group[]> getGroups()
         {
             try
             {
                 var json = await client.GetStringAsync("groups").ConfigureAwait(false);
-                Groups[] groups = JsonConvert.DeserializeObject<Groups[]>(json);
+                Group[] groups = JsonConvert.DeserializeObject<Group[]>(json);
                 return groups;
             }
             catch (Exception)

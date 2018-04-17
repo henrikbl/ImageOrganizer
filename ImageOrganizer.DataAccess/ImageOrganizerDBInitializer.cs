@@ -19,6 +19,7 @@ namespace ImageOrganizer.DataAccess
         {
             var Picture1 = context.Pictures.Add(new Picture() { Title = "Vacation", FilePath = @"C:\documents\test1" });
             var Picture2 = context.Pictures.Add(new Picture() { Title = "My friend", FilePath = @"C:\images" });
+            var Picture3 = context.Pictures.Add(new Picture() { Title = "Test1", FilePath = @"C:\Users\hen_b\Pictures\EveOnlineWallpaper.jpg" });
 
             context.Groups.Add(new Group() { Name = "Places", Pictures = new List<Picture>() { Picture1 } });
             context.Groups.Add(new Group() { Name = "People", Pictures = new List<Picture>() { Picture2 } });

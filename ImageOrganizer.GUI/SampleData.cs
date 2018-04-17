@@ -10,18 +10,15 @@ namespace ImageOrganizer.GUI
 {
     class SampleData
     {
-
-        public string testString1 { get; set; }
-        public string testString2 { get; set; }
-
-        public string testImage { get; set; }
+        public string PathToFolder { get; set; }
 
         public ObservableCollection<Picture> PictureList { get; set; }
 
+        public ObservableCollection<Group> GroupList { get; set; }
+
         public SampleData()
         {
-            testString1 = "Test string 1";
-            testString2 = "Test string 2";
+            PathToFolder = "Directory";
 
             PictureList = new ObservableCollection<Picture>()
             {
@@ -41,7 +38,20 @@ namespace ImageOrganizer.GUI
                 }
             };
 
-            //testImage = "/Assets/StoreLogo.png";
+            GroupList = new ObservableCollection<Group>()
+            {
+                new Group()
+                {
+                    GroupId = 1,
+                    Name = "Places"
+                },
+
+                new Group()
+                {
+                    GroupId = 1,
+                    Name = "People"
+                }
+            };
         }
         
     }
