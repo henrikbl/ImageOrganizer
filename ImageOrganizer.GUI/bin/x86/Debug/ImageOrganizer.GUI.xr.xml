@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="Images" />
     <RootPropertyPathName Name="PictureList" />
-    <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="ConvertToImage" />
+    <RootPropertyPathName Name="DisplayName" />
+    <RootPropertyPathName Name="isValid" />
     <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="SelectedGroup" />
+    <RootPropertyPathName Name="CurrentPictureTitle" />
     <RootPropertyPathName Name="PathToFolder" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -40,6 +43,8 @@
       <RootMethod Name="SetAlignBottomWithPanel" />
       <RootMethod Name="GetRightOf" />
       <RootMethod Name="SetRightOf" />
+      <RootMethod Name="GetAlignHorizontalCenterWithPanel" />
+      <RootMethod Name="SetAlignHorizontalCenterWithPanel" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Template10.Controls.PageHeader">
@@ -49,18 +54,26 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.FlipView">
       <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedItem" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Mode" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension">
+      <RootProperty Name="Mode" />
+      <RootProperty Name="UpdateSourceTrigger" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Padding" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
@@ -70,19 +83,35 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
+      <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
       <RootProperty Name="Command" />
       <RootProperty Name="Margin" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ContentDialog">
+      <RootProperty Name="PrimaryButtonText" />
+      <RootProperty Name="IsPrimaryButtonEnabled" />
+      <RootProperty Name="SecondaryButtonText" />
+      <RootProperty Name="IsSecondaryButtonEnabled" />
+      <RootProperty Name="TitleTemplate" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Text" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="MaxLength" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="ItemsSource" />
+      <RootProperty Name="SelectedItem" />
       <RootProperty Name="DisplayMemberPath" />
       <RootProperty Name="Margin" />
       <RootProperty Name="PlaceholderText" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
     <RootType FullName="ImageOrganizer.GUI.Views.MainPage" />
   </Roots.RootTypes>
 </Roots>

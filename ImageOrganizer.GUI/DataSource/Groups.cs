@@ -26,7 +26,7 @@ namespace ImageOrganizer.GUI.DataSource
         }
         
         // Retrieve list of groups from the database.
-        public async Task<Group[]> getGroups()
+        public async Task<Group[]> GetGroups()
         {
             try
             {
@@ -38,6 +38,14 @@ namespace ImageOrganizer.GUI.DataSource
             {
                 throw;
             }     
+        }
+
+        // Add a group to database
+        public async Task<bool> AddGroup(Group group)
+        {
+            string objectBody = JsonConvert.SerializeObject(group);
+            var response = await client.PostAsync("groups", new StringContent(objectBody, Encoding.UTF8, "application/json")).ConfigureAwait(false);
+            return response.IsSuccessStatusCode;
         }
         
     }

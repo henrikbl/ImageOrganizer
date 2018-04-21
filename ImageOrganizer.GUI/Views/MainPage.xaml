@@ -51,16 +51,58 @@
                     RelativePanel.AlignRightWithPanel="True"
                     RelativePanel.Below="FolderPath"
                     Margin="8,8,0,0"/>
+
+            <!-- Panel for manipulating picture and group properties-->
             <RelativePanel x:Name="AddPicturePanel"
-                           RelativePanel.AlignBottomWithPanel="True">
+                           RelativePanel.AlignBottomWithPanel="True"
+                           RelativePanel.AlignLeftWithPanel="True"
+                           RelativePanel.AlignRightWithPanel="True">
+
+                <!-- TEST BUTTON FOR ADDING PICTURES-->
+                <Button x:Name="AddPictureButton"
+                    Content="Add Picture"
+                    Click="{x:Bind AddPicture}"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True"
+                    Margin="0,0,0,100"/>
+
+                <TextBox x:Name="PictureName"
+                         Width="200"
+                         Text="{Binding CurrentPictureTitle, Mode=TwoWay}"
+                         PlaceholderText="Title"
+                         MaxLength="20"
+                         RelativePanel.Below="AddPictureButton"/>
 
                 <ComboBox x:Name="ChooseGroupMenu"
                           ItemsSource="{x:Bind ViewModel.GroupList}"
+                          SelectedItem="{Binding SelectedGroup, Mode=TwoWay}"
                           DisplayMemberPath="Name"
-                          Margin="0,0,0,100"
-                          PlaceholderText="Choose a group" />
+                          Margin="0,8,0,100"
+                          PlaceholderText="Choose a group"
+                          RelativePanel.Below="PictureName"/>
+
+                <Button x:Name="CreateGroup"
+                        Content="New group"
+                        Click="{x:Bind CreateNewGroup}"
+                        RelativePanel.Below="ChooseGroupMenu"
+                        RelativePanel.AlignRightWithPanel="True"/>
 
             </RelativePanel>
+
+            <!-- "Create new group" content dialog-->
+            <ContentDialog x:Name="AddGroupContentDialog"
+                           PrimaryButtonText="Create" IsPrimaryButtonEnabled="{Binding isValid}"
+                           SecondaryButtonText="Cancel" IsSecondaryButtonEnabled="True">
+                <ContentDialog.TitleTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="Create a group" TextAlignment="Center"/>
+                    </DataTemplate>
+                </ContentDialog.TitleTemplate>
+                <StackPanel Orientation="Horizontal" Padding="8">
+                    <TextBlock Text="Name:" Margin="0,0,8,0"/>
+                    <TextBox Text="{Binding Name, Mode=TwoWay}" PlaceholderText="Enter a name for a group"/>
+
+                </StackPanel>
+            </ContentDialog>
 
         </RelativePanel>
         
@@ -71,7 +113,8 @@
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.AlignBottomWithPanel="True">
 
-            <FlipView x:Name="imageBlock" ItemsSource="{Binding Images}"
+            <FlipView x:Name="imageBlock" ItemsSource="{Binding PictureList}"
+                      SelectedItem="{x:Bind ViewModel.SelectedPicture, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                    RelativePanel.AlignBottomWithPanel="True"
                    RelativePanel.AlignTopWithPanel="True"
@@ -81,8 +124,8 @@
                 <FlipView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding PictureList.Title}" TextAlignment="Center"/>
-                            <Image Source="{Binding}" />
+                            <TextBlock x:Name="currentTitle" Text="{Binding DisplayName}" TextAlignment="Center"/>
+                            <Image Source="{Binding ConvertToImage}" Stretch="Uniform"/>
                         </StackPanel>
                     </DataTemplate>
                 </FlipView.ItemTemplate>

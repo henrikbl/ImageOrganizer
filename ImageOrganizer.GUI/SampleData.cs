@@ -11,6 +11,7 @@ namespace ImageOrganizer.GUI
     class SampleData
     {
         public string PathToFolder { get; set; }
+        public string CurrentPictureTitle { get; set; }
 
         public ObservableCollection<Picture> PictureList { get; set; }
 
@@ -19,24 +20,6 @@ namespace ImageOrganizer.GUI
         public SampleData()
         {
             PathToFolder = "Directory";
-
-            PictureList = new ObservableCollection<Picture>()
-            {
-                new Picture()
-                {
-                    PictureId = 1,
-                    Title = "Image 1",
-                    FilePath = "/Assets/ExampleImage.png"
-
-                },
-
-                new Picture()
-                {
-                    PictureId = 2,
-                    Title = "Image 2",
-                    FilePath = "/Assets/StoreLogo.png"
-                }
-            };
 
             GroupList = new ObservableCollection<Group>()
             {
