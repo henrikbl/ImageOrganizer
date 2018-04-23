@@ -149,6 +149,38 @@ namespace ImageOrganizer.GUI.ViewModels
         } 
 
         public ICommand FindFolderCommand { get { return new FindFolderCommand(async ()=> await FindFolderAsync()); }}
+        public ICommand AddPictureCommand { get { return new AddPicture(async () => await AddPictureAsync()); } }
+
+        // Add picture to database
+        public async Task AddPictureAsync()
+        {
+            var picture = new Picture();
+            picture.Title = CurrentPictureTitle;
+            picture.FilePath = SelectedPicture.Path;
+
+            int selectedGroupId = SelectedGroup.GroupId;
+
+            try
+            {
+                await DataSource.Pictures.Instance.AddPicture(picture);
+
+                // TODO need to retrieve the pictureId from database. so it can be used here.
+                try
+                {
+                    await DataSource.Pictures.Instance.AddPictureToGroup(picture.PictureId, selectedGroupId);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         // Folder picker method with image list creation.
         public async Task FindFolderAsync()
@@ -215,6 +247,28 @@ namespace ImageOrganizer.GUI.ViewModels
      * Commands 
      * 
      */
+
+    public class AddPicture : ICommand
+    {
+        private Action _action;
+
+        public AddPicture(Action action)
+        {
+            _action = action;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            this._action();
+        }
+    }
 
     // Command for finding a folder with images.
     public class FindFolderCommand : ICommand

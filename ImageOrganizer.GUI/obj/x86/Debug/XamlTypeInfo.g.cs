@@ -589,6 +589,7 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 userType.AddMemberName("PictureList");
                 userType.AddMemberName("Images");
                 userType.AddMemberName("FindFolderCommand");
+                userType.AddMemberName("AddPictureCommand");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -1243,162 +1244,167 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             return that.FindFolderCommand;
         }
-        private object get_44_ViewModelBase_NavigationService(object instance)
+        private object get_44_MainPageViewModel_AddPictureCommand(object instance)
+        {
+            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
+            return that.AddPictureCommand;
+        }
+        private object get_45_ViewModelBase_NavigationService(object instance)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.NavigationService;
         }
-        private void set_44_ViewModelBase_NavigationService(object instance, object Value)
+        private void set_45_ViewModelBase_NavigationService(object instance, object Value)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.NavigationService = (global::Template10.Services.NavigationService.INavigationService)Value;
         }
-        private object get_45_ViewModelBase_Dispatcher(object instance)
+        private object get_46_ViewModelBase_Dispatcher(object instance)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.Dispatcher;
         }
-        private void set_45_ViewModelBase_Dispatcher(object instance, object Value)
+        private void set_46_ViewModelBase_Dispatcher(object instance, object Value)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.Dispatcher = (global::Template10.Common.IDispatcherWrapper)Value;
         }
-        private object get_46_ViewModelBase_SessionState(object instance)
+        private object get_47_ViewModelBase_SessionState(object instance)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.SessionState;
         }
-        private void set_46_ViewModelBase_SessionState(object instance, object Value)
+        private void set_47_ViewModelBase_SessionState(object instance, object Value)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.SessionState = (global::Template10.Common.IStateItems)Value;
         }
-        private object get_47_SampleData_PathToFolder(object instance)
+        private object get_48_SampleData_PathToFolder(object instance)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             return that.PathToFolder;
         }
-        private void set_47_SampleData_PathToFolder(object instance, object Value)
+        private void set_48_SampleData_PathToFolder(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             that.PathToFolder = (global::System.String)Value;
         }
-        private object get_48_SampleData_CurrentPictureTitle(object instance)
+        private object get_49_SampleData_CurrentPictureTitle(object instance)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             return that.CurrentPictureTitle;
         }
-        private void set_48_SampleData_CurrentPictureTitle(object instance, object Value)
+        private void set_49_SampleData_CurrentPictureTitle(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             that.CurrentPictureTitle = (global::System.String)Value;
         }
-        private object get_49_SampleData_PictureList(object instance)
+        private object get_50_SampleData_PictureList(object instance)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             return that.PictureList;
         }
-        private void set_49_SampleData_PictureList(object instance, object Value)
+        private void set_50_SampleData_PictureList(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             that.PictureList = (global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Picture>)Value;
         }
-        private object get_50_SampleData_GroupList(object instance)
+        private object get_51_SampleData_GroupList(object instance)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             return that.GroupList;
         }
-        private void set_50_SampleData_GroupList(object instance, object Value)
+        private void set_51_SampleData_GroupList(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             that.GroupList = (global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Group>)Value;
         }
-        private object get_51_PageHeader_EllipsisVisibility(object instance)
+        private object get_52_PageHeader_EllipsisVisibility(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.EllipsisVisibility;
         }
-        private void set_51_PageHeader_EllipsisVisibility(object instance, object Value)
+        private void set_52_PageHeader_EllipsisVisibility(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.EllipsisVisibility = (global::Template10.Behaviors.EllipsisBehavior.Visibilities)Value;
         }
-        private object get_52_PageHeader_PrimaryCommandsVisibility(object instance)
+        private object get_53_PageHeader_PrimaryCommandsVisibility(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.PrimaryCommandsVisibility;
         }
-        private void set_52_PageHeader_PrimaryCommandsVisibility(object instance, object Value)
+        private void set_53_PageHeader_PrimaryCommandsVisibility(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.PrimaryCommandsVisibility = (global::Windows.UI.Xaml.Visibility)Value;
         }
-        private object get_53_PageHeader_BackButtonVisibility(object instance)
+        private object get_54_PageHeader_BackButtonVisibility(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.BackButtonVisibility;
         }
-        private void set_53_PageHeader_BackButtonVisibility(object instance, object Value)
+        private void set_54_PageHeader_BackButtonVisibility(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.BackButtonVisibility = (global::Windows.UI.Xaml.Visibility)Value;
         }
-        private object get_54_PageHeader_BackButtonContent(object instance)
+        private object get_55_PageHeader_BackButtonContent(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.BackButtonContent;
         }
-        private void set_54_PageHeader_BackButtonContent(object instance, object Value)
+        private void set_55_PageHeader_BackButtonContent(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.BackButtonContent = (global::Windows.UI.Xaml.Controls.Symbol)Value;
         }
-        private object get_55_PageHeader_Frame(object instance)
+        private object get_56_PageHeader_Frame(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.Frame;
         }
-        private void set_55_PageHeader_Frame(object instance, object Value)
+        private void set_56_PageHeader_Frame(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.Frame = (global::Windows.UI.Xaml.Controls.Frame)Value;
         }
-        private object get_56_PageHeader_EnableHamburgerMenuAutoLayout(object instance)
+        private object get_57_PageHeader_EnableHamburgerMenuAutoLayout(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.EnableHamburgerMenuAutoLayout;
         }
-        private void set_56_PageHeader_EnableHamburgerMenuAutoLayout(object instance, object Value)
+        private void set_57_PageHeader_EnableHamburgerMenuAutoLayout(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.EnableHamburgerMenuAutoLayout = (global::System.Boolean)Value;
         }
-        private object get_57_PageHeader_VisualStateNarrowMinWidth(object instance)
+        private object get_58_PageHeader_VisualStateNarrowMinWidth(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.VisualStateNarrowMinWidth;
         }
-        private void set_57_PageHeader_VisualStateNarrowMinWidth(object instance, object Value)
+        private void set_58_PageHeader_VisualStateNarrowMinWidth(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.VisualStateNarrowMinWidth = (global::System.Double)Value;
         }
-        private object get_58_PageHeader_VisualStateNormalMinWidth(object instance)
+        private object get_59_PageHeader_VisualStateNormalMinWidth(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.VisualStateNormalMinWidth;
         }
-        private void set_58_PageHeader_VisualStateNormalMinWidth(object instance, object Value)
+        private void set_59_PageHeader_VisualStateNormalMinWidth(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.VisualStateNormalMinWidth = (global::System.Double)Value;
         }
-        private object get_59_PageHeader_Text(object instance)
+        private object get_60_PageHeader_Text(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.Text;
         }
-        private void set_59_PageHeader_Text(object instance, object Value)
+        private void set_60_PageHeader_Text(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.Text = (global::System.String)Value;
@@ -1675,110 +1681,116 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlMember.Getter = get_43_MainPageViewModel_FindFolderCommand;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.AddPictureCommand":
+                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
+                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "AddPictureCommand", "System.Windows.Input.ICommand");
+                xamlMember.Getter = get_44_MainPageViewModel_AddPictureCommand;
+                xamlMember.SetIsReadOnly();
+                break;
             case "Template10.Mvvm.ViewModelBase.NavigationService":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "NavigationService", "Template10.Services.NavigationService.INavigationService");
-                xamlMember.Getter = get_44_ViewModelBase_NavigationService;
-                xamlMember.Setter = set_44_ViewModelBase_NavigationService;
+                xamlMember.Getter = get_45_ViewModelBase_NavigationService;
+                xamlMember.Setter = set_45_ViewModelBase_NavigationService;
                 break;
             case "Template10.Mvvm.ViewModelBase.Dispatcher":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Dispatcher", "Template10.Common.IDispatcherWrapper");
-                xamlMember.Getter = get_45_ViewModelBase_Dispatcher;
-                xamlMember.Setter = set_45_ViewModelBase_Dispatcher;
+                xamlMember.Getter = get_46_ViewModelBase_Dispatcher;
+                xamlMember.Setter = set_46_ViewModelBase_Dispatcher;
                 break;
             case "Template10.Mvvm.ViewModelBase.SessionState":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "SessionState", "Template10.Common.IStateItems");
-                xamlMember.Getter = get_46_ViewModelBase_SessionState;
-                xamlMember.Setter = set_46_ViewModelBase_SessionState;
+                xamlMember.Getter = get_47_ViewModelBase_SessionState;
+                xamlMember.Setter = set_47_ViewModelBase_SessionState;
                 break;
             case "ImageOrganizer.GUI.SampleData.PathToFolder":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.SampleData");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PathToFolder", "String");
-                xamlMember.Getter = get_47_SampleData_PathToFolder;
-                xamlMember.Setter = set_47_SampleData_PathToFolder;
+                xamlMember.Getter = get_48_SampleData_PathToFolder;
+                xamlMember.Setter = set_48_SampleData_PathToFolder;
                 break;
             case "ImageOrganizer.GUI.SampleData.CurrentPictureTitle":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.SampleData");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "CurrentPictureTitle", "String");
-                xamlMember.Getter = get_48_SampleData_CurrentPictureTitle;
-                xamlMember.Setter = set_48_SampleData_CurrentPictureTitle;
+                xamlMember.Getter = get_49_SampleData_CurrentPictureTitle;
+                xamlMember.Setter = set_49_SampleData_CurrentPictureTitle;
                 break;
             case "ImageOrganizer.GUI.SampleData.PictureList":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.SampleData");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PictureList", "System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Picture>");
-                xamlMember.Getter = get_49_SampleData_PictureList;
-                xamlMember.Setter = set_49_SampleData_PictureList;
+                xamlMember.Getter = get_50_SampleData_PictureList;
+                xamlMember.Setter = set_50_SampleData_PictureList;
                 break;
             case "ImageOrganizer.GUI.SampleData.GroupList":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.SampleData");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "GroupList", "System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Group>");
-                xamlMember.Getter = get_50_SampleData_GroupList;
-                xamlMember.Setter = set_50_SampleData_GroupList;
+                xamlMember.Getter = get_51_SampleData_GroupList;
+                xamlMember.Setter = set_51_SampleData_GroupList;
                 break;
             case "Template10.Controls.PageHeader.EllipsisVisibility":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "EllipsisVisibility", "Template10.Behaviors.EllipsisBehavior.Visibilities");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_51_PageHeader_EllipsisVisibility;
-                xamlMember.Setter = set_51_PageHeader_EllipsisVisibility;
+                xamlMember.Getter = get_52_PageHeader_EllipsisVisibility;
+                xamlMember.Setter = set_52_PageHeader_EllipsisVisibility;
                 break;
             case "Template10.Controls.PageHeader.PrimaryCommandsVisibility":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PrimaryCommandsVisibility", "Windows.UI.Xaml.Visibility");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_52_PageHeader_PrimaryCommandsVisibility;
-                xamlMember.Setter = set_52_PageHeader_PrimaryCommandsVisibility;
+                xamlMember.Getter = get_53_PageHeader_PrimaryCommandsVisibility;
+                xamlMember.Setter = set_53_PageHeader_PrimaryCommandsVisibility;
                 break;
             case "Template10.Controls.PageHeader.BackButtonVisibility":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "BackButtonVisibility", "Windows.UI.Xaml.Visibility");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_53_PageHeader_BackButtonVisibility;
-                xamlMember.Setter = set_53_PageHeader_BackButtonVisibility;
+                xamlMember.Getter = get_54_PageHeader_BackButtonVisibility;
+                xamlMember.Setter = set_54_PageHeader_BackButtonVisibility;
                 break;
             case "Template10.Controls.PageHeader.BackButtonContent":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "BackButtonContent", "Windows.UI.Xaml.Controls.Symbol");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_54_PageHeader_BackButtonContent;
-                xamlMember.Setter = set_54_PageHeader_BackButtonContent;
+                xamlMember.Getter = get_55_PageHeader_BackButtonContent;
+                xamlMember.Setter = set_55_PageHeader_BackButtonContent;
                 break;
             case "Template10.Controls.PageHeader.Frame":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Frame", "Windows.UI.Xaml.Controls.Frame");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_55_PageHeader_Frame;
-                xamlMember.Setter = set_55_PageHeader_Frame;
+                xamlMember.Getter = get_56_PageHeader_Frame;
+                xamlMember.Setter = set_56_PageHeader_Frame;
                 break;
             case "Template10.Controls.PageHeader.EnableHamburgerMenuAutoLayout":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "EnableHamburgerMenuAutoLayout", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_56_PageHeader_EnableHamburgerMenuAutoLayout;
-                xamlMember.Setter = set_56_PageHeader_EnableHamburgerMenuAutoLayout;
+                xamlMember.Getter = get_57_PageHeader_EnableHamburgerMenuAutoLayout;
+                xamlMember.Setter = set_57_PageHeader_EnableHamburgerMenuAutoLayout;
                 break;
             case "Template10.Controls.PageHeader.VisualStateNarrowMinWidth":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "VisualStateNarrowMinWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_57_PageHeader_VisualStateNarrowMinWidth;
-                xamlMember.Setter = set_57_PageHeader_VisualStateNarrowMinWidth;
+                xamlMember.Getter = get_58_PageHeader_VisualStateNarrowMinWidth;
+                xamlMember.Setter = set_58_PageHeader_VisualStateNarrowMinWidth;
                 break;
             case "Template10.Controls.PageHeader.VisualStateNormalMinWidth":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "VisualStateNormalMinWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_58_PageHeader_VisualStateNormalMinWidth;
-                xamlMember.Setter = set_58_PageHeader_VisualStateNormalMinWidth;
+                xamlMember.Getter = get_59_PageHeader_VisualStateNormalMinWidth;
+                xamlMember.Setter = set_59_PageHeader_VisualStateNormalMinWidth;
                 break;
             case "Template10.Controls.PageHeader.Text":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Text", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_59_PageHeader_Text;
-                xamlMember.Setter = set_59_PageHeader_Text;
+                xamlMember.Getter = get_60_PageHeader_Text;
+                xamlMember.Setter = set_60_PageHeader_Text;
                 break;
             }
             return xamlMember;

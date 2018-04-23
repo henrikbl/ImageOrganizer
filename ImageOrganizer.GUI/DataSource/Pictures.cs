@@ -54,7 +54,6 @@ namespace ImageOrganizer.GUI.DataSource
             }
             catch (Exception)
             {
-
                 throw;
             }
             

@@ -14,38 +14,8 @@ namespace ImageOrganizer.GUI.Views
             NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
         }
 
-        // TODO move all add methods to ViewModel.
-        public async void AddPicture()
-        {
-            var picture = new Picture();
-            picture.Title = ViewModel.CurrentPictureTitle;
-            picture.FilePath = ViewModel.SelectedPicture.Path;
-
-            int selectedGroupId = ViewModel.SelectedGroup.GroupId;
-
-            try
-            {
-                await DataSource.Pictures.Instance.AddPicture(picture);
-
-                // TODO need to retrieve the pictureId from database. so it can be used here.
-                try
-                {
-                    await DataSource.Pictures.Instance.AddPictureToGroup(picture.PictureId, selectedGroupId);
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        // TODO move to viewmodel and add handling.
+        // TODO add handling.
+        // Method is placed in code-behind to get access to the content dialog so the datacontext can be set.
         public async void CreateNewGroup()
         {
             var group = new Group();

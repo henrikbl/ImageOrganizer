@@ -61,7 +61,7 @@
                 <!-- TEST BUTTON FOR ADDING PICTURES-->
                 <Button x:ConnectionId='13' x:Name="AddPictureButton"
                     Content="Add Picture"
-                                               
+                                                                  
                     RelativePanel.AlignHorizontalCenterWithPanel="True"
                     Margin="0,0,0,100"/>
 
@@ -90,7 +90,7 @@
 
             <!-- "Create new group" content dialog-->
             <ContentDialog x:ConnectionId='12' x:Name="AddGroupContentDialog"
-                           PrimaryButtonText="Create" IsPrimaryButtonEnabled="{Binding isValid}"
+                           PrimaryButtonText="Create" IsPrimaryButtonEnabled="{Binding IsValid}"
                            SecondaryButtonText="Cancel" IsSecondaryButtonEnabled="True">
                 <ContentDialog.TitleTemplate>
                     <DataTemplate>

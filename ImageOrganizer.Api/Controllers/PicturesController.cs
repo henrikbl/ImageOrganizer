@@ -22,8 +22,6 @@ namespace ImageOrganizer.Api.Controllers
             return db.Pictures;
         }
 
-        public int currentId { get; set; }
-
         // GET: api/Pictures/5
         [ResponseType(typeof(Picture))]
         public async Task<IHttpActionResult> GetPicture(int id)
@@ -83,8 +81,6 @@ namespace ImageOrganizer.Api.Controllers
 
             db.Pictures.Add(picture);
             await db.SaveChangesAsync();
-
-            currentId = picture.PictureId;
 
             return CreatedAtRoute("DefaultApi", new { id = picture.PictureId }, picture);
         }
