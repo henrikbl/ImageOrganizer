@@ -38,14 +38,14 @@
                        BorderThickness="1"
                        Padding="8">
 
-            <TextBlock x:ConnectionId='9' x:Name="FolderPath"
+            <TextBlock x:ConnectionId='10' x:Name="FolderPath"
                 Text="{Binding PathToFolder}"
                 RelativePanel.AlignLeftWithPanel="True"
                 RelativePanel.AlignRightWithPanel="True"
                 Margin="0,8,0,0"
                 Width="200"/>
 
-            <Button x:ConnectionId='10' x:Name="BrowseForFolder"
+            <Button x:ConnectionId='11' x:Name="BrowseForFolder"
                     Content="Browse"
                                                                   
                     RelativePanel.AlignRightWithPanel="True"
@@ -53,26 +53,26 @@
                     Margin="8,8,0,0"/>
 
             <!-- Panel for manipulating picture and group properties-->
-            <RelativePanel x:ConnectionId='11' x:Name="AddPicturePanel"
+            <RelativePanel x:ConnectionId='12' x:Name="AddPicturePanel"
                            RelativePanel.AlignBottomWithPanel="True"
                            RelativePanel.AlignLeftWithPanel="True"
                            RelativePanel.AlignRightWithPanel="True">
 
                 <!-- TEST BUTTON FOR ADDING PICTURES-->
-                <Button x:ConnectionId='13' x:Name="AddPictureButton"
+                <Button x:ConnectionId='14' x:Name="AddPictureButton"
                     Content="Add Picture"
                                                                   
                     RelativePanel.AlignHorizontalCenterWithPanel="True"
                     Margin="0,0,0,100"/>
 
-                <TextBox x:ConnectionId='14' x:Name="PictureName"
+                <TextBox x:ConnectionId='15' x:Name="PictureName"
                          Width="200"
                          Text="{Binding CurrentPictureTitle, Mode=TwoWay}"
                          PlaceholderText="Title"
                          MaxLength="20"
                          RelativePanel.Below="AddPictureButton"/>
 
-                <ComboBox x:ConnectionId='15' x:Name="ChooseGroupMenu"
+                <ComboBox x:ConnectionId='16' x:Name="ChooseGroupMenu"
                                                                     
                           SelectedItem="{Binding SelectedGroup, Mode=TwoWay}"
                           DisplayMemberPath="Name"
@@ -80,7 +80,7 @@
                           PlaceholderText="Choose a group"
                           RelativePanel.Below="PictureName"/>
 
-                <Button x:ConnectionId='16' x:Name="CreateGroup"
+                <Button x:ConnectionId='17' x:Name="CreateGroup"
                         Content="New group"
                                                        
                         RelativePanel.Below="ChooseGroupMenu"
@@ -89,7 +89,7 @@
             </RelativePanel>
 
             <!-- "Create new group" content dialog-->
-            <ContentDialog x:ConnectionId='12' x:Name="AddGroupContentDialog"
+            <ContentDialog x:ConnectionId='13' x:Name="AddGroupContentDialog"
                            PrimaryButtonText="Create" IsPrimaryButtonEnabled="{Binding IsValid}"
                            SecondaryButtonText="Cancel" IsSecondaryButtonEnabled="True">
                 <ContentDialog.TitleTemplate>
@@ -113,7 +113,13 @@
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.AlignBottomWithPanel="True">
 
-            <FlipView x:ConnectionId='8' x:Name="imageBlock" ItemsSource="{Binding PictureList}"
+            <TextBlock x:ConnectionId='8' x:Name="messageBoard"
+                       Text="{Binding MessageBoardText}"
+                       Margin="8,8,0,0"
+                       RelativePanel.AlignTopWithPanel="True"
+                       RelativePanel.AlignLeftWithPanel="true"/>
+
+            <FlipView x:ConnectionId='9' x:Name="imageBlock" ItemsSource="{Binding PictureList}"
                                                                                                                          
                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                    RelativePanel.AlignBottomWithPanel="True"
@@ -124,8 +130,9 @@
                 <FlipView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
-                            <TextBlock x:Name="currentTitle" Text="{Binding DisplayName}" TextAlignment="Center"/>
-                            <Image Source="{Binding ConvertToImage}" Stretch="Uniform"/>
+                            <TextBlock x:Name="currentTitle" Text="{Binding Title}" TextAlignment="Center"/>
+                            <Image Source="{Binding CurrentImage}" Stretch="Uniform">
+                            </Image>
                         </StackPanel>
                     </DataTemplate>
                 </FlipView.ItemTemplate>
@@ -136,4 +143,5 @@
     </RelativePanel>
 
 </Page>
+ 
 

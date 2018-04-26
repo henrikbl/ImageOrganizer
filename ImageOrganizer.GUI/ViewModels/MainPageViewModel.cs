@@ -14,26 +14,16 @@ using System.Runtime.CompilerServices;
 using Windows.Storage.Search;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage.Streams;
+using ImageOrganizer.GUI.DataSource;
+using System.IO;
+using Windows.UI.Xaml.Media;
 
 namespace ImageOrganizer.GUI.ViewModels
 {
 
     public class MainPageViewModel : ViewModelBase, INotifyPropertyChanged
     {
-        private string _CurrentPictureTitle;
-        public string CurrentPictureTitle
-        {
-            get => _CurrentPictureTitle;
-            set
-            {
-                if (value != _CurrentPictureTitle)
-                {
-                    _CurrentPictureTitle = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-
+        // path to currently picked folder.
         private string _PathToFolder;
         public string PathToFolder
         {
@@ -48,9 +38,38 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
+        // Message board textinput
+        private string _MessageBoardText;
+        public string MessageBoardText
+        {
+            get => _MessageBoardText;
+            set
+            {
+                if(value != _MessageBoardText)
+                {
+                    _MessageBoardText = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        private string _CurrentPictureTitle;
+        public string CurrentPictureTitle
+        {
+            get => _CurrentPictureTitle;
+            set
+            {
+                if (value != _CurrentPictureTitle)
+                {
+                    _CurrentPictureTitle = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
         // TODO image not showing. probably incorrect method.
-        private BitmapImage _CurrentImage;
-        public BitmapImage CurrentImage
+        private ImageSource _CurrentImage;
+        public ImageSource CurrentImage
         {
             get => _CurrentImage;
             set
@@ -63,8 +82,8 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
-        private StorageFile _SelectedPicture;
-        public StorageFile SelectedPicture
+        private Picture _SelectedPicture;
+        public Picture SelectedPicture
         {
             get => _SelectedPicture;
             set
@@ -72,7 +91,8 @@ namespace ImageOrganizer.GUI.ViewModels
                 if(value != _SelectedPicture)
                 {
                     _SelectedPicture = value;
-                    CurrentPictureTitle = _SelectedPicture.DisplayName;
+                    CurrentPictureTitle = _SelectedPicture.Title;
+                    CurrentImage = ConvertToBitmapImage(_SelectedPicture.base64ImageString);
                     NotifyPropertyChanged();
                 }
             }
@@ -95,43 +115,19 @@ namespace ImageOrganizer.GUI.ViewModels
         ObservableCollection<Group> groupList;
         public ObservableCollection<Group> GroupList { get { return groupList; } set { Set(ref groupList, value); } }
 
-        /*ObservableCollection<Picture> pictureList;
-        public ObservableCollection<Picture> PictureList { get { return pictureList; } set { Set( ref pictureList, value); } } */
+        ObservableCollection<Picture> pictureList;
+        public ObservableCollection<Picture> PictureList { get { return pictureList; } set { Set(ref pictureList, value); } }
 
-        ObservableCollection<StorageFile> pictureList;
-        public ObservableCollection<StorageFile> PictureList { get { return pictureList; } set { Set(ref pictureList, value); } }
-
-
-        //Mapping images with bitmap created from storagefiles.
-        ObservableCollection<BitmapImage> images;
-        public ObservableCollection<BitmapImage> Images { get { return images; } set { if (images != value) { images = value; NotifyPropertyChanged(); } } }
-
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public event PropertyChangedEventHandler PropertyChanged;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
 
         public MainPageViewModel()
         {
             _PathToFolder = "Directory";
+            _MessageBoardText = "Message board";
 
-            Images = new ObservableCollection<BitmapImage>();
-
-            PictureList = new ObservableCollection<StorageFile>();
-
-          /*  PictureList = new ObservableCollection<Picture>()
-            {
-                new Picture()
-                {
-                    PictureId = 1,
-                    Title = "Image 1",
-                    FilePath = "/Assets/ExampleImage.png"
-                },
-
-                new Picture()
-                {
-                    PictureId = 2,
-                    Title = "Image 2",
-                    FilePath = "/Assets/StoreLogo.png"
-                }
-            }; */
+            PictureList = new ObservableCollection<Picture>();
         }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
@@ -139,6 +135,11 @@ namespace ImageOrganizer.GUI.ViewModels
             if(GroupList == null)
             {
                 GroupList = new ObservableCollection<Group>(await DataSource.Groups.Instance.GetGroups());
+            }
+
+            if(PictureList == null)
+            {
+                PictureList = new ObservableCollection<Picture>();
             }
             
             if(state.Any())
@@ -151,23 +152,23 @@ namespace ImageOrganizer.GUI.ViewModels
         public ICommand FindFolderCommand { get { return new FindFolderCommand(async ()=> await FindFolderAsync()); }}
         public ICommand AddPictureCommand { get { return new AddPicture(async () => await AddPictureAsync()); } }
 
-        // Add picture to database
+        // Add picture to database and group.
         public async Task AddPictureAsync()
         {
             var picture = new Picture();
             picture.Title = CurrentPictureTitle;
-            picture.FilePath = SelectedPicture.Path;
+            picture.base64ImageString = SelectedPicture.base64ImageString;
 
-            int selectedGroupId = SelectedGroup.GroupId;
-
-            try
+            if (SelectedGroup != null)
             {
-                await DataSource.Pictures.Instance.AddPicture(picture);
+                int selectedGroupId = SelectedGroup.GroupId;
 
-                // TODO need to retrieve the pictureId from database. so it can be used here.
                 try
                 {
-                    await DataSource.Pictures.Instance.AddPictureToGroup(picture.PictureId, selectedGroupId);
+                    await DataSource.Pictures.Instance.AddPicture(picture);
+
+                    // TODO need to retrieve the pictureId from database. so it can be used here.
+                    await DataSource.Pictures.Instance.AddPictureToGroup(Pictures.CurrentPictureId, selectedGroupId);
                 }
                 catch (Exception)
                 {
@@ -175,11 +176,11 @@ namespace ImageOrganizer.GUI.ViewModels
                     throw;
                 }
             }
-            catch (Exception)
+            
+            else
             {
-
-                throw;
-            }
+                MessageBoardText = "Oops.. you did not set a group to add to!";
+            }       
         }
 
         // Folder picker method with image list creation.
@@ -213,26 +214,47 @@ namespace ImageOrganizer.GUI.ViewModels
 
             foreach(var f in files)
             {
-                PictureList.Add(f);
-              /*  Picture p = new Picture();
+                Picture p = new Picture();
                 p.Title = f.DisplayName.ToString();
-                p.FilePath = f.Path;
+                p.base64ImageString = await ConvertToBase64String(f);
                 PictureList.Add(p);
-
-                BitmapImage img = await RetrieveImageAsync(f);
-                Images.Add(img);  */
             }
         }
 
-        // Converts bitmapimage from a storagefile.
-        public async Task<BitmapImage> RetrieveImageAsync(StorageFile file)
+        // Convert image to a base64String. Method is found at https://blogs.msdn.microsoft.com/msgulfcommunity/2014/11/02/c-encoding-and-decoding-base-64-strings/
+        public async Task<string> ConvertToBase64String(StorageFile file)
         {
             var bitmapImage = new BitmapImage();
             var stream = (FileRandomAccessStream)await file.OpenAsync(FileAccessMode.Read);
 
             bitmapImage.SetSource(stream);
 
-            return (BitmapImage)bitmapImage;
+            Byte[] pictureAttachment = new Byte[0];
+            var reader = new DataReader(stream.GetInputStreamAt(0));
+            pictureAttachment = new Byte[stream.Size];
+
+            await reader.LoadAsync((uint)stream.Size);
+            reader.ReadBytes(pictureAttachment);
+
+            string imageAsBase64String = Convert.ToBase64String(pictureAttachment);
+            return imageAsBase64String;
+        }
+
+        // Convert base64String to BitmapImage. Method found at https://social.msdn.microsoft.com/Forums/sqlserver/en-US/09a07285-c03d-42e9-901f-e7ded45944b7/wp81chow-to-convert-base64-string-to-image-or-bitmap-image-in-windows-phone-81-store-app?forum=wpdevelop
+        public BitmapImage ConvertToBitmapImage(string base64String)
+        {
+            var byteArray = Convert.FromBase64String(base64String);
+            var stream = new InMemoryRandomAccessStream();
+
+            var dataWriter = new DataWriter(stream);
+            dataWriter.WriteBytes(byteArray);
+            dataWriter.StoreAsync();
+            stream.Seek(0);
+
+            BitmapImage image = new BitmapImage();
+            image.SetSource(stream);
+
+            return image;
         }
 
         // method for updating UI elements using INotifyPropertyChanged
@@ -248,6 +270,7 @@ namespace ImageOrganizer.GUI.ViewModels
      * 
      */
 
+    // Command for adding a picture to database.
     public class AddPicture : ICommand
     {
         private Action _action;

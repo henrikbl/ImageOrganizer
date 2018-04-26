@@ -113,6 +113,12 @@
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.AlignBottomWithPanel="True">
 
+            <TextBlock x:Name="messageBoard"
+                       Text="{Binding MessageBoardText}"
+                       Margin="8,8,0,0"
+                       RelativePanel.AlignTopWithPanel="True"
+                       RelativePanel.AlignLeftWithPanel="true"/>
+
             <FlipView x:Name="imageBlock" ItemsSource="{Binding PictureList}"
                       SelectedItem="{x:Bind ViewModel.SelectedPicture, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
@@ -124,8 +130,9 @@
                 <FlipView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
-                            <TextBlock x:Name="currentTitle" Text="{Binding DisplayName}" TextAlignment="Center"/>
-                            <Image Source="{Binding ConvertToImage}" Stretch="Uniform"/>
+                            <TextBlock x:Name="currentTitle" Text="{Binding Title}" TextAlignment="Center"/>
+                            <Image Source="{Binding CurrentImage}" Stretch="Uniform">
+                            </Image>
                         </StackPanel>
                     </DataTemplate>
                 </FlipView.ItemTemplate>
@@ -136,3 +143,4 @@
     </RelativePanel>
 
 </Page>
+ 

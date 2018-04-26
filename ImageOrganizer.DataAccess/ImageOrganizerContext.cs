@@ -61,8 +61,8 @@ namespace ImageOrganizer.DataAccess
                 .Map(m =>
                 {
                     m.ToTable("PictureGroup");
-                    m.MapLeftKey("PictureId");
-                    m.MapRightKey("GroupId");
+                    m.MapLeftKey("GroupId");
+                    m.MapRightKey("PictureId");
                 });
         }
     }

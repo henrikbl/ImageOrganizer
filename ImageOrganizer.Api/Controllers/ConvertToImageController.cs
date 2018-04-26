@@ -13,26 +13,6 @@ namespace ImageOrganizer.Api.Controllers
 
         private ImageOrganizerContext db = new ImageOrganizerContext();
 
-
-        [Route("api/images/0/{url}")]
-        public async System.Threading.Tasks.Task<HttpResponseMessage> GetAsync(string url)
-        {
-            try
-            {
-                string filePath = url;
-                var image = File.ReadAllBytes(filePath);
-                var ms = new MemoryStream(image);
-                var response = new HttpResponseMessage(HttpStatusCode.OK) { Content = new StreamContent(ms) };
-                response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(@"image/jpeg");
-                return response;
-            }
-            catch (System.Exception)
-            {
-                throw;
-            }
-
-        }
-
         // Creates an image object of the filepath stored in the database. 
         /*
          * TODO move to pictureController and add to get method.
@@ -44,7 +24,7 @@ namespace ImageOrganizer.Api.Controllers
             {
                 Picture picture = await db.Pictures.FindAsync(id);
 
-                string url = picture.FilePath;
+                string url = picture.base64ImageString;
                 var image = File.ReadAllBytes(url);
                 var ms = new MemoryStream(image);
                 var response = new HttpResponseMessage(HttpStatusCode.OK) { Content = new StreamContent(ms) };

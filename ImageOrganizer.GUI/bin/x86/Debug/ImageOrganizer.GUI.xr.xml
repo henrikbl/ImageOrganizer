@@ -2,8 +2,9 @@
 <Roots >
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="PictureList" />
-    <RootPropertyPathName Name="ConvertToImage" />
-    <RootPropertyPathName Name="DisplayName" />
+    <RootPropertyPathName Name="CurrentImage" />
+    <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="MessageBoardText" />
     <RootPropertyPathName Name="IsValid" />
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="SelectedGroup" />
@@ -52,6 +53,12 @@
       <RootProperty Name="Background" />
       <RootProperty Name="HorizontalContentAlignment" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="Text" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="TextAlignment" />
+      <RootProperty Name="Width" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.FlipView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="SelectedItem" />
@@ -74,12 +81,6 @@
       <RootProperty Name="Orientation" />
       <RootProperty Name="Children" />
       <RootProperty Name="Padding" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="Text" />
-      <RootProperty Name="TextAlignment" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />

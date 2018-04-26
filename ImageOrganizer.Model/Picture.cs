@@ -75,7 +75,7 @@ namespace ImageOrganizer.Model
         /// <value>
         /// The file directory.
         /// </value>
-        public string FilePath { get; set; }
+        public string base64ImageString { get; set; }
 
         /// <summary>
         /// Gets or sets the groups.

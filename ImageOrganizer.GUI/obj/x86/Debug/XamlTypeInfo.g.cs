@@ -204,7 +204,7 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[55];
+            _typeNameTable = new string[46];
             _typeNameTable[0] = "Template10.Common.BootStrapper";
             _typeNameTable[1] = "Windows.UI.Xaml.Application";
             _typeNameTable[2] = "Template10.Common.StateItems";
@@ -227,41 +227,32 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             _typeNameTable[19] = "ImageOrganizer.GUI.ViewModels.MainPageViewModel";
             _typeNameTable[20] = "Template10.Mvvm.ViewModelBase";
             _typeNameTable[21] = "Template10.Mvvm.BindableBase";
-            _typeNameTable[22] = "Windows.UI.Xaml.Media.Imaging.BitmapImage";
-            _typeNameTable[23] = "Windows.Storage.StorageFile";
+            _typeNameTable[22] = "Windows.UI.Xaml.Media.ImageSource";
+            _typeNameTable[23] = "ImageOrganizer.Model.Picture";
             _typeNameTable[24] = "ImageOrganizer.Model.Group";
             _typeNameTable[25] = "System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Group>";
             _typeNameTable[26] = "System.Collections.ObjectModel.Collection`1<ImageOrganizer.Model.Group>";
             _typeNameTable[27] = "Int32";
             _typeNameTable[28] = "System.Collections.Generic.List`1<ImageOrganizer.Model.Picture>";
-            _typeNameTable[29] = "ImageOrganizer.Model.Picture";
-            _typeNameTable[30] = "System.Collections.Generic.List`1<ImageOrganizer.Model.Group>";
-            _typeNameTable[31] = "System.Collections.ObjectModel.ObservableCollection`1<Windows.Storage.StorageFile>";
-            _typeNameTable[32] = "System.Collections.ObjectModel.Collection`1<Windows.Storage.StorageFile>";
-            _typeNameTable[33] = "Windows.Storage.FileAttributes";
-            _typeNameTable[34] = "System.DateTimeOffset";
-            _typeNameTable[35] = "Windows.Storage.FileProperties.StorageItemContentProperties";
-            _typeNameTable[36] = "Windows.Storage.StorageProvider";
-            _typeNameTable[37] = "System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Media.Imaging.BitmapImage>";
-            _typeNameTable[38] = "System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Media.Imaging.BitmapImage>";
-            _typeNameTable[39] = "System.Windows.Input.ICommand";
-            _typeNameTable[40] = "Template10.Common.IDispatcherWrapper";
-            _typeNameTable[41] = "Template10.Common.IStateItems";
-            _typeNameTable[42] = "ImageOrganizer.GUI.SampleData";
-            _typeNameTable[43] = "System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Picture>";
-            _typeNameTable[44] = "System.Collections.ObjectModel.Collection`1<ImageOrganizer.Model.Picture>";
-            _typeNameTable[45] = "Template10.Controls.PageHeader";
-            _typeNameTable[46] = "Windows.UI.Xaml.Controls.CommandBar";
-            _typeNameTable[47] = "Template10.Behaviors.EllipsisBehavior.Visibilities";
-            _typeNameTable[48] = "Windows.UI.Xaml.Visibility";
-            _typeNameTable[49] = "Windows.UI.Xaml.Controls.Symbol";
-            _typeNameTable[50] = "Windows.UI.Xaml.Controls.Frame";
-            _typeNameTable[51] = "Double";
-            _typeNameTable[52] = "ImageOrganizer.GUI.Views.MainPage";
-            _typeNameTable[53] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[54] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[29] = "System.Collections.Generic.List`1<ImageOrganizer.Model.Group>";
+            _typeNameTable[30] = "System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Picture>";
+            _typeNameTable[31] = "System.Collections.ObjectModel.Collection`1<ImageOrganizer.Model.Picture>";
+            _typeNameTable[32] = "System.Windows.Input.ICommand";
+            _typeNameTable[33] = "Template10.Common.IDispatcherWrapper";
+            _typeNameTable[34] = "Template10.Common.IStateItems";
+            _typeNameTable[35] = "ImageOrganizer.GUI.SampleData";
+            _typeNameTable[36] = "Template10.Controls.PageHeader";
+            _typeNameTable[37] = "Windows.UI.Xaml.Controls.CommandBar";
+            _typeNameTable[38] = "Template10.Behaviors.EllipsisBehavior.Visibilities";
+            _typeNameTable[39] = "Windows.UI.Xaml.Visibility";
+            _typeNameTable[40] = "Windows.UI.Xaml.Controls.Symbol";
+            _typeNameTable[41] = "Windows.UI.Xaml.Controls.Frame";
+            _typeNameTable[42] = "Double";
+            _typeNameTable[43] = "ImageOrganizer.GUI.Views.MainPage";
+            _typeNameTable[44] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[45] = "Windows.UI.Xaml.Controls.UserControl";
 
-            _typeTable = new global::System.Type[55];
+            _typeTable = new global::System.Type[46];
             _typeTable[0] = typeof(global::Template10.Common.BootStrapper);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Application);
             _typeTable[2] = typeof(global::Template10.Common.StateItems);
@@ -284,39 +275,30 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             _typeTable[19] = typeof(global::ImageOrganizer.GUI.ViewModels.MainPageViewModel);
             _typeTable[20] = typeof(global::Template10.Mvvm.ViewModelBase);
             _typeTable[21] = typeof(global::Template10.Mvvm.BindableBase);
-            _typeTable[22] = typeof(global::Windows.UI.Xaml.Media.Imaging.BitmapImage);
-            _typeTable[23] = typeof(global::Windows.Storage.StorageFile);
+            _typeTable[22] = typeof(global::Windows.UI.Xaml.Media.ImageSource);
+            _typeTable[23] = typeof(global::ImageOrganizer.Model.Picture);
             _typeTable[24] = typeof(global::ImageOrganizer.Model.Group);
             _typeTable[25] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Group>);
             _typeTable[26] = typeof(global::System.Collections.ObjectModel.Collection<global::ImageOrganizer.Model.Group>);
             _typeTable[27] = typeof(global::System.Int32);
             _typeTable[28] = typeof(global::System.Collections.Generic.List<global::ImageOrganizer.Model.Picture>);
-            _typeTable[29] = typeof(global::ImageOrganizer.Model.Picture);
-            _typeTable[30] = typeof(global::System.Collections.Generic.List<global::ImageOrganizer.Model.Group>);
-            _typeTable[31] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Windows.Storage.StorageFile>);
-            _typeTable[32] = typeof(global::System.Collections.ObjectModel.Collection<global::Windows.Storage.StorageFile>);
-            _typeTable[33] = typeof(global::Windows.Storage.FileAttributes);
-            _typeTable[34] = typeof(global::System.DateTimeOffset);
-            _typeTable[35] = typeof(global::Windows.Storage.FileProperties.StorageItemContentProperties);
-            _typeTable[36] = typeof(global::Windows.Storage.StorageProvider);
-            _typeTable[37] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Media.Imaging.BitmapImage>);
-            _typeTable[38] = typeof(global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.Media.Imaging.BitmapImage>);
-            _typeTable[39] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[40] = typeof(global::Template10.Common.IDispatcherWrapper);
-            _typeTable[41] = typeof(global::Template10.Common.IStateItems);
-            _typeTable[42] = typeof(global::ImageOrganizer.GUI.SampleData);
-            _typeTable[43] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Picture>);
-            _typeTable[44] = typeof(global::System.Collections.ObjectModel.Collection<global::ImageOrganizer.Model.Picture>);
-            _typeTable[45] = typeof(global::Template10.Controls.PageHeader);
-            _typeTable[46] = typeof(global::Windows.UI.Xaml.Controls.CommandBar);
-            _typeTable[47] = typeof(global::Template10.Behaviors.EllipsisBehavior.Visibilities);
-            _typeTable[48] = typeof(global::Windows.UI.Xaml.Visibility);
-            _typeTable[49] = typeof(global::Windows.UI.Xaml.Controls.Symbol);
-            _typeTable[50] = typeof(global::Windows.UI.Xaml.Controls.Frame);
-            _typeTable[51] = typeof(global::System.Double);
-            _typeTable[52] = typeof(global::ImageOrganizer.GUI.Views.MainPage);
-            _typeTable[53] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[54] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[29] = typeof(global::System.Collections.Generic.List<global::ImageOrganizer.Model.Group>);
+            _typeTable[30] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Picture>);
+            _typeTable[31] = typeof(global::System.Collections.ObjectModel.Collection<global::ImageOrganizer.Model.Picture>);
+            _typeTable[32] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[33] = typeof(global::Template10.Common.IDispatcherWrapper);
+            _typeTable[34] = typeof(global::Template10.Common.IStateItems);
+            _typeTable[35] = typeof(global::ImageOrganizer.GUI.SampleData);
+            _typeTable[36] = typeof(global::Template10.Controls.PageHeader);
+            _typeTable[37] = typeof(global::Windows.UI.Xaml.Controls.CommandBar);
+            _typeTable[38] = typeof(global::Template10.Behaviors.EllipsisBehavior.Visibilities);
+            _typeTable[39] = typeof(global::Windows.UI.Xaml.Visibility);
+            _typeTable[40] = typeof(global::Windows.UI.Xaml.Controls.Symbol);
+            _typeTable[41] = typeof(global::Windows.UI.Xaml.Controls.Frame);
+            _typeTable[42] = typeof(global::System.Double);
+            _typeTable[43] = typeof(global::ImageOrganizer.GUI.Views.MainPage);
+            _typeTable[44] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[45] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -355,21 +337,17 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
         private object Activate_3_Dictionary() { return new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object>(); }
         private object Activate_16_ModalDialog() { return new global::Template10.Controls.ModalDialog(); }
         private object Activate_19_MainPageViewModel() { return new global::ImageOrganizer.GUI.ViewModels.MainPageViewModel(); }
+        private object Activate_23_Picture() { return new global::ImageOrganizer.Model.Picture(); }
         private object Activate_24_Group() { return new global::ImageOrganizer.Model.Group(); }
         private object Activate_25_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Group>(); }
         private object Activate_26_Collection() { return new global::System.Collections.ObjectModel.Collection<global::ImageOrganizer.Model.Group>(); }
         private object Activate_28_List() { return new global::System.Collections.Generic.List<global::ImageOrganizer.Model.Picture>(); }
-        private object Activate_29_Picture() { return new global::ImageOrganizer.Model.Picture(); }
-        private object Activate_30_List() { return new global::System.Collections.Generic.List<global::ImageOrganizer.Model.Group>(); }
-        private object Activate_31_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Windows.Storage.StorageFile>(); }
-        private object Activate_32_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Windows.Storage.StorageFile>(); }
-        private object Activate_37_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Media.Imaging.BitmapImage>(); }
-        private object Activate_38_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.Media.Imaging.BitmapImage>(); }
-        private object Activate_42_SampleData() { return new global::ImageOrganizer.GUI.SampleData(); }
-        private object Activate_43_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Picture>(); }
-        private object Activate_44_Collection() { return new global::System.Collections.ObjectModel.Collection<global::ImageOrganizer.Model.Picture>(); }
-        private object Activate_45_PageHeader() { return new global::Template10.Controls.PageHeader(); }
-        private object Activate_52_MainPage() { return new global::ImageOrganizer.GUI.Views.MainPage(); }
+        private object Activate_29_List() { return new global::System.Collections.Generic.List<global::ImageOrganizer.Model.Group>(); }
+        private object Activate_30_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Picture>(); }
+        private object Activate_31_Collection() { return new global::System.Collections.ObjectModel.Collection<global::ImageOrganizer.Model.Picture>(); }
+        private object Activate_35_SampleData() { return new global::ImageOrganizer.GUI.SampleData(); }
+        private object Activate_36_PageHeader() { return new global::Template10.Controls.PageHeader(); }
+        private object Activate_43_MainPage() { return new global::ImageOrganizer.GUI.Views.MainPage(); }
         private void MapAdd_2_StateItems(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
@@ -402,43 +380,19 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             var newItem = (global::ImageOrganizer.Model.Picture)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_30_List(object instance, object item)
+        private void VectorAdd_29_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::ImageOrganizer.Model.Group>)instance;
             var newItem = (global::ImageOrganizer.Model.Group)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_31_ObservableCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::Windows.Storage.StorageFile>)instance;
-            var newItem = (global::Windows.Storage.StorageFile)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_32_Collection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::Windows.Storage.StorageFile>)instance;
-            var newItem = (global::Windows.Storage.StorageFile)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_37_ObservableCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Media.Imaging.BitmapImage>)instance;
-            var newItem = (global::Windows.UI.Xaml.Media.Imaging.BitmapImage)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_38_Collection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Media.Imaging.BitmapImage>)instance;
-            var newItem = (global::Windows.UI.Xaml.Media.Imaging.BitmapImage)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_43_ObservableCollection(object instance, object item)
+        private void VectorAdd_30_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::ImageOrganizer.Model.Picture>)instance;
             var newItem = (global::ImageOrganizer.Model.Picture)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_44_Collection(object instance, object item)
+        private void VectorAdd_31_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::ImageOrganizer.Model.Picture>)instance;
             var newItem = (global::ImageOrganizer.Model.Picture)item;
@@ -580,14 +534,14 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             case 19:   //  ImageOrganizer.GUI.ViewModels.MainPageViewModel
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Template10.Mvvm.ViewModelBase"));
                 userType.Activator = Activate_19_MainPageViewModel;
-                userType.AddMemberName("CurrentPictureTitle");
                 userType.AddMemberName("PathToFolder");
+                userType.AddMemberName("MessageBoardText");
+                userType.AddMemberName("CurrentPictureTitle");
                 userType.AddMemberName("CurrentImage");
                 userType.AddMemberName("SelectedPicture");
                 userType.AddMemberName("SelectedGroup");
                 userType.AddMemberName("GroupList");
                 userType.AddMemberName("PictureList");
-                userType.AddMemberName("Images");
                 userType.AddMemberName("FindFolderCommand");
                 userType.AddMemberName("AddPictureCommand");
                 userType.SetIsLocalType();
@@ -607,24 +561,18 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 22:   //  Windows.UI.Xaml.Media.Imaging.BitmapImage
+            case 22:   //  Windows.UI.Xaml.Media.ImageSource
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 23:   //  Windows.Storage.StorageFile
+            case 23:   //  ImageOrganizer.Model.Picture
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.AddMemberName("ContentType");
-                userType.AddMemberName("FileType");
-                userType.AddMemberName("IsAvailable");
-                userType.AddMemberName("Attributes");
-                userType.AddMemberName("DateCreated");
-                userType.AddMemberName("Name");
-                userType.AddMemberName("Path");
-                userType.AddMemberName("DisplayType");
-                userType.AddMemberName("FolderRelativeId");
-                userType.AddMemberName("Properties");
-                userType.AddMemberName("DisplayName");
-                userType.AddMemberName("Provider");
+                userType.Activator = Activate_23_Picture;
+                userType.AddMemberName("PictureId");
+                userType.AddMemberName("Title");
+                userType.AddMemberName("base64ImageString");
+                userType.AddMemberName("Groups");
+                userType.AddMemberName("IsValid");
                 xamlType = userType;
                 break;
 
@@ -663,102 +611,48 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 29:   //  ImageOrganizer.Model.Picture
+            case 29:   //  System.Collections.Generic.List`1<ImageOrganizer.Model.Group>
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_29_Picture;
-                userType.AddMemberName("PictureId");
-                userType.AddMemberName("Title");
-                userType.AddMemberName("FilePath");
-                userType.AddMemberName("Groups");
-                userType.AddMemberName("IsValid");
-                xamlType = userType;
-                break;
-
-            case 30:   //  System.Collections.Generic.List`1<ImageOrganizer.Model.Group>
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_30_List;
+                userType.CollectionAdd = VectorAdd_29_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 31:   //  System.Collections.ObjectModel.ObservableCollection`1<Windows.Storage.StorageFile>
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Windows.Storage.StorageFile>"));
-                userType.CollectionAdd = VectorAdd_31_ObservableCollection;
+            case 30:   //  System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Picture>
+                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<ImageOrganizer.Model.Picture>"));
+                userType.CollectionAdd = VectorAdd_30_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 32:   //  System.Collections.ObjectModel.Collection`1<Windows.Storage.StorageFile>
+            case 31:   //  System.Collections.ObjectModel.Collection`1<ImageOrganizer.Model.Picture>
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_32_Collection;
-                userType.CollectionAdd = VectorAdd_32_Collection;
+                userType.Activator = Activate_31_Collection;
+                userType.CollectionAdd = VectorAdd_31_Collection;
                 xamlType = userType;
                 break;
 
-            case 33:   //  Windows.Storage.FileAttributes
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("Normal", global::Windows.Storage.FileAttributes.Normal);
-                userType.AddEnumValue("ReadOnly", global::Windows.Storage.FileAttributes.ReadOnly);
-                userType.AddEnumValue("Directory", global::Windows.Storage.FileAttributes.Directory);
-                userType.AddEnumValue("Archive", global::Windows.Storage.FileAttributes.Archive);
-                userType.AddEnumValue("Temporary", global::Windows.Storage.FileAttributes.Temporary);
-                userType.AddEnumValue("LocallyIncomplete", global::Windows.Storage.FileAttributes.LocallyIncomplete);
-                xamlType = userType;
-                break;
-
-            case 34:   //  System.DateTimeOffset
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 35:   //  Windows.Storage.FileProperties.StorageItemContentProperties
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 36:   //  Windows.Storage.StorageProvider
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 37:   //  System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Media.Imaging.BitmapImage>
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Media.Imaging.BitmapImage>"));
-                userType.CollectionAdd = VectorAdd_37_ObservableCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 38:   //  System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Media.Imaging.BitmapImage>
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_38_Collection;
-                userType.CollectionAdd = VectorAdd_38_Collection;
-                xamlType = userType;
-                break;
-
-            case 39:   //  System.Windows.Input.ICommand
+            case 32:   //  System.Windows.Input.ICommand
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 40:   //  Template10.Common.IDispatcherWrapper
+            case 33:   //  Template10.Common.IDispatcherWrapper
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 41:   //  Template10.Common.IStateItems
+            case 34:   //  Template10.Common.IStateItems
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 42:   //  ImageOrganizer.GUI.SampleData
+            case 35:   //  ImageOrganizer.GUI.SampleData
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_42_SampleData;
+                userType.Activator = Activate_35_SampleData;
                 userType.AddMemberName("PathToFolder");
                 userType.AddMemberName("CurrentPictureTitle");
                 userType.AddMemberName("PictureList");
@@ -767,23 +661,9 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 43:   //  System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Picture>
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<ImageOrganizer.Model.Picture>"));
-                userType.CollectionAdd = VectorAdd_43_ObservableCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 44:   //  System.Collections.ObjectModel.Collection`1<ImageOrganizer.Model.Picture>
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_44_Collection;
-                userType.CollectionAdd = VectorAdd_44_Collection;
-                xamlType = userType;
-                break;
-
-            case 45:   //  Template10.Controls.PageHeader
+            case 36:   //  Template10.Controls.PageHeader
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.CommandBar"));
-                userType.Activator = Activate_45_PageHeader;
+                userType.Activator = Activate_36_PageHeader;
                 userType.AddMemberName("EllipsisVisibility");
                 userType.AddMemberName("PrimaryCommandsVisibility");
                 userType.AddMemberName("BackButtonVisibility");
@@ -796,11 +676,11 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 46:   //  Windows.UI.Xaml.Controls.CommandBar
+            case 37:   //  Windows.UI.Xaml.Controls.CommandBar
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 47:   //  Template10.Behaviors.EllipsisBehavior.Visibilities
+            case 38:   //  Template10.Behaviors.EllipsisBehavior.Visibilities
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Visible", global::Template10.Behaviors.EllipsisBehavior.Visibilities.Visible);
                 userType.AddEnumValue("Collapsed", global::Template10.Behaviors.EllipsisBehavior.Visibilities.Collapsed);
@@ -808,34 +688,34 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 48:   //  Windows.UI.Xaml.Visibility
+            case 39:   //  Windows.UI.Xaml.Visibility
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 49:   //  Windows.UI.Xaml.Controls.Symbol
+            case 40:   //  Windows.UI.Xaml.Controls.Symbol
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 50:   //  Windows.UI.Xaml.Controls.Frame
+            case 41:   //  Windows.UI.Xaml.Controls.Frame
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 51:   //  Double
+            case 42:   //  Double
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 52:   //  ImageOrganizer.GUI.Views.MainPage
+            case 43:   //  ImageOrganizer.GUI.Views.MainPage
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_52_MainPage;
+                userType.Activator = Activate_43_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 53:   //  Windows.UI.Xaml.Controls.Page
+            case 44:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 54:   //  Windows.UI.Xaml.Controls.UserControl
+            case 45:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -1019,392 +899,332 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             var that = (global::Template10.Common.BootStrapper)instance;
             that.ModalContent = (global::Windows.UI.Xaml.UIElement)Value;
         }
-        private object get_14_MainPageViewModel_CurrentPictureTitle(object instance)
-        {
-            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            return that.CurrentPictureTitle;
-        }
-        private void set_14_MainPageViewModel_CurrentPictureTitle(object instance, object Value)
-        {
-            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            that.CurrentPictureTitle = (global::System.String)Value;
-        }
-        private object get_15_MainPageViewModel_PathToFolder(object instance)
+        private object get_14_MainPageViewModel_PathToFolder(object instance)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             return that.PathToFolder;
         }
-        private void set_15_MainPageViewModel_PathToFolder(object instance, object Value)
+        private void set_14_MainPageViewModel_PathToFolder(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             that.PathToFolder = (global::System.String)Value;
         }
-        private object get_16_MainPageViewModel_CurrentImage(object instance)
+        private object get_15_MainPageViewModel_MessageBoardText(object instance)
+        {
+            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
+            return that.MessageBoardText;
+        }
+        private void set_15_MainPageViewModel_MessageBoardText(object instance, object Value)
+        {
+            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
+            that.MessageBoardText = (global::System.String)Value;
+        }
+        private object get_16_MainPageViewModel_CurrentPictureTitle(object instance)
+        {
+            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
+            return that.CurrentPictureTitle;
+        }
+        private void set_16_MainPageViewModel_CurrentPictureTitle(object instance, object Value)
+        {
+            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
+            that.CurrentPictureTitle = (global::System.String)Value;
+        }
+        private object get_17_MainPageViewModel_CurrentImage(object instance)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             return that.CurrentImage;
         }
-        private void set_16_MainPageViewModel_CurrentImage(object instance, object Value)
+        private void set_17_MainPageViewModel_CurrentImage(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            that.CurrentImage = (global::Windows.UI.Xaml.Media.Imaging.BitmapImage)Value;
+            that.CurrentImage = (global::Windows.UI.Xaml.Media.ImageSource)Value;
         }
-        private object get_17_MainPageViewModel_SelectedPicture(object instance)
+        private object get_18_MainPageViewModel_SelectedPicture(object instance)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             return that.SelectedPicture;
         }
-        private void set_17_MainPageViewModel_SelectedPicture(object instance, object Value)
+        private void set_18_MainPageViewModel_SelectedPicture(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            that.SelectedPicture = (global::Windows.Storage.StorageFile)Value;
+            that.SelectedPicture = (global::ImageOrganizer.Model.Picture)Value;
         }
-        private object get_18_MainPageViewModel_SelectedGroup(object instance)
+        private object get_19_MainPageViewModel_SelectedGroup(object instance)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             return that.SelectedGroup;
         }
-        private void set_18_MainPageViewModel_SelectedGroup(object instance, object Value)
+        private void set_19_MainPageViewModel_SelectedGroup(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             that.SelectedGroup = (global::ImageOrganizer.Model.Group)Value;
         }
-        private object get_19_MainPageViewModel_GroupList(object instance)
+        private object get_20_MainPageViewModel_GroupList(object instance)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             return that.GroupList;
         }
-        private void set_19_MainPageViewModel_GroupList(object instance, object Value)
+        private void set_20_MainPageViewModel_GroupList(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             that.GroupList = (global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Group>)Value;
         }
-        private object get_20_Group_GroupId(object instance)
+        private object get_21_Group_GroupId(object instance)
         {
             var that = (global::ImageOrganizer.Model.Group)instance;
             return that.GroupId;
         }
-        private void set_20_Group_GroupId(object instance, object Value)
+        private void set_21_Group_GroupId(object instance, object Value)
         {
             var that = (global::ImageOrganizer.Model.Group)instance;
             that.GroupId = (global::System.Int32)Value;
         }
-        private object get_21_Group_Name(object instance)
+        private object get_22_Group_Name(object instance)
         {
             var that = (global::ImageOrganizer.Model.Group)instance;
             return that.Name;
         }
-        private void set_21_Group_Name(object instance, object Value)
+        private void set_22_Group_Name(object instance, object Value)
         {
             var that = (global::ImageOrganizer.Model.Group)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_22_Group_Pictures(object instance)
+        private object get_23_Group_Pictures(object instance)
         {
             var that = (global::ImageOrganizer.Model.Group)instance;
             return that.Pictures;
         }
-        private void set_22_Group_Pictures(object instance, object Value)
+        private void set_23_Group_Pictures(object instance, object Value)
         {
             var that = (global::ImageOrganizer.Model.Group)instance;
             that.Pictures = (global::System.Collections.Generic.List<global::ImageOrganizer.Model.Picture>)Value;
         }
-        private object get_23_Picture_PictureId(object instance)
+        private object get_24_Picture_PictureId(object instance)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
             return that.PictureId;
         }
-        private void set_23_Picture_PictureId(object instance, object Value)
+        private void set_24_Picture_PictureId(object instance, object Value)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
             that.PictureId = (global::System.Int32)Value;
         }
-        private object get_24_Picture_Title(object instance)
+        private object get_25_Picture_Title(object instance)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
             return that.Title;
         }
-        private void set_24_Picture_Title(object instance, object Value)
+        private void set_25_Picture_Title(object instance, object Value)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
             that.Title = (global::System.String)Value;
         }
-        private object get_25_Picture_FilePath(object instance)
+        private object get_26_Picture_base64ImageString(object instance)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
-            return that.FilePath;
+            return that.base64ImageString;
         }
-        private void set_25_Picture_FilePath(object instance, object Value)
+        private void set_26_Picture_base64ImageString(object instance, object Value)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
-            that.FilePath = (global::System.String)Value;
+            that.base64ImageString = (global::System.String)Value;
         }
-        private object get_26_Picture_Groups(object instance)
+        private object get_27_Picture_Groups(object instance)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
             return that.Groups;
         }
-        private void set_26_Picture_Groups(object instance, object Value)
+        private void set_27_Picture_Groups(object instance, object Value)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
             that.Groups = (global::System.Collections.Generic.List<global::ImageOrganizer.Model.Group>)Value;
         }
-        private object get_27_Group_IsValid(object instance)
+        private object get_28_Group_IsValid(object instance)
         {
             var that = (global::ImageOrganizer.Model.Group)instance;
             return that.IsValid;
         }
-        private object get_28_Picture_IsValid(object instance)
+        private object get_29_Picture_IsValid(object instance)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
             return that.IsValid;
         }
-        private object get_29_MainPageViewModel_PictureList(object instance)
+        private object get_30_MainPageViewModel_PictureList(object instance)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             return that.PictureList;
         }
-        private void set_29_MainPageViewModel_PictureList(object instance, object Value)
+        private void set_30_MainPageViewModel_PictureList(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            that.PictureList = (global::System.Collections.ObjectModel.ObservableCollection<global::Windows.Storage.StorageFile>)Value;
+            that.PictureList = (global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Picture>)Value;
         }
-        private object get_30_StorageFile_ContentType(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.ContentType;
-        }
-        private object get_31_StorageFile_FileType(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.FileType;
-        }
-        private object get_32_StorageFile_IsAvailable(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.IsAvailable;
-        }
-        private object get_33_StorageFile_Attributes(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.Attributes;
-        }
-        private object get_34_StorageFile_DateCreated(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.DateCreated;
-        }
-        private object get_35_StorageFile_Name(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.Name;
-        }
-        private object get_36_StorageFile_Path(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.Path;
-        }
-        private object get_37_StorageFile_DisplayType(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.DisplayType;
-        }
-        private object get_38_StorageFile_FolderRelativeId(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.FolderRelativeId;
-        }
-        private object get_39_StorageFile_Properties(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.Properties;
-        }
-        private object get_40_StorageFile_DisplayName(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.DisplayName;
-        }
-        private object get_41_StorageFile_Provider(object instance)
-        {
-            var that = (global::Windows.Storage.StorageFile)instance;
-            return that.Provider;
-        }
-        private object get_42_MainPageViewModel_Images(object instance)
-        {
-            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            return that.Images;
-        }
-        private void set_42_MainPageViewModel_Images(object instance, object Value)
-        {
-            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            that.Images = (global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Media.Imaging.BitmapImage>)Value;
-        }
-        private object get_43_MainPageViewModel_FindFolderCommand(object instance)
+        private object get_31_MainPageViewModel_FindFolderCommand(object instance)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             return that.FindFolderCommand;
         }
-        private object get_44_MainPageViewModel_AddPictureCommand(object instance)
+        private object get_32_MainPageViewModel_AddPictureCommand(object instance)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             return that.AddPictureCommand;
         }
-        private object get_45_ViewModelBase_NavigationService(object instance)
+        private object get_33_ViewModelBase_NavigationService(object instance)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.NavigationService;
         }
-        private void set_45_ViewModelBase_NavigationService(object instance, object Value)
+        private void set_33_ViewModelBase_NavigationService(object instance, object Value)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.NavigationService = (global::Template10.Services.NavigationService.INavigationService)Value;
         }
-        private object get_46_ViewModelBase_Dispatcher(object instance)
+        private object get_34_ViewModelBase_Dispatcher(object instance)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.Dispatcher;
         }
-        private void set_46_ViewModelBase_Dispatcher(object instance, object Value)
+        private void set_34_ViewModelBase_Dispatcher(object instance, object Value)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.Dispatcher = (global::Template10.Common.IDispatcherWrapper)Value;
         }
-        private object get_47_ViewModelBase_SessionState(object instance)
+        private object get_35_ViewModelBase_SessionState(object instance)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             return that.SessionState;
         }
-        private void set_47_ViewModelBase_SessionState(object instance, object Value)
+        private void set_35_ViewModelBase_SessionState(object instance, object Value)
         {
             var that = (global::Template10.Mvvm.ViewModelBase)instance;
             that.SessionState = (global::Template10.Common.IStateItems)Value;
         }
-        private object get_48_SampleData_PathToFolder(object instance)
+        private object get_36_SampleData_PathToFolder(object instance)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             return that.PathToFolder;
         }
-        private void set_48_SampleData_PathToFolder(object instance, object Value)
+        private void set_36_SampleData_PathToFolder(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             that.PathToFolder = (global::System.String)Value;
         }
-        private object get_49_SampleData_CurrentPictureTitle(object instance)
+        private object get_37_SampleData_CurrentPictureTitle(object instance)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             return that.CurrentPictureTitle;
         }
-        private void set_49_SampleData_CurrentPictureTitle(object instance, object Value)
+        private void set_37_SampleData_CurrentPictureTitle(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             that.CurrentPictureTitle = (global::System.String)Value;
         }
-        private object get_50_SampleData_PictureList(object instance)
+        private object get_38_SampleData_PictureList(object instance)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             return that.PictureList;
         }
-        private void set_50_SampleData_PictureList(object instance, object Value)
+        private void set_38_SampleData_PictureList(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             that.PictureList = (global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Picture>)Value;
         }
-        private object get_51_SampleData_GroupList(object instance)
+        private object get_39_SampleData_GroupList(object instance)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             return that.GroupList;
         }
-        private void set_51_SampleData_GroupList(object instance, object Value)
+        private void set_39_SampleData_GroupList(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.SampleData)instance;
             that.GroupList = (global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Group>)Value;
         }
-        private object get_52_PageHeader_EllipsisVisibility(object instance)
+        private object get_40_PageHeader_EllipsisVisibility(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.EllipsisVisibility;
         }
-        private void set_52_PageHeader_EllipsisVisibility(object instance, object Value)
+        private void set_40_PageHeader_EllipsisVisibility(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.EllipsisVisibility = (global::Template10.Behaviors.EllipsisBehavior.Visibilities)Value;
         }
-        private object get_53_PageHeader_PrimaryCommandsVisibility(object instance)
+        private object get_41_PageHeader_PrimaryCommandsVisibility(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.PrimaryCommandsVisibility;
         }
-        private void set_53_PageHeader_PrimaryCommandsVisibility(object instance, object Value)
+        private void set_41_PageHeader_PrimaryCommandsVisibility(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.PrimaryCommandsVisibility = (global::Windows.UI.Xaml.Visibility)Value;
         }
-        private object get_54_PageHeader_BackButtonVisibility(object instance)
+        private object get_42_PageHeader_BackButtonVisibility(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.BackButtonVisibility;
         }
-        private void set_54_PageHeader_BackButtonVisibility(object instance, object Value)
+        private void set_42_PageHeader_BackButtonVisibility(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.BackButtonVisibility = (global::Windows.UI.Xaml.Visibility)Value;
         }
-        private object get_55_PageHeader_BackButtonContent(object instance)
+        private object get_43_PageHeader_BackButtonContent(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.BackButtonContent;
         }
-        private void set_55_PageHeader_BackButtonContent(object instance, object Value)
+        private void set_43_PageHeader_BackButtonContent(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.BackButtonContent = (global::Windows.UI.Xaml.Controls.Symbol)Value;
         }
-        private object get_56_PageHeader_Frame(object instance)
+        private object get_44_PageHeader_Frame(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.Frame;
         }
-        private void set_56_PageHeader_Frame(object instance, object Value)
+        private void set_44_PageHeader_Frame(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.Frame = (global::Windows.UI.Xaml.Controls.Frame)Value;
         }
-        private object get_57_PageHeader_EnableHamburgerMenuAutoLayout(object instance)
+        private object get_45_PageHeader_EnableHamburgerMenuAutoLayout(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.EnableHamburgerMenuAutoLayout;
         }
-        private void set_57_PageHeader_EnableHamburgerMenuAutoLayout(object instance, object Value)
+        private void set_45_PageHeader_EnableHamburgerMenuAutoLayout(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.EnableHamburgerMenuAutoLayout = (global::System.Boolean)Value;
         }
-        private object get_58_PageHeader_VisualStateNarrowMinWidth(object instance)
+        private object get_46_PageHeader_VisualStateNarrowMinWidth(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.VisualStateNarrowMinWidth;
         }
-        private void set_58_PageHeader_VisualStateNarrowMinWidth(object instance, object Value)
+        private void set_46_PageHeader_VisualStateNarrowMinWidth(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.VisualStateNarrowMinWidth = (global::System.Double)Value;
         }
-        private object get_59_PageHeader_VisualStateNormalMinWidth(object instance)
+        private object get_47_PageHeader_VisualStateNormalMinWidth(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.VisualStateNormalMinWidth;
         }
-        private void set_59_PageHeader_VisualStateNormalMinWidth(object instance, object Value)
+        private void set_47_PageHeader_VisualStateNormalMinWidth(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.VisualStateNormalMinWidth = (global::System.Double)Value;
         }
-        private object get_60_PageHeader_Text(object instance)
+        private object get_48_PageHeader_Text(object instance)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             return that.Text;
         }
-        private void set_60_PageHeader_Text(object instance, object Value)
+        private void set_48_PageHeader_Text(object instance, object Value)
         {
             var that = (global::Template10.Controls.PageHeader)instance;
             that.Text = (global::System.String)Value;
@@ -1501,296 +1321,224 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlMember.Getter = get_13_BootStrapper_ModalContent;
                 xamlMember.Setter = set_13_BootStrapper_ModalContent;
                 break;
-            case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.CurrentPictureTitle":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "CurrentPictureTitle", "String");
-                xamlMember.Getter = get_14_MainPageViewModel_CurrentPictureTitle;
-                xamlMember.Setter = set_14_MainPageViewModel_CurrentPictureTitle;
-                break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.PathToFolder":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PathToFolder", "String");
-                xamlMember.Getter = get_15_MainPageViewModel_PathToFolder;
-                xamlMember.Setter = set_15_MainPageViewModel_PathToFolder;
+                xamlMember.Getter = get_14_MainPageViewModel_PathToFolder;
+                xamlMember.Setter = set_14_MainPageViewModel_PathToFolder;
+                break;
+            case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.MessageBoardText":
+                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
+                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "MessageBoardText", "String");
+                xamlMember.Getter = get_15_MainPageViewModel_MessageBoardText;
+                xamlMember.Setter = set_15_MainPageViewModel_MessageBoardText;
+                break;
+            case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.CurrentPictureTitle":
+                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
+                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "CurrentPictureTitle", "String");
+                xamlMember.Getter = get_16_MainPageViewModel_CurrentPictureTitle;
+                xamlMember.Setter = set_16_MainPageViewModel_CurrentPictureTitle;
                 break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.CurrentImage":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "CurrentImage", "Windows.UI.Xaml.Media.Imaging.BitmapImage");
-                xamlMember.Getter = get_16_MainPageViewModel_CurrentImage;
-                xamlMember.Setter = set_16_MainPageViewModel_CurrentImage;
+                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "CurrentImage", "Windows.UI.Xaml.Media.ImageSource");
+                xamlMember.Getter = get_17_MainPageViewModel_CurrentImage;
+                xamlMember.Setter = set_17_MainPageViewModel_CurrentImage;
                 break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.SelectedPicture":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "SelectedPicture", "Windows.Storage.StorageFile");
-                xamlMember.Getter = get_17_MainPageViewModel_SelectedPicture;
-                xamlMember.Setter = set_17_MainPageViewModel_SelectedPicture;
+                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "SelectedPicture", "ImageOrganizer.Model.Picture");
+                xamlMember.Getter = get_18_MainPageViewModel_SelectedPicture;
+                xamlMember.Setter = set_18_MainPageViewModel_SelectedPicture;
                 break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.SelectedGroup":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "SelectedGroup", "ImageOrganizer.Model.Group");
-                xamlMember.Getter = get_18_MainPageViewModel_SelectedGroup;
-                xamlMember.Setter = set_18_MainPageViewModel_SelectedGroup;
+                xamlMember.Getter = get_19_MainPageViewModel_SelectedGroup;
+                xamlMember.Setter = set_19_MainPageViewModel_SelectedGroup;
                 break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.GroupList":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "GroupList", "System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Group>");
-                xamlMember.Getter = get_19_MainPageViewModel_GroupList;
-                xamlMember.Setter = set_19_MainPageViewModel_GroupList;
+                xamlMember.Getter = get_20_MainPageViewModel_GroupList;
+                xamlMember.Setter = set_20_MainPageViewModel_GroupList;
                 break;
             case "ImageOrganizer.Model.Group.GroupId":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Group");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "GroupId", "Int32");
-                xamlMember.Getter = get_20_Group_GroupId;
-                xamlMember.Setter = set_20_Group_GroupId;
+                xamlMember.Getter = get_21_Group_GroupId;
+                xamlMember.Setter = set_21_Group_GroupId;
                 break;
             case "ImageOrganizer.Model.Group.Name":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Group");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_21_Group_Name;
-                xamlMember.Setter = set_21_Group_Name;
+                xamlMember.Getter = get_22_Group_Name;
+                xamlMember.Setter = set_22_Group_Name;
                 break;
             case "ImageOrganizer.Model.Group.Pictures":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Group");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Pictures", "System.Collections.Generic.List`1<ImageOrganizer.Model.Picture>");
-                xamlMember.Getter = get_22_Group_Pictures;
-                xamlMember.Setter = set_22_Group_Pictures;
+                xamlMember.Getter = get_23_Group_Pictures;
+                xamlMember.Setter = set_23_Group_Pictures;
                 break;
             case "ImageOrganizer.Model.Picture.PictureId":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Picture");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PictureId", "Int32");
-                xamlMember.Getter = get_23_Picture_PictureId;
-                xamlMember.Setter = set_23_Picture_PictureId;
+                xamlMember.Getter = get_24_Picture_PictureId;
+                xamlMember.Setter = set_24_Picture_PictureId;
                 break;
             case "ImageOrganizer.Model.Picture.Title":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Picture");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Title", "String");
-                xamlMember.Getter = get_24_Picture_Title;
-                xamlMember.Setter = set_24_Picture_Title;
+                xamlMember.Getter = get_25_Picture_Title;
+                xamlMember.Setter = set_25_Picture_Title;
                 break;
-            case "ImageOrganizer.Model.Picture.FilePath":
+            case "ImageOrganizer.Model.Picture.base64ImageString":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Picture");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "FilePath", "String");
-                xamlMember.Getter = get_25_Picture_FilePath;
-                xamlMember.Setter = set_25_Picture_FilePath;
+                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "base64ImageString", "String");
+                xamlMember.Getter = get_26_Picture_base64ImageString;
+                xamlMember.Setter = set_26_Picture_base64ImageString;
                 break;
             case "ImageOrganizer.Model.Picture.Groups":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Picture");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Groups", "System.Collections.Generic.List`1<ImageOrganizer.Model.Group>");
-                xamlMember.Getter = get_26_Picture_Groups;
-                xamlMember.Setter = set_26_Picture_Groups;
+                xamlMember.Getter = get_27_Picture_Groups;
+                xamlMember.Setter = set_27_Picture_Groups;
                 break;
             case "ImageOrganizer.Model.Group.IsValid":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Group");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "IsValid", "Boolean");
-                xamlMember.Getter = get_27_Group_IsValid;
+                xamlMember.Getter = get_28_Group_IsValid;
                 xamlMember.SetIsReadOnly();
                 break;
             case "ImageOrganizer.Model.Picture.IsValid":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Picture");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "IsValid", "Boolean");
-                xamlMember.Getter = get_28_Picture_IsValid;
+                xamlMember.Getter = get_29_Picture_IsValid;
                 xamlMember.SetIsReadOnly();
                 break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.PictureList":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PictureList", "System.Collections.ObjectModel.ObservableCollection`1<Windows.Storage.StorageFile>");
-                xamlMember.Getter = get_29_MainPageViewModel_PictureList;
-                xamlMember.Setter = set_29_MainPageViewModel_PictureList;
-                break;
-            case "Windows.Storage.StorageFile.ContentType":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "ContentType", "String");
-                xamlMember.Getter = get_30_StorageFile_ContentType;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.FileType":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "FileType", "String");
-                xamlMember.Getter = get_31_StorageFile_FileType;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.IsAvailable":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "IsAvailable", "Boolean");
-                xamlMember.Getter = get_32_StorageFile_IsAvailable;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.Attributes":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Attributes", "Windows.Storage.FileAttributes");
-                xamlMember.Getter = get_33_StorageFile_Attributes;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.DateCreated":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "DateCreated", "System.DateTimeOffset");
-                xamlMember.Getter = get_34_StorageFile_DateCreated;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.Name":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_35_StorageFile_Name;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.Path":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Path", "String");
-                xamlMember.Getter = get_36_StorageFile_Path;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.DisplayType":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "DisplayType", "String");
-                xamlMember.Getter = get_37_StorageFile_DisplayType;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.FolderRelativeId":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "FolderRelativeId", "String");
-                xamlMember.Getter = get_38_StorageFile_FolderRelativeId;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.Properties":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Properties", "Windows.Storage.FileProperties.StorageItemContentProperties");
-                xamlMember.Getter = get_39_StorageFile_Properties;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.DisplayName":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "DisplayName", "String");
-                xamlMember.Getter = get_40_StorageFile_DisplayName;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Windows.Storage.StorageFile.Provider":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Windows.Storage.StorageFile");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Provider", "Windows.Storage.StorageProvider");
-                xamlMember.Getter = get_41_StorageFile_Provider;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.Images":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Images", "System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Media.Imaging.BitmapImage>");
-                xamlMember.Getter = get_42_MainPageViewModel_Images;
-                xamlMember.Setter = set_42_MainPageViewModel_Images;
+                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PictureList", "System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Picture>");
+                xamlMember.Getter = get_30_MainPageViewModel_PictureList;
+                xamlMember.Setter = set_30_MainPageViewModel_PictureList;
                 break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.FindFolderCommand":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "FindFolderCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_43_MainPageViewModel_FindFolderCommand;
+                xamlMember.Getter = get_31_MainPageViewModel_FindFolderCommand;
                 xamlMember.SetIsReadOnly();
                 break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.AddPictureCommand":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "AddPictureCommand", "System.Windows.Input.ICommand");
-                xamlMember.Getter = get_44_MainPageViewModel_AddPictureCommand;
+                xamlMember.Getter = get_32_MainPageViewModel_AddPictureCommand;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Template10.Mvvm.ViewModelBase.NavigationService":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "NavigationService", "Template10.Services.NavigationService.INavigationService");
-                xamlMember.Getter = get_45_ViewModelBase_NavigationService;
-                xamlMember.Setter = set_45_ViewModelBase_NavigationService;
+                xamlMember.Getter = get_33_ViewModelBase_NavigationService;
+                xamlMember.Setter = set_33_ViewModelBase_NavigationService;
                 break;
             case "Template10.Mvvm.ViewModelBase.Dispatcher":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Dispatcher", "Template10.Common.IDispatcherWrapper");
-                xamlMember.Getter = get_46_ViewModelBase_Dispatcher;
-                xamlMember.Setter = set_46_ViewModelBase_Dispatcher;
+                xamlMember.Getter = get_34_ViewModelBase_Dispatcher;
+                xamlMember.Setter = set_34_ViewModelBase_Dispatcher;
                 break;
             case "Template10.Mvvm.ViewModelBase.SessionState":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Mvvm.ViewModelBase");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "SessionState", "Template10.Common.IStateItems");
-                xamlMember.Getter = get_47_ViewModelBase_SessionState;
-                xamlMember.Setter = set_47_ViewModelBase_SessionState;
+                xamlMember.Getter = get_35_ViewModelBase_SessionState;
+                xamlMember.Setter = set_35_ViewModelBase_SessionState;
                 break;
             case "ImageOrganizer.GUI.SampleData.PathToFolder":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.SampleData");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PathToFolder", "String");
-                xamlMember.Getter = get_48_SampleData_PathToFolder;
-                xamlMember.Setter = set_48_SampleData_PathToFolder;
+                xamlMember.Getter = get_36_SampleData_PathToFolder;
+                xamlMember.Setter = set_36_SampleData_PathToFolder;
                 break;
             case "ImageOrganizer.GUI.SampleData.CurrentPictureTitle":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.SampleData");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "CurrentPictureTitle", "String");
-                xamlMember.Getter = get_49_SampleData_CurrentPictureTitle;
-                xamlMember.Setter = set_49_SampleData_CurrentPictureTitle;
+                xamlMember.Getter = get_37_SampleData_CurrentPictureTitle;
+                xamlMember.Setter = set_37_SampleData_CurrentPictureTitle;
                 break;
             case "ImageOrganizer.GUI.SampleData.PictureList":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.SampleData");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PictureList", "System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Picture>");
-                xamlMember.Getter = get_50_SampleData_PictureList;
-                xamlMember.Setter = set_50_SampleData_PictureList;
+                xamlMember.Getter = get_38_SampleData_PictureList;
+                xamlMember.Setter = set_38_SampleData_PictureList;
                 break;
             case "ImageOrganizer.GUI.SampleData.GroupList":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.SampleData");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "GroupList", "System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Group>");
-                xamlMember.Getter = get_51_SampleData_GroupList;
-                xamlMember.Setter = set_51_SampleData_GroupList;
+                xamlMember.Getter = get_39_SampleData_GroupList;
+                xamlMember.Setter = set_39_SampleData_GroupList;
                 break;
             case "Template10.Controls.PageHeader.EllipsisVisibility":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "EllipsisVisibility", "Template10.Behaviors.EllipsisBehavior.Visibilities");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_52_PageHeader_EllipsisVisibility;
-                xamlMember.Setter = set_52_PageHeader_EllipsisVisibility;
+                xamlMember.Getter = get_40_PageHeader_EllipsisVisibility;
+                xamlMember.Setter = set_40_PageHeader_EllipsisVisibility;
                 break;
             case "Template10.Controls.PageHeader.PrimaryCommandsVisibility":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PrimaryCommandsVisibility", "Windows.UI.Xaml.Visibility");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_53_PageHeader_PrimaryCommandsVisibility;
-                xamlMember.Setter = set_53_PageHeader_PrimaryCommandsVisibility;
+                xamlMember.Getter = get_41_PageHeader_PrimaryCommandsVisibility;
+                xamlMember.Setter = set_41_PageHeader_PrimaryCommandsVisibility;
                 break;
             case "Template10.Controls.PageHeader.BackButtonVisibility":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "BackButtonVisibility", "Windows.UI.Xaml.Visibility");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_54_PageHeader_BackButtonVisibility;
-                xamlMember.Setter = set_54_PageHeader_BackButtonVisibility;
+                xamlMember.Getter = get_42_PageHeader_BackButtonVisibility;
+                xamlMember.Setter = set_42_PageHeader_BackButtonVisibility;
                 break;
             case "Template10.Controls.PageHeader.BackButtonContent":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "BackButtonContent", "Windows.UI.Xaml.Controls.Symbol");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_55_PageHeader_BackButtonContent;
-                xamlMember.Setter = set_55_PageHeader_BackButtonContent;
+                xamlMember.Getter = get_43_PageHeader_BackButtonContent;
+                xamlMember.Setter = set_43_PageHeader_BackButtonContent;
                 break;
             case "Template10.Controls.PageHeader.Frame":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Frame", "Windows.UI.Xaml.Controls.Frame");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_56_PageHeader_Frame;
-                xamlMember.Setter = set_56_PageHeader_Frame;
+                xamlMember.Getter = get_44_PageHeader_Frame;
+                xamlMember.Setter = set_44_PageHeader_Frame;
                 break;
             case "Template10.Controls.PageHeader.EnableHamburgerMenuAutoLayout":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "EnableHamburgerMenuAutoLayout", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_57_PageHeader_EnableHamburgerMenuAutoLayout;
-                xamlMember.Setter = set_57_PageHeader_EnableHamburgerMenuAutoLayout;
+                xamlMember.Getter = get_45_PageHeader_EnableHamburgerMenuAutoLayout;
+                xamlMember.Setter = set_45_PageHeader_EnableHamburgerMenuAutoLayout;
                 break;
             case "Template10.Controls.PageHeader.VisualStateNarrowMinWidth":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "VisualStateNarrowMinWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_58_PageHeader_VisualStateNarrowMinWidth;
-                xamlMember.Setter = set_58_PageHeader_VisualStateNarrowMinWidth;
+                xamlMember.Getter = get_46_PageHeader_VisualStateNarrowMinWidth;
+                xamlMember.Setter = set_46_PageHeader_VisualStateNarrowMinWidth;
                 break;
             case "Template10.Controls.PageHeader.VisualStateNormalMinWidth":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "VisualStateNormalMinWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_59_PageHeader_VisualStateNormalMinWidth;
-                xamlMember.Setter = set_59_PageHeader_VisualStateNormalMinWidth;
+                xamlMember.Getter = get_47_PageHeader_VisualStateNormalMinWidth;
+                xamlMember.Setter = set_47_PageHeader_VisualStateNormalMinWidth;
                 break;
             case "Template10.Controls.PageHeader.Text":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Template10.Controls.PageHeader");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Text", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_60_PageHeader_Text;
-                xamlMember.Setter = set_60_PageHeader_Text;
+                xamlMember.Getter = get_48_PageHeader_Text;
+                xamlMember.Setter = set_48_PageHeader_Text;
                 break;
             }
             return xamlMember;

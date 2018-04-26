@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -16,13 +19,13 @@ namespace ImageOrganizer.Api.Controllers
     {
         private ImageOrganizerContext db = new ImageOrganizerContext();
 
-        // GET: api/Pictures
+        // GET: api/Pictures1
         public IQueryable<Picture> GetPictures()
         {
             return db.Pictures;
         }
 
-        // GET: api/Pictures/5
+        // GET: api/Pictures1/5
         [ResponseType(typeof(Picture))]
         public async Task<IHttpActionResult> GetPicture(int id)
         {
@@ -35,7 +38,7 @@ namespace ImageOrganizer.Api.Controllers
             return Ok(picture);
         }
 
-        // PUT: api/Pictures/5
+        // PUT: api/Pictures1/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutPicture(int id, Picture picture)
         {
@@ -70,19 +73,28 @@ namespace ImageOrganizer.Api.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Pictures
+        // POST: api/Pictures1
         [ResponseType(typeof(Picture))]
         public async Task<IHttpActionResult> PostPicture(Picture picture)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                db.Pictures.Add(picture);
+                await db.SaveChangesAsync();
+
+                return CreatedAtRoute("DefaultApi", new { id = picture.PictureId }, picture);
             }
+            catch (Exception)
+            {
 
-            db.Pictures.Add(picture);
-            await db.SaveChangesAsync();
-
-            return CreatedAtRoute("DefaultApi", new { id = picture.PictureId }, picture);
+                throw;
+            }
+            
         }
 
         // POST: api/Pictures/5/Groups/5
@@ -93,9 +105,9 @@ namespace ImageOrganizer.Api.Controllers
         {
             try
             {
-                using(var conn = new SqlConnection(db.Database.Connection.ConnectionString.ToString()))
+                using (var conn = new SqlConnection(db.Database.Connection.ConnectionString.ToString()))
                 {
-                    var cmd = new SqlCommand("INSERT INTO PictureGroup(PictureId, GroupId) VALUES (@PictureId, @GroupId)", conn);
+                    var cmd = new SqlCommand("INSERT INTO PictureGroup(GroupId, PictureId) VALUES (@GroupId, @PictureId)", conn);
                     cmd.Parameters.AddWithValue("@PictureId", pictureId);
                     cmd.Parameters.AddWithValue("@GroupId", groupId);
 
@@ -104,7 +116,7 @@ namespace ImageOrganizer.Api.Controllers
                     await cmd.ExecuteNonQueryAsync();
                 }
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
                 return InternalServerError();
             }
@@ -112,7 +124,7 @@ namespace ImageOrganizer.Api.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // DELETE: api/Pictures/5
+        // DELETE: api/Pictures1/5
         [ResponseType(typeof(Picture))]
         public async Task<IHttpActionResult> DeletePicture(int id)
         {

@@ -13,6 +13,7 @@ namespace ImageOrganizer.GUI.DataSource
     class Pictures
     {
         public static Pictures Instance { get; } = new Pictures();
+        public static int CurrentPictureId { get; set; }
 
         private const string baseUri = "http://localhost:55850/api/";
 
@@ -33,6 +34,10 @@ namespace ImageOrganizer.GUI.DataSource
             {
                 string objectBody = JsonConvert.SerializeObject(picture);
                 var response = await client.PostAsync("pictures", new StringContent(objectBody, Encoding.UTF8, "application/json")).ConfigureAwait(false);
+
+                string[] location = response.Headers.Location.Segments;
+                CurrentPictureId = Int32.Parse(location[location.Length-1]);
+
                 return response.IsSuccessStatusCode;
             }
             catch (Exception)
@@ -48,8 +53,9 @@ namespace ImageOrganizer.GUI.DataSource
         {
             try
             {
-                Uri addPictureToGroup = new Uri(baseUri+"Pictures/" + pictureId + "/Groups/" + groupId);
-                var response = await client.PostAsync(addPictureToGroup, null).ConfigureAwait(false);
+                Uri addPictureToGroup = new Uri(baseUri+"pictures/" + pictureId + "/groups/" + groupId);
+                string urlString = baseUri + "Pictures/" + pictureId + "/Groups/" + groupId;
+                var response = await client.PostAsync(urlString, null).ConfigureAwait(false);
                 return response.IsSuccessStatusCode;
             }
             catch (Exception)
