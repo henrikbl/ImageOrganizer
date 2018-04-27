@@ -67,7 +67,7 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
-        // TODO image not showing. probably incorrect method.
+        // TODO image not showing.
         private ImageSource _CurrentImage;
         public ImageSource CurrentImage
         {
@@ -118,6 +118,9 @@ namespace ImageOrganizer.GUI.ViewModels
         ObservableCollection<Picture> pictureList;
         public ObservableCollection<Picture> PictureList { get { return pictureList; } set { Set(ref pictureList, value); } }
 
+        ObservableCollection<BitmapImage> images;
+        public ObservableCollection<BitmapImage> Images { get { return images; } set { Set( ref images, value); } } 
+
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public event PropertyChangedEventHandler PropertyChanged;
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
@@ -128,6 +131,7 @@ namespace ImageOrganizer.GUI.ViewModels
             _MessageBoardText = "Message board";
 
             PictureList = new ObservableCollection<Picture>();
+            Images = new ObservableCollection<BitmapImage>();
         }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
@@ -179,11 +183,11 @@ namespace ImageOrganizer.GUI.ViewModels
             
             else
             {
-                MessageBoardText = "Oops.. you did not set a group to add to!";
+                MessageBoardText = "Oops.. you did not set a group to add picture to!";
             }       
         }
 
-        // Folder picker method with image list creation.
+        // Folder picker method which creates a list of storagefiles with .png, .jpg and .jpeg extensions.
         public async Task FindFolderAsync()
         {
             var folderPicker = new FolderPicker();
@@ -214,12 +218,31 @@ namespace ImageOrganizer.GUI.ViewModels
 
             foreach(var f in files)
             {
-                Picture p = new Picture();
-                p.Title = f.DisplayName.ToString();
-                p.base64ImageString = await ConvertToBase64String(f);
-                PictureList.Add(p);
+                Picture p = new Picture
+                {
+                    Title = f.DisplayName.ToString(),
+                    base64ImageString = await ConvertToBase64String(f)
+                };
+                PictureList.Add(p);  
+
+              /*  BitmapImage image = new BitmapImage();
+                string base64 = await ConvertToBase64String(f);
+                image = ConvertToBitmapImage(base64);
+                Images.Add(image);  */
+
             }
         }
+
+        // Test method
+       /* public async Task<BitmapImage> toBitmapImage(StorageFile file)
+        {
+            var bitmapImage = new BitmapImage();
+            var stream = await file.OpenAsync(FileAccessMode.Read);
+
+            bitmapImage.SetSource(stream);
+
+            return bitmapImage;
+        } */
 
         // Convert image to a base64String. Method is found at https://blogs.msdn.microsoft.com/msgulfcommunity/2014/11/02/c-encoding-and-decoding-base-64-strings/
         public async Task<string> ConvertToBase64String(StorageFile file)

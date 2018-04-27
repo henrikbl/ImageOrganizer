@@ -52,6 +52,13 @@
                     RelativePanel.Below="FolderPath"
                     Margin="8,8,0,0"/>
 
+            <Image Source="{Binding CurrentImage}" 
+                   RelativePanel.Below="BrowseForFolder"
+                   Margin="30,0,0,0"
+                   Width="150"
+                   Height="150"
+                   Stretch="Uniform"/>
+
             <!-- Panel for manipulating picture and group properties-->
             <RelativePanel x:ConnectionId='12' x:Name="AddPicturePanel"
                            RelativePanel.AlignBottomWithPanel="True"
@@ -118,10 +125,10 @@
                        Margin="8,8,0,0"
                        RelativePanel.AlignTopWithPanel="True"
                        RelativePanel.AlignLeftWithPanel="true"/>
-
+            <!--SelectedItem="{x:Bind ViewModel.SelectedPicture, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" -->
             <FlipView x:ConnectionId='9' x:Name="imageBlock" ItemsSource="{Binding PictureList}"
-                                                                                                                         
-                      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                                                                                                      
+                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                    RelativePanel.AlignBottomWithPanel="True"
                    RelativePanel.AlignTopWithPanel="True"
                    RelativePanel.AlignLeftWithPanel="True"
@@ -131,7 +138,7 @@
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <TextBlock x:Name="currentTitle" Text="{Binding Title}" TextAlignment="Center"/>
-                            <Image Source="{Binding CurrentImage}" Stretch="Uniform">
+                            <Image Source="{Binding CurrentImage}" Width="{Binding ActualWidth, ElementName=imageBlock}" Stretch="Uniform">
                             </Image>
                         </StackPanel>
                     </DataTemplate>
