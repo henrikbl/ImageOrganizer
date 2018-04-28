@@ -42,6 +42,28 @@ namespace ImageOrganizer.Model
             OnPropertyChanged(propertyName);
             return true;
         }
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Picture"/> class.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="base64ImageString">The base64 image string.</param>
+        public Picture(string title, string base64ImageString)
+        {
+            this.Title = title;
+            this.base64ImageString = base64ImageString;
+        }
+
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Picture"/> class.
+        /// </summary>
+        public Picture()
+        {
+
+        }
+
         /// <summary>
         /// Gets or sets the picture identifier.
         /// </summary>

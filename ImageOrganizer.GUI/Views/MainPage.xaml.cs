@@ -38,5 +38,15 @@ namespace ImageOrganizer.GUI.Views
                 }
             }
         }
+
+        private void LocalRadioButton_Checked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+
+        }
+
+        private void DatabaseRadioButton_Checked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+
+        }
     }
 }

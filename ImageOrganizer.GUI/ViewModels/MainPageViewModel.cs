@@ -53,6 +53,7 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
+        // title of the selected picture
         private string _CurrentPictureTitle;
         public string CurrentPictureTitle
         {
@@ -62,28 +63,15 @@ namespace ImageOrganizer.GUI.ViewModels
                 if (value != _CurrentPictureTitle)
                 {
                     _CurrentPictureTitle = value;
+                    SelectedPicture.Title = CurrentPictureTitle;
                     NotifyPropertyChanged();
                 }
             }
         }
 
-        // TODO image not showing.
-        private ImageSource _CurrentImage;
-        public ImageSource CurrentImage
-        {
-            get => _CurrentImage;
-            set
-            {
-                if (value != _CurrentImage)
-                {
-                    _CurrentImage = value;
-                    NotifyPropertyChanged();
-                }
-            }
-        }
-
-        private Picture _SelectedPicture;
-        public Picture SelectedPicture
+        // picture which is currently showing.
+        private PictureForView _SelectedPicture;
+        public PictureForView SelectedPicture
         {
             get => _SelectedPicture;
             set
@@ -91,13 +79,17 @@ namespace ImageOrganizer.GUI.ViewModels
                 if(value != _SelectedPicture)
                 {
                     _SelectedPicture = value;
-                    CurrentPictureTitle = _SelectedPicture.Title;
-                    CurrentImage = ConvertToBitmapImage(_SelectedPicture.base64ImageString);
+                    if(SelectedPicture != null)
+                    {
+                        CurrentPictureTitle = _SelectedPicture.Title;
+                    }
+                    
                     NotifyPropertyChanged();
                 }
             }
         }
 
+        // group which is currently selected.
         private Group _SelectedGroup;
         public Group SelectedGroup
         {
@@ -115,11 +107,8 @@ namespace ImageOrganizer.GUI.ViewModels
         ObservableCollection<Group> groupList;
         public ObservableCollection<Group> GroupList { get { return groupList; } set { Set(ref groupList, value); } }
 
-        ObservableCollection<Picture> pictureList;
-        public ObservableCollection<Picture> PictureList { get { return pictureList; } set { Set(ref pictureList, value); } }
-
-        ObservableCollection<BitmapImage> images;
-        public ObservableCollection<BitmapImage> Images { get { return images; } set { Set( ref images, value); } } 
+        ObservableCollection<PictureForView> pictureList;
+        public ObservableCollection<PictureForView> PictureList { get { return pictureList; } set { Set(ref pictureList, value); } }
 
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         public event PropertyChangedEventHandler PropertyChanged;
@@ -130,8 +119,7 @@ namespace ImageOrganizer.GUI.ViewModels
             _PathToFolder = "Directory";
             _MessageBoardText = "Message board";
 
-            PictureList = new ObservableCollection<Picture>();
-            Images = new ObservableCollection<BitmapImage>();
+            PictureList = new ObservableCollection<PictureForView>();
         }
 
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
@@ -143,7 +131,7 @@ namespace ImageOrganizer.GUI.ViewModels
 
             if(PictureList == null)
             {
-                PictureList = new ObservableCollection<Picture>();
+                PictureList = new ObservableCollection<PictureForView>();
             }
             
             if(state.Any())
@@ -159,9 +147,7 @@ namespace ImageOrganizer.GUI.ViewModels
         // Add picture to database and group.
         public async Task AddPictureAsync()
         {
-            var picture = new Picture();
-            picture.Title = CurrentPictureTitle;
-            picture.base64ImageString = SelectedPicture.base64ImageString;
+            var picture = new Picture(CurrentPictureTitle, SelectedPicture.base64ImageString);
 
             if (SelectedGroup != null)
             {
@@ -171,8 +157,9 @@ namespace ImageOrganizer.GUI.ViewModels
                 {
                     await DataSource.Pictures.Instance.AddPicture(picture);
 
-                    // TODO need to retrieve the pictureId from database. so it can be used here.
                     await DataSource.Pictures.Instance.AddPictureToGroup(Pictures.CurrentPictureId, selectedGroupId);
+
+                    MessageBoardText = String.Format("yay....{0} is added to {1}!", picture.Title, SelectedGroup.Name); 
                 }
                 catch (Exception)
                 {
@@ -218,31 +205,16 @@ namespace ImageOrganizer.GUI.ViewModels
 
             foreach(var f in files)
             {
-                Picture p = new Picture
-                {
-                    Title = f.DisplayName.ToString(),
-                    base64ImageString = await ConvertToBase64String(f)
-                };
-                PictureList.Add(p);  
+                string imageString = await ConvertToBase64String(f);
+                Picture p = new Picture(f.DisplayName.ToString(), imageString);
 
-              /*  BitmapImage image = new BitmapImage();
-                string base64 = await ConvertToBase64String(f);
-                image = ConvertToBitmapImage(base64);
-                Images.Add(image);  */
+                BitmapImage image = new BitmapImage();
+                image = await ConvertToBitmapImageAsync(imageString);
 
+                PictureForView pfv = new PictureForView(p, image);
+                PictureList.Add(pfv);  
             }
         }
-
-        // Test method
-       /* public async Task<BitmapImage> toBitmapImage(StorageFile file)
-        {
-            var bitmapImage = new BitmapImage();
-            var stream = await file.OpenAsync(FileAccessMode.Read);
-
-            bitmapImage.SetSource(stream);
-
-            return bitmapImage;
-        } */
 
         // Convert image to a base64String. Method is found at https://blogs.msdn.microsoft.com/msgulfcommunity/2014/11/02/c-encoding-and-decoding-base-64-strings/
         public async Task<string> ConvertToBase64String(StorageFile file)
@@ -264,14 +236,14 @@ namespace ImageOrganizer.GUI.ViewModels
         }
 
         // Convert base64String to BitmapImage. Method found at https://social.msdn.microsoft.com/Forums/sqlserver/en-US/09a07285-c03d-42e9-901f-e7ded45944b7/wp81chow-to-convert-base64-string-to-image-or-bitmap-image-in-windows-phone-81-store-app?forum=wpdevelop
-        public BitmapImage ConvertToBitmapImage(string base64String)
+        public async Task<BitmapImage> ConvertToBitmapImageAsync(string base64String)
         {
             var byteArray = Convert.FromBase64String(base64String);
             var stream = new InMemoryRandomAccessStream();
 
             var dataWriter = new DataWriter(stream);
             dataWriter.WriteBytes(byteArray);
-            dataWriter.StoreAsync();
+            await dataWriter.StoreAsync();
             stream.Seek(0);
 
             BitmapImage image = new BitmapImage();

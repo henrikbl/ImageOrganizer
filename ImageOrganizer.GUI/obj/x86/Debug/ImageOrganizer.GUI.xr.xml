@@ -2,8 +2,7 @@
 <Roots >
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="PictureList" />
-    <RootPropertyPathName Name="CurrentImage" />
-    <RootPropertyPathName Name="ActualWidth" />
+    <RootPropertyPathName Name="Image" />
     <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="MessageBoardText" />
     <RootPropertyPathName Name="IsValid" />
@@ -69,7 +68,6 @@
       <RootProperty Name="ItemTemplate" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="ElementName" />
       <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension">
@@ -87,9 +85,8 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Stretch" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
@@ -110,6 +107,7 @@
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Width" />
       <RootProperty Name="MaxLength" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="ItemsSource" />
@@ -117,6 +115,13 @@
       <RootProperty Name="DisplayMemberPath" />
       <RootProperty Name="Margin" />
       <RootProperty Name="PlaceholderText" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
+      <RootProperty Name="Content" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="IsChecked" />
+      <RootEvent Name="Checked" />
     </RootType>
     <RootType FullName="ImageOrganizer.GUI.Views.MainPage" />
   </Roots.RootTypes>

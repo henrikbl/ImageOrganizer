@@ -38,8 +38,27 @@
                        BorderThickness="1"
                        Padding="8">
 
+            <!-- choose what part of the view is visible -->
+            <StackPanel x:Name="RadiobuttonPanel"
+                        RelativePanel.AlignTopWithPanel="True"
+                        Orientation="Horizontal"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True">
+                <RadioButton x:Name="LocalRadioButton"
+                             Content="Local"
+                             Margin="8,8,0,0"
+                             HorizontalAlignment="Left"
+                             Checked="LocalRadioButton_Checked"
+                             IsChecked="True"/>
+                <RadioButton x:Name="DatabaseRadioButton"
+                             Content="Database"
+                             Margin="0,8,8,0"
+                             HorizontalAlignment="Right"
+                             Checked="DatabaseRadioButton_Checked"/>
+            </StackPanel>
+
             <TextBlock x:Name="FolderPath"
                 Text="{Binding PathToFolder}"
+                RelativePanel.Below="RadiobuttonPanel"
                 RelativePanel.AlignLeftWithPanel="True"
                 RelativePanel.AlignRightWithPanel="True"
                 Margin="0,8,0,0"
@@ -52,47 +71,44 @@
                     RelativePanel.Below="FolderPath"
                     Margin="8,8,0,0"/>
 
-            <Image Source="{Binding CurrentImage}" 
-                   RelativePanel.Below="BrowseForFolder"
-                   Margin="30,0,0,0"
-                   Width="150"
-                   Height="150"
-                   Stretch="Uniform"/>
-
             <!-- Panel for manipulating picture and group properties-->
             <RelativePanel x:Name="AddPicturePanel"
                            RelativePanel.AlignBottomWithPanel="True"
                            RelativePanel.AlignLeftWithPanel="True"
                            RelativePanel.AlignRightWithPanel="True">
 
-                <!-- TEST BUTTON FOR ADDING PICTURES-->
-                <Button x:Name="AddPictureButton"
-                    Content="Add Picture"
-                    Command="{x:Bind ViewModel.AddPictureCommand}"
-                    RelativePanel.AlignHorizontalCenterWithPanel="True"
-                    Margin="0,0,0,100"/>
-
                 <TextBox x:Name="PictureName"
                          Width="200"
                          Text="{Binding CurrentPictureTitle, Mode=TwoWay}"
                          PlaceholderText="Title"
                          MaxLength="20"
-                         RelativePanel.Below="AddPictureButton"/>
+                         Margin="8,8,0,0"
+                         RelativePanel.AlignTopWithPanel="True"/>
+
+                <!-- TEST BUTTON FOR ADDING PICTURES-->
+                <Button x:Name="AddPictureButton"
+                    Content="Add Picture"
+                    Command="{x:Bind ViewModel.AddPictureCommand}"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        RelativePanel.Below="PictureName"
+                        RelativePanel.AlignRightWithPanel="True"
+                    Margin="8,8,8,8"/>
 
                 <ComboBox x:Name="ChooseGroupMenu"
                           ItemsSource="{x:Bind ViewModel.GroupList}"
                           SelectedItem="{Binding SelectedGroup, Mode=TwoWay}"
                           DisplayMemberPath="Name"
-                          Margin="0,8,0,100"
+                          Margin="8,8,8,100"
                           PlaceholderText="Choose a group"
-                          RelativePanel.Below="PictureName"/>
+                          RelativePanel.Below="AddPictureButton"
+                          RelativePanel.AlignLeftWithPanel="True"/>
 
                 <Button x:Name="CreateGroup"
                         Content="New group"
                         Click="{x:Bind CreateNewGroup}"
+                        Margin="8,8,8,0"
                         RelativePanel.Below="ChooseGroupMenu"
                         RelativePanel.AlignRightWithPanel="True"/>
-
             </RelativePanel>
 
             <!-- "Create new group" content dialog-->
@@ -137,9 +153,11 @@
                 <FlipView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
-                            <TextBlock x:Name="currentTitle" Text="{Binding Title}" TextAlignment="Center"/>
-                            <Image Source="{Binding CurrentImage}" Width="{Binding ActualWidth, ElementName=imageBlock}" Stretch="Uniform">
-                            </Image>
+                            <TextBlock x:Name="currentTitle" Text="{Binding Title}" Margin="0,0,0,8" TextAlignment="Center"/>
+                            <Image Source="{Binding Image}" 
+                                   Width="480"
+                                   Height="300" 
+                                   Stretch="Uniform"/>
                         </StackPanel>
                     </DataTemplate>
                 </FlipView.ItemTemplate>
