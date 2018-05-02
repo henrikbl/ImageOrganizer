@@ -38,7 +38,7 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
-        // Message board textinput
+        // message board textinput.
         private string _MessageBoardText;
         public string MessageBoardText
         {
@@ -53,7 +53,7 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
-        // title of the selected picture
+        // title of the selected picture.
         private string _CurrentPictureTitle;
         public string CurrentPictureTitle
         {
@@ -65,6 +65,22 @@ namespace ImageOrganizer.GUI.ViewModels
                     _CurrentPictureTitle = value;
                     SelectedPicture.Title = CurrentPictureTitle;
                     NotifyPropertyChanged();
+                }
+            }
+        }
+
+        // group which is selected when viewing pictures from database.
+        private Group _PickedGroup;
+        public Group PickedGroup
+        {
+            get => _PickedGroup;
+            set
+            {
+                if (value != _PickedGroup)
+                {
+                    _PickedGroup = value;
+                    NotifyPropertyChanged();
+                    CreatePictureListFromDatabaseAsync(_PickedGroup.GroupId);
                 }
             }
         }
@@ -89,7 +105,7 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
-        // group which is currently selected.
+        // group which is selected to be stored in.
         private Group _SelectedGroup;
         public Group SelectedGroup
         {
@@ -141,8 +157,15 @@ namespace ImageOrganizer.GUI.ViewModels
             await Task.CompletedTask;
         } 
 
-        public ICommand FindFolderCommand { get { return new FindFolderCommand(async ()=> await FindFolderAsync()); }}
+        public ICommand FindFolderCommand { get { return new FindFolderCommand(async ()=> await FindFolderAsync()); } }
         public ICommand AddPictureCommand { get { return new AddPicture(async () => await AddPictureAsync()); } }
+        public ICommand UpdatePictureCommand { get { return new UpdatePicture(async () => await UpdatePictureAsync()); } }
+
+        // TODO implement update method for updating a picture title.
+        private Task UpdatePictureAsync()
+        {
+            throw new NotImplementedException();
+        }
 
         // Add picture to database and group.
         public async Task AddPictureAsync()
@@ -198,7 +221,7 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
-        // creates a list of pictures from computer for viewing.
+        // Creates a list of pictures from computer for viewing.
         public async Task CreatePictureListFromFolderAsync(IReadOnlyList<StorageFile> files)
         {
             PictureList.Clear();
@@ -215,6 +238,23 @@ namespace ImageOrganizer.GUI.ViewModels
                 PictureList.Add(pfv);  
             }
         }
+
+        // TODO exceptionhandling if imagestring is not a correct string
+        // Creates a list of pictures from the database based on groups
+        public async Task CreatePictureListFromDatabaseAsync(int id)
+        {
+            PictureList.Clear();
+
+            Picture[] list = await DataSource.Pictures.Instance.GetPictures(id);
+
+            for(int i = 0; i < list.Length; i++)
+            {
+                BitmapImage image = await ConvertToBitmapImageAsync(list[i].base64ImageString);
+                PictureForView forView = new PictureForView(list[i], image);
+
+                PictureList.Add(forView);
+            }
+         }
 
         // Convert image to a base64String. Method is found at https://blogs.msdn.microsoft.com/msgulfcommunity/2014/11/02/c-encoding-and-decoding-base-64-strings/
         public async Task<string> ConvertToBase64String(StorageFile file)
@@ -271,6 +311,29 @@ namespace ImageOrganizer.GUI.ViewModels
         private Action _action;
 
         public AddPicture(Action action)
+        {
+            _action = action;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            this._action();
+        }
+    }
+
+    // Command for updating a picture which exist in database.
+    public class UpdatePicture : ICommand
+    {
+        private Action _action;
+
+        public UpdatePicture(Action action)
         {
             _action = action;
         }

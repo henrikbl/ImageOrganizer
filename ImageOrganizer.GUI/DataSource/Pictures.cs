@@ -27,6 +27,22 @@ namespace ImageOrganizer.GUI.DataSource
             };
         }
 
+        // Get pictures from group in database
+        public async Task<Picture[]> GetPictures(int id)
+        {
+            try
+            {
+                var json = await client.GetStringAsync("pictures/groups/"+id).ConfigureAwait(false);
+                Picture[] pictures = JsonConvert.DeserializeObject<Picture[]>(json);
+                return pictures;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         // Add a picture to database
         public async Task<bool> AddPicture(Picture picture)
         {

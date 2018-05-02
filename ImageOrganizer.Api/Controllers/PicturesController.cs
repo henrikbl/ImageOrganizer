@@ -19,13 +19,13 @@ namespace ImageOrganizer.Api.Controllers
     {
         private ImageOrganizerContext db = new ImageOrganizerContext();
 
-        // GET: api/Pictures1
+        // GET: api/Pictures
         public IQueryable<Picture> GetPictures()
         {
             return db.Pictures;
         }
 
-        // GET: api/Pictures1/5
+        // GET: api/Pictures/5
         [ResponseType(typeof(Picture))]
         public async Task<IHttpActionResult> GetPicture(int id)
         {
@@ -38,7 +38,7 @@ namespace ImageOrganizer.Api.Controllers
             return Ok(picture);
         }
 
-        // PUT: api/Pictures1/5
+        // PUT: api/Pictures/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutPicture(int id, Picture picture)
         {
@@ -73,7 +73,7 @@ namespace ImageOrganizer.Api.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Pictures1
+        // POST: api/Pictures
         [ResponseType(typeof(Picture))]
         public async Task<IHttpActionResult> PostPicture(Picture picture)
         {
@@ -95,6 +95,26 @@ namespace ImageOrganizer.Api.Controllers
                 throw;
             }
             
+        }
+
+        // GET: api/Pictures/Groups/5
+        [HttpGet()]
+        [Route("api/Pictures/Groups/{groupId}")]
+        public IQueryable<Picture> GetPicturesFromGroupAsync(int groupId)
+        {
+            try
+            {
+                //IQueryable<Picture> pictures = 
+                return from picture in db.Pictures where picture.Groups.Any(c => c.GroupId == groupId) select picture;
+
+               // return pictures;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // POST: api/Pictures/5/Groups/5
@@ -124,7 +144,7 @@ namespace ImageOrganizer.Api.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // DELETE: api/Pictures1/5
+        // DELETE: api/Pictures/5
         [ResponseType(typeof(Picture))]
         public async Task<IHttpActionResult> DeletePicture(int id)
         {

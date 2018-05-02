@@ -14,7 +14,6 @@ namespace ImageOrganizer.GUI.Views
             NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
         }
 
-        // TODO add handling.
         // Method is placed in code-behind to get access to the content dialog so the datacontext can be set.
         public async void CreateNewGroup()
         {
@@ -39,14 +38,24 @@ namespace ImageOrganizer.GUI.Views
             }
         }
 
+        // Configures the interface for local files usage.
         private void LocalRadioButton_Checked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
+            LocalInterface.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            DatabaseInterface.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
 
+            ChooseGroupMenu.IsEnabled = true;
+            AddPictureButton.Command = ViewModel.AddPictureCommand;
         }
 
+        // Configure the interface for database files usage.
         private void DatabaseRadioButton_Checked(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
+            LocalInterface.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            DatabaseInterface.Visibility = Windows.UI.Xaml.Visibility.Visible;
 
+            ChooseGroupMenu.IsEnabled = false;
+            AddPictureButton.Command = ViewModel.UpdatePictureCommand;
         }
     }
 }

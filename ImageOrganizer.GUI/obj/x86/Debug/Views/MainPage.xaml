@@ -43,33 +43,59 @@
                         RelativePanel.AlignTopWithPanel="True"
                         Orientation="Horizontal"
                         RelativePanel.AlignHorizontalCenterWithPanel="True">
-                <RadioButton x:ConnectionId='19' x:Name="LocalRadioButton"
+                <RadioButton x:ConnectionId='22' x:Name="LocalRadioButton"
                              Content="Local"
                              Margin="8,8,0,0"
                              HorizontalAlignment="Left"
                                                                
-                             IsChecked="True"/>
-                <RadioButton x:ConnectionId='20' x:Name="DatabaseRadioButton"
+                             />
+                <RadioButton x:ConnectionId='23' x:Name="DatabaseRadioButton"
                              Content="Database"
                              Margin="0,8,8,0"
                              HorizontalAlignment="Right"
                                                                   />
             </StackPanel>
 
-            <TextBlock x:ConnectionId='11' x:Name="FolderPath"
-                Text="{Binding PathToFolder}"
-                RelativePanel.Below="RadiobuttonPanel"
-                RelativePanel.AlignLeftWithPanel="True"
-                RelativePanel.AlignRightWithPanel="True"
-                Margin="0,8,0,0"
-                Width="200"/>
+            <!-- interface for Local -->
+            <RelativePanel x:ConnectionId='11' x:Name="LocalInterface"
+                           RelativePanel.Below="RadiobuttonPanel"
+                           RelativePanel.AlignLeftWithPanel="True"
+                           RelativePanel.AlignRightWithPanel="True"
+                           Visibility="Visible">
+                
+                <TextBlock x:ConnectionId='20' x:Name="FolderPath"
+                           Text="{Binding PathToFolder}"
+                           RelativePanel.AlignTopWithPanel="True"
+                           RelativePanel.AlignLeftWithPanel="True"
+                           Margin="8,8,0,0"
+                           Width="200"/>
 
-            <Button x:ConnectionId='12' x:Name="BrowseForFolder"
-                    Content="Browse"
-                                                                  
-                    RelativePanel.AlignRightWithPanel="True"
-                    RelativePanel.Below="FolderPath"
-                    Margin="8,8,0,0"/>
+                <Button x:ConnectionId='21' x:Name="BrowseForFolder"
+                        Content="Browse"
+                                                                      
+                        RelativePanel.AlignRightWithPanel="True"
+                        RelativePanel.Below="FolderPath"
+                        Margin="8,8,0,0"/>
+
+            </RelativePanel>
+
+            <!-- Interface for Database-->
+            <RelativePanel x:ConnectionId='12' x:Name="DatabaseInterface"
+                           RelativePanel.Below="RadiobuttonPanel"
+                           RelativePanel.AlignLeftWithPanel="True"
+                           RelativePanel.AlignRightWithPanel="True"
+                           Visibility="Collapsed">
+
+                <ComboBox x:ConnectionId='19' x:Name="PicturelistFromGroup"
+                                                                    
+                          SelectedItem="{Binding PickedGroup, Mode=TwoWay}"
+                          DisplayMemberPath="Name"
+                          Margin="8,8,8,100"
+                          PlaceholderText="Get pictures from..."
+                          RelativePanel.AlignTopWithPanel="True"
+                          RelativePanel.AlignLeftWithPanel="True"/>
+
+            </RelativePanel>
 
             <!-- Panel for manipulating picture and group properties-->
             <RelativePanel x:ConnectionId='13' x:Name="AddPicturePanel"
@@ -87,12 +113,12 @@
 
                 <!-- TEST BUTTON FOR ADDING PICTURES-->
                 <Button x:ConnectionId='16' x:Name="AddPictureButton"
-                    Content="Add Picture"
-                                                                  
-                    RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        Content="Add Picture"
+                                                                      
+                        RelativePanel.AlignHorizontalCenterWithPanel="True"
                         RelativePanel.Below="PictureName"
                         RelativePanel.AlignRightWithPanel="True"
-                    Margin="8,8,8,8"/>
+                        Margin="8,8,8,8"/>
 
                 <ComboBox x:ConnectionId='17' x:Name="ChooseGroupMenu"
                                                                     
@@ -101,7 +127,8 @@
                           Margin="8,8,8,100"
                           PlaceholderText="Choose a group"
                           RelativePanel.Below="AddPictureButton"
-                          RelativePanel.AlignLeftWithPanel="True"/>
+                          RelativePanel.AlignLeftWithPanel="True"
+                          IsEnabled="True"/>
 
                 <Button x:ConnectionId='18' x:Name="CreateGroup"
                         Content="New group"

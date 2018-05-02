@@ -9,6 +9,7 @@
     <RootPropertyPathName Name="Name" />
     <RootPropertyPathName Name="SelectedGroup" />
     <RootPropertyPathName Name="CurrentPictureTitle" />
+    <RootPropertyPathName Name="PickedGroup" />
     <RootPropertyPathName Name="PathToFolder" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -32,6 +33,7 @@
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="Visibility" />
       <RootMethod Name="GetAlignLeftWithPanel" />
       <RootMethod Name="SetAlignLeftWithPanel" />
       <RootMethod Name="GetAlignRightWithPanel" />
@@ -88,12 +90,6 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Stretch" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Content" />
-      <RootProperty Name="Command" />
-      <RootProperty Name="Margin" />
-      <RootEvent Name="Click" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ContentDialog">
       <RootProperty Name="PrimaryButtonText" />
       <RootProperty Name="IsPrimaryButtonEnabled" />
@@ -109,18 +105,24 @@
       <RootProperty Name="MaxLength" />
       <RootProperty Name="Margin" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="Content" />
+      <RootProperty Name="Command" />
+      <RootProperty Name="Margin" />
+      <RootEvent Name="Click" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="SelectedItem" />
       <RootProperty Name="DisplayMemberPath" />
       <RootProperty Name="Margin" />
       <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="IsEnabled" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RadioButton">
       <RootProperty Name="Content" />
       <RootProperty Name="Margin" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="IsChecked" />
       <RootEvent Name="Checked" />
     </RootType>
     <RootType FullName="ImageOrganizer.GUI.Views.MainPage" />
