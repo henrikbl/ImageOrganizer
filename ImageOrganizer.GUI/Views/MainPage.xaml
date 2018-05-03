@@ -90,10 +90,18 @@
                           ItemsSource="{x:Bind ViewModel.GroupList}"
                           SelectedItem="{Binding PickedGroup, Mode=TwoWay}"
                           DisplayMemberPath="Name"
-                          Margin="8,8,8,100"
+                          Margin="8,8,8,0"
                           PlaceholderText="Get pictures from..."
                           RelativePanel.AlignTopWithPanel="True"
                           RelativePanel.AlignLeftWithPanel="True"/>
+
+                <Button x:Name="DeletePictureButton"
+                        Content="Delete Picture"
+                        Command="{x:Bind ViewModel.DeletePictureCommand}"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        RelativePanel.Below="PicturelistFromGroup"
+                        RelativePanel.AlignRightWithPanel="True"
+                        Margin="8,8,8,8"/>
 
             </RelativePanel>
 

@@ -18,6 +18,7 @@ namespace ImageOrganizer.GUI
         public PictureForView(Picture picture, BitmapImage image)
             : base(picture.Title, picture.base64ImageString)
         {
+            this.PictureId = picture.PictureId;
             this.Image = image;
         }
 

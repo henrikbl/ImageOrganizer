@@ -43,13 +43,13 @@
                         RelativePanel.AlignTopWithPanel="True"
                         Orientation="Horizontal"
                         RelativePanel.AlignHorizontalCenterWithPanel="True">
-                <RadioButton x:ConnectionId='22' x:Name="LocalRadioButton"
+                <RadioButton x:ConnectionId='23' x:Name="LocalRadioButton"
                              Content="Local"
                              Margin="8,8,0,0"
                              HorizontalAlignment="Left"
                                                                
                              />
-                <RadioButton x:ConnectionId='23' x:Name="DatabaseRadioButton"
+                <RadioButton x:ConnectionId='24' x:Name="DatabaseRadioButton"
                              Content="Database"
                              Margin="0,8,8,0"
                              HorizontalAlignment="Right"
@@ -63,14 +63,14 @@
                            RelativePanel.AlignRightWithPanel="True"
                            Visibility="Visible">
                 
-                <TextBlock x:ConnectionId='20' x:Name="FolderPath"
+                <TextBlock x:ConnectionId='21' x:Name="FolderPath"
                            Text="{Binding PathToFolder}"
                            RelativePanel.AlignTopWithPanel="True"
                            RelativePanel.AlignLeftWithPanel="True"
                            Margin="8,8,0,0"
                            Width="200"/>
 
-                <Button x:ConnectionId='21' x:Name="BrowseForFolder"
+                <Button x:ConnectionId='22' x:Name="BrowseForFolder"
                         Content="Browse"
                                                                       
                         RelativePanel.AlignRightWithPanel="True"
@@ -90,10 +90,18 @@
                                                                     
                           SelectedItem="{Binding PickedGroup, Mode=TwoWay}"
                           DisplayMemberPath="Name"
-                          Margin="8,8,8,100"
+                          Margin="8,8,8,0"
                           PlaceholderText="Get pictures from..."
                           RelativePanel.AlignTopWithPanel="True"
                           RelativePanel.AlignLeftWithPanel="True"/>
+
+                <Button x:ConnectionId='20' x:Name="DeletePictureButton"
+                        Content="Delete Picture"
+                                                                         
+                        RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        RelativePanel.Below="PicturelistFromGroup"
+                        RelativePanel.AlignRightWithPanel="True"
+                        Margin="8,8,8,8"/>
 
             </RelativePanel>
 

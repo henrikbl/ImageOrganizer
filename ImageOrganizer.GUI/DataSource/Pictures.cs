@@ -43,6 +43,23 @@ namespace ImageOrganizer.GUI.DataSource
             }
         }
 
+        // Update a picture in database
+        public async Task<bool> UpdatePicture(Picture picture)
+        {
+            try
+            {
+                string objectBody = JsonConvert.SerializeObject(picture);
+                var response = await client.PutAsync("pictures/" + picture.PictureId, new StringContent(objectBody, Encoding.UTF8, "application/json")).ConfigureAwait(false);
+
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         // Add a picture to database
         public async Task<bool> AddPicture(Picture picture)
         {
@@ -72,6 +89,21 @@ namespace ImageOrganizer.GUI.DataSource
                 Uri addPictureToGroup = new Uri(baseUri+"pictures/" + pictureId + "/groups/" + groupId);
                 string urlString = baseUri + "Pictures/" + pictureId + "/Groups/" + groupId;
                 var response = await client.PostAsync(urlString, null).ConfigureAwait(false);
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
+        }
+
+        // Delete a picture from database
+        public async Task<bool> DeletePicture(int id)
+        {
+            try
+            {
+                var response = await client.DeleteAsync("pictures/" + id).ConfigureAwait(false);
                 return response.IsSuccessStatusCode;
             }
             catch (Exception)

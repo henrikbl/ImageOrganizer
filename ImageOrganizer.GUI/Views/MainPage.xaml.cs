@@ -46,6 +46,7 @@ namespace ImageOrganizer.GUI.Views
 
             ChooseGroupMenu.IsEnabled = true;
             AddPictureButton.Command = ViewModel.AddPictureCommand;
+            AddPictureButton.Content = "Add Picture";
         }
 
         // Configure the interface for database files usage.
@@ -56,6 +57,7 @@ namespace ImageOrganizer.GUI.Views
 
             ChooseGroupMenu.IsEnabled = false;
             AddPictureButton.Command = ViewModel.UpdatePictureCommand;
+            AddPictureButton.Content = "Update";
         }
     }
 }

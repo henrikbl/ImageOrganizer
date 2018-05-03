@@ -105,7 +105,7 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
-        // group which is selected to be stored in.
+        // group which is selected to add picture in.
         private Group _SelectedGroup;
         public Group SelectedGroup
         {
@@ -160,11 +160,43 @@ namespace ImageOrganizer.GUI.ViewModels
         public ICommand FindFolderCommand { get { return new FindFolderCommand(async ()=> await FindFolderAsync()); } }
         public ICommand AddPictureCommand { get { return new AddPicture(async () => await AddPictureAsync()); } }
         public ICommand UpdatePictureCommand { get { return new UpdatePicture(async () => await UpdatePictureAsync()); } }
+        public ICommand DeletePictureCommand { get { return new DeletePicture(async () => await DeletePictureAsync()); } }
 
-        // TODO implement update method for updating a picture title.
-        private Task UpdatePictureAsync()
+        // Delete picture from database
+        public async Task DeletePictureAsync()
         {
-            throw new NotImplementedException();
+            string title = SelectedPicture.Title;
+
+            try
+            {
+                await DataSource.Pictures.Instance.DeletePicture(SelectedPicture.PictureId);
+
+                MessageBoardText = String.Format("Picture {0} was deleted from the database", title);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        // Update picture in database
+        public async Task UpdatePictureAsync()
+        {
+            Picture picture = new Picture(CurrentPictureTitle, SelectedPicture.base64ImageString);
+            picture.PictureId = SelectedPicture.PictureId;
+
+            try
+            {
+                await DataSource.Pictures.Instance.UpdatePicture(picture);
+
+                MessageBoardText = String.Format("Title of current picture was changed to {0}", picture.Title);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         // Add picture to database and group.
@@ -182,7 +214,7 @@ namespace ImageOrganizer.GUI.ViewModels
 
                     await DataSource.Pictures.Instance.AddPictureToGroup(Pictures.CurrentPictureId, selectedGroupId);
 
-                    MessageBoardText = String.Format("yay....{0} is added to {1}!", picture.Title, SelectedGroup.Name); 
+                    MessageBoardText = String.Format("Yay....{0} is added to {1}!", picture.Title, SelectedGroup.Name); 
                 }
                 catch (Exception)
                 {
@@ -221,7 +253,7 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
-        // Creates a list of pictures from computer for viewing.
+        // Creates a list of pictures from local for viewing.
         public async Task CreatePictureListFromFolderAsync(IReadOnlyList<StorageFile> files)
         {
             PictureList.Clear();
@@ -240,7 +272,7 @@ namespace ImageOrganizer.GUI.ViewModels
         }
 
         // TODO exceptionhandling if imagestring is not a correct string
-        // Creates a list of pictures from the database based on groups
+        // Creates a list of pictures from database based on groups
         public async Task CreatePictureListFromDatabaseAsync(int id)
         {
             PictureList.Clear();
@@ -292,7 +324,7 @@ namespace ImageOrganizer.GUI.ViewModels
             return image;
         }
 
-        // method for updating UI elements using INotifyPropertyChanged
+        // Method for updating UI elements using INotifyPropertyChanged
         private void NotifyPropertyChanged([CallerMemberName] String propertyName="")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -334,6 +366,29 @@ namespace ImageOrganizer.GUI.ViewModels
         private Action _action;
 
         public UpdatePicture(Action action)
+        {
+            _action = action;
+        }
+
+        public event EventHandler CanExecuteChanged;
+
+        public bool CanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void Execute(object parameter)
+        {
+            this._action();
+        }
+    }
+
+    // Command for deleting a picture from database.
+    public class DeletePicture : ICommand
+    {
+        private Action _action;
+
+        public DeletePicture(Action action)
         {
             _action = action;
         }
