@@ -283,7 +283,7 @@ namespace ImageOrganizer.GUI.ViewModels
             {
                 BitmapImage image = await ConvertToBitmapImageAsync(list[i].base64ImageString);
                 PictureForView forView = new PictureForView(list[i], image);
-
+                
                 PictureList.Add(forView);
             }
          }

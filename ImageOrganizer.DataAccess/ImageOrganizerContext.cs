@@ -29,6 +29,7 @@ namespace ImageOrganizer.DataAccess
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageOrganizerContext"/> class.
         /// </summary>
+        //public ImageOrganizerContext() : base(@"Data Source=Donau.hiof.no;Initial Catalog=henrikbl; Integrated Security = False; User ID=henrikbl; Password=y1UELk;Connect Timeout = 30; Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
         public ImageOrganizerContext()
         {
             Configuration.ProxyCreationEnabled = false;

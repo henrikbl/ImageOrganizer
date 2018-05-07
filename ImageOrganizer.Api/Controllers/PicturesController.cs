@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
@@ -104,11 +105,7 @@ namespace ImageOrganizer.Api.Controllers
         {
             try
             {
-                //IQueryable<Picture> pictures = 
                 return from picture in db.Pictures where picture.Groups.Any(c => c.GroupId == groupId) select picture;
-
-               // return pictures;
-
             }
             catch (Exception)
             {
@@ -125,7 +122,8 @@ namespace ImageOrganizer.Api.Controllers
         {
             try
             {
-                using (var conn = new SqlConnection(db.Database.Connection.ConnectionString.ToString()))
+                using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["defaultConnection"].ConnectionString))
+                //using (var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["donauConnection"].ConnectionString))
                 {
                     var cmd = new SqlCommand("INSERT INTO PictureGroup(GroupId, PictureId) VALUES (@GroupId, @PictureId)", conn);
                     cmd.Parameters.AddWithValue("@PictureId", pictureId);
