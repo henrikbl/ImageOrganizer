@@ -58,6 +58,7 @@ namespace ImageOrganizer.GUI.Views
             ChooseGroupMenu.IsEnabled = false;
             AddPictureButton.Command = ViewModel.UpdatePictureCommand;
             AddPictureButton.Content = "Update";
+            FolderPath.Text = "Directory";
         }
     }
 }

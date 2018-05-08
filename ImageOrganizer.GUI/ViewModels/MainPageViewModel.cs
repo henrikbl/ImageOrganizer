@@ -15,8 +15,7 @@ using Windows.Storage.Search;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage.Streams;
 using ImageOrganizer.GUI.DataSource;
-using System.IO;
-using Windows.UI.Xaml.Media;
+
 
 namespace ImageOrganizer.GUI.ViewModels
 {
@@ -53,7 +52,27 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
-        // title of the selected picture.
+        // picture which is currently showing.
+        private PictureForView _SelectedPicture;
+        public PictureForView SelectedPicture
+        {
+            get => _SelectedPicture;
+            set
+            {
+                if (value != _SelectedPicture)
+                {
+                    _SelectedPicture = value;
+                    if (SelectedPicture != null)
+                    {
+                        CurrentPictureTitle = _SelectedPicture.Title;
+                    }
+
+                    NotifyPropertyChanged();
+                }
+            }
+        }
+
+        // current title of the selected picture from the title textbox.
         private string _CurrentPictureTitle;
         public string CurrentPictureTitle
         {
@@ -81,26 +100,6 @@ namespace ImageOrganizer.GUI.ViewModels
                     _PickedGroup = value;
                     NotifyPropertyChanged();
                     CreatePictureListFromDatabaseAsync(_PickedGroup.GroupId);
-                }
-            }
-        }
-
-        // picture which is currently showing.
-        private PictureForView _SelectedPicture;
-        public PictureForView SelectedPicture
-        {
-            get => _SelectedPicture;
-            set
-            {
-                if(value != _SelectedPicture)
-                {
-                    _SelectedPicture = value;
-                    if(SelectedPicture != null)
-                    {
-                        CurrentPictureTitle = _SelectedPicture.Title;
-                    }
-                    
-                    NotifyPropertyChanged();
                 }
             }
         }
@@ -171,7 +170,9 @@ namespace ImageOrganizer.GUI.ViewModels
             {
                 await DataSource.Pictures.Instance.DeletePicture(SelectedPicture.PictureId);
 
-                MessageBoardText = String.Format("Picture {0} was deleted from the database", title);
+                PictureList.Remove(PictureList.Where(i => i.PictureId == SelectedPicture.PictureId).Single());
+
+                MessageBoardText = String.Format("Picture {0} was deleted from the database!", title);
             }
             catch (Exception)
             {
@@ -242,7 +243,7 @@ namespace ImageOrganizer.GUI.ViewModels
             {
                 QueryOptions options;
 
-                options = new QueryOptions(CommonFileQuery.DefaultQuery, new[] { ".png", ".jpg", ".jpeg" });
+                options = new QueryOptions(CommonFileQuery.DefaultQuery, new[] { ".png", ".jpg", ".jpeg", ".JPG" });
                 StorageFileQueryResult sfqr = folder.CreateFileQueryWithOptions(options);
 
                 IReadOnlyList<StorageFile> picture_files = await sfqr.GetFilesAsync();
@@ -260,7 +261,7 @@ namespace ImageOrganizer.GUI.ViewModels
 
             foreach(var f in files)
             {
-                string imageString = await ConvertToBase64String(f);
+                string imageString = await ConvertToBase64StringAsync(f);
                 Picture p = new Picture(f.DisplayName.ToString(), imageString);
 
                 BitmapImage image = new BitmapImage();
@@ -271,7 +272,6 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
-        // TODO exceptionhandling if imagestring is not a correct string
         // Creates a list of pictures from database based on groups
         public async Task CreatePictureListFromDatabaseAsync(int id)
         {
@@ -289,7 +289,7 @@ namespace ImageOrganizer.GUI.ViewModels
          }
 
         // Convert image to a base64String. Method is found at https://blogs.msdn.microsoft.com/msgulfcommunity/2014/11/02/c-encoding-and-decoding-base-64-strings/
-        public async Task<string> ConvertToBase64String(StorageFile file)
+        public async Task<string> ConvertToBase64StringAsync(StorageFile file)
         {
             var bitmapImage = new BitmapImage();
             var stream = (FileRandomAccessStream)await file.OpenAsync(FileAccessMode.Read);

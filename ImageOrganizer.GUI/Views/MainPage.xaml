@@ -94,7 +94,7 @@
                           ItemsSource="{x:Bind ViewModel.GroupList}"
                           SelectedItem="{Binding PickedGroup, Mode=TwoWay}"
                           DisplayMemberPath="Name"
-                          Margin="8,8,8,0"
+                          Margin="8,8,8,30"
                           PlaceholderText="Get pictures from..."
                           RelativePanel.AlignTopWithPanel="True"
                           RelativePanel.AlignLeftWithPanel="True"/>
