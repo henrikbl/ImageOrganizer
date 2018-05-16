@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>C433A9FD7A7BCBEEB4623E3C073A980FD3BF1A02211CF989E57F812F5985E1FF</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>21EBC5D7C6CA3ED918BB6FA4636FA71E8F86B136A74B8BCFC919F1DBECAC8CFA</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>6906cf59-d9f6-4de4-90fb-cd8b07875b8e_1.0.0.0_x86__8zmgqd0netmce</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>6906cf59-d9f6-4de4-90fb-cd8b07875b8e_8zmgqd0netmce!App</RegisteredUserModeAppID>
     <RegisteredPackageID>6906cf59-d9f6-4de4-90fb-cd8b07875b8e</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-08T17:31:13.491</Modified>
+      <Modified>2018-05-16T16:12:17.341</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\ImageOrganizer.GUI.exe">
       <PackagePath>entrypoint\ImageOrganizer.GUI.exe</PackagePath>
-      <Modified>2018-05-08T17:31:11.925</Modified>
+      <Modified>2018-05-16T16:12:16.145</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -533,7 +533,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Model\bin\Debug\ImageOrganizer.Model.dll">
       <PackagePath>ImageOrganizer.Model.dll</PackagePath>
-      <Modified>2018-05-07T14:56:29.010</Modified>
+      <Modified>2018-05-16T14:55:03.156</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -575,11 +575,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\ImageOrganizer.GUI.xr.xml">
       <PackagePath>ImageOrganizer.GUI.xr.xml</PackagePath>
-      <Modified>2018-05-07T15:56:10.272</Modified>
+      <Modified>2018-05-16T15:57:11.593</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\App.xbf">
+      <PackagePath>App.xbf</PackagePath>
+      <Modified>2018-05-16T16:12:15.831</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\Styles\Custom.xbf">
+      <PackagePath>Styles\Custom.xbf</PackagePath>
+      <Modified>2018-05-16T16:12:15.831</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\Views\MainPage.xbf">
+      <PackagePath>Views\MainPage.xbf</PackagePath>
+      <Modified>2018-05-16T16:12:15.831</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
-      <Modified>2017-11-10T17:15:50.000</Modified>
+      <Modified>2017-09-28T15:28:16.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\.nuget\packages\template10\1.1.12\lib\uap10.0\Template10Library\Template10Library.xr.xml">
       <PackagePath>Template10Library\Template10Library.xr.xml</PackagePath>
@@ -616,11 +628,11 @@
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-08T17:31:12.881</Modified>
+      <Modified>2018-05-16T14:55:09.710</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\Core\ImageOrganizer.GUI.exe">
       <PackagePath>ImageOrganizer.GUI.exe</PackagePath>
-      <Modified>2018-05-08T17:31:13.485</Modified>
+      <Modified>2018-05-16T16:12:17.329</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
@@ -653,27 +665,27 @@
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.26128.0</Version>
+      <Version>14.0.26428.1</Version>
       <Architecture>ARM</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26128.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26428.1, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.26128.0</Version>
+      <Version>14.0.26428.1</Version>
       <Architecture>x64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26128.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26428.1, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.26128.0</Version>
+      <Version>14.0.26428.1</Version>
       <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26128.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.26428.1, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>

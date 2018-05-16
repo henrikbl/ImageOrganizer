@@ -1,8 +1,6 @@
 ﻿using ImageOrganizer.Model;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,9 +41,18 @@ namespace ImageOrganizer.GUI.DataSource
         // Add a group to database
         public async Task<bool> AddGroup(Group group)
         {
-            string objectBody = JsonConvert.SerializeObject(group);
-            var response = await client.PostAsync("groups", new StringContent(objectBody, Encoding.UTF8, "application/json")).ConfigureAwait(false);
-            return response.IsSuccessStatusCode;
+            try
+            {
+                string objectBody = JsonConvert.SerializeObject(group);
+                var response = await client.PostAsync("groups", new StringContent(objectBody, Encoding.UTF8, "application/json")).ConfigureAwait(false);
+                return response.IsSuccessStatusCode;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
         
     }

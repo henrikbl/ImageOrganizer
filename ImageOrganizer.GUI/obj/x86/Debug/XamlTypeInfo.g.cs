@@ -227,9 +227,9 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             _typeNameTable[19] = "ImageOrganizer.GUI.ViewModels.MainPageViewModel";
             _typeNameTable[20] = "Template10.Mvvm.ViewModelBase";
             _typeNameTable[21] = "Template10.Mvvm.BindableBase";
-            _typeNameTable[22] = "ImageOrganizer.Model.Group";
-            _typeNameTable[23] = "ImageOrganizer.GUI.PictureForView";
-            _typeNameTable[24] = "ImageOrganizer.Model.Picture";
+            _typeNameTable[22] = "ImageOrganizer.GUI.PictureForView";
+            _typeNameTable[23] = "ImageOrganizer.Model.Picture";
+            _typeNameTable[24] = "ImageOrganizer.Model.Group";
             _typeNameTable[25] = "System.Collections.ObjectModel.ObservableCollection`1<ImageOrganizer.Model.Group>";
             _typeNameTable[26] = "System.Collections.ObjectModel.Collection`1<ImageOrganizer.Model.Group>";
             _typeNameTable[27] = "Int32";
@@ -278,9 +278,9 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             _typeTable[19] = typeof(global::ImageOrganizer.GUI.ViewModels.MainPageViewModel);
             _typeTable[20] = typeof(global::Template10.Mvvm.ViewModelBase);
             _typeTable[21] = typeof(global::Template10.Mvvm.BindableBase);
-            _typeTable[22] = typeof(global::ImageOrganizer.Model.Group);
-            _typeTable[23] = typeof(global::ImageOrganizer.GUI.PictureForView);
-            _typeTable[24] = typeof(global::ImageOrganizer.Model.Picture);
+            _typeTable[22] = typeof(global::ImageOrganizer.GUI.PictureForView);
+            _typeTable[23] = typeof(global::ImageOrganizer.Model.Picture);
+            _typeTable[24] = typeof(global::ImageOrganizer.Model.Group);
             _typeTable[25] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Group>);
             _typeTable[26] = typeof(global::System.Collections.ObjectModel.Collection<global::ImageOrganizer.Model.Group>);
             _typeTable[27] = typeof(global::System.Int32);
@@ -343,8 +343,8 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
         private object Activate_3_Dictionary() { return new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object>(); }
         private object Activate_16_ModalDialog() { return new global::Template10.Controls.ModalDialog(); }
         private object Activate_19_MainPageViewModel() { return new global::ImageOrganizer.GUI.ViewModels.MainPageViewModel(); }
-        private object Activate_22_Group() { return new global::ImageOrganizer.Model.Group(); }
-        private object Activate_24_Picture() { return new global::ImageOrganizer.Model.Picture(); }
+        private object Activate_23_Picture() { return new global::ImageOrganizer.Model.Picture(); }
+        private object Activate_24_Group() { return new global::ImageOrganizer.Model.Group(); }
         private object Activate_25_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::ImageOrganizer.Model.Group>(); }
         private object Activate_26_Collection() { return new global::System.Collections.ObjectModel.Collection<global::ImageOrganizer.Model.Group>(); }
         private object Activate_28_List() { return new global::System.Collections.Generic.List<global::ImageOrganizer.Model.Picture>(); }
@@ -556,9 +556,9 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 userType.Activator = Activate_19_MainPageViewModel;
                 userType.AddMemberName("PathToFolder");
                 userType.AddMemberName("MessageBoardText");
+                userType.AddMemberName("SelectedPicture");
                 userType.AddMemberName("CurrentPictureTitle");
                 userType.AddMemberName("PickedGroup");
-                userType.AddMemberName("SelectedPicture");
                 userType.AddMemberName("SelectedGroup");
                 userType.AddMemberName("GroupList");
                 userType.AddMemberName("PictureList");
@@ -583,30 +583,30 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 22:   //  ImageOrganizer.Model.Group
-                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_22_Group;
-                userType.AddMemberName("GroupId");
-                userType.AddMemberName("Name");
-                userType.AddMemberName("Pictures");
-                userType.AddMemberName("IsValid");
-                xamlType = userType;
-                break;
-
-            case 23:   //  ImageOrganizer.GUI.PictureForView
+            case 22:   //  ImageOrganizer.GUI.PictureForView
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("ImageOrganizer.Model.Picture"));
                 userType.AddMemberName("Image");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 24:   //  ImageOrganizer.Model.Picture
+            case 23:   //  ImageOrganizer.Model.Picture
                 userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_24_Picture;
+                userType.Activator = Activate_23_Picture;
                 userType.AddMemberName("PictureId");
                 userType.AddMemberName("Title");
                 userType.AddMemberName("base64ImageString");
                 userType.AddMemberName("Groups");
+                userType.AddMemberName("IsValid");
+                xamlType = userType;
+                break;
+
+            case 24:   //  ImageOrganizer.Model.Group
+                userType = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_24_Group;
+                userType.AddMemberName("GroupId");
+                userType.AddMemberName("Name");
+                userType.AddMemberName("Pictures");
                 userType.AddMemberName("IsValid");
                 xamlType = userType;
                 break;
@@ -962,35 +962,35 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             that.MessageBoardText = (global::System.String)Value;
         }
-        private object get_16_MainPageViewModel_CurrentPictureTitle(object instance)
-        {
-            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            return that.CurrentPictureTitle;
-        }
-        private void set_16_MainPageViewModel_CurrentPictureTitle(object instance, object Value)
-        {
-            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            that.CurrentPictureTitle = (global::System.String)Value;
-        }
-        private object get_17_MainPageViewModel_PickedGroup(object instance)
-        {
-            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            return that.PickedGroup;
-        }
-        private void set_17_MainPageViewModel_PickedGroup(object instance, object Value)
-        {
-            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
-            that.PickedGroup = (global::ImageOrganizer.Model.Group)Value;
-        }
-        private object get_18_MainPageViewModel_SelectedPicture(object instance)
+        private object get_16_MainPageViewModel_SelectedPicture(object instance)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             return that.SelectedPicture;
         }
-        private void set_18_MainPageViewModel_SelectedPicture(object instance, object Value)
+        private void set_16_MainPageViewModel_SelectedPicture(object instance, object Value)
         {
             var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
             that.SelectedPicture = (global::ImageOrganizer.GUI.PictureForView)Value;
+        }
+        private object get_17_MainPageViewModel_CurrentPictureTitle(object instance)
+        {
+            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
+            return that.CurrentPictureTitle;
+        }
+        private void set_17_MainPageViewModel_CurrentPictureTitle(object instance, object Value)
+        {
+            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
+            that.CurrentPictureTitle = (global::System.String)Value;
+        }
+        private object get_18_MainPageViewModel_PickedGroup(object instance)
+        {
+            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
+            return that.PickedGroup;
+        }
+        private void set_18_MainPageViewModel_PickedGroup(object instance, object Value)
+        {
+            var that = (global::ImageOrganizer.GUI.ViewModels.MainPageViewModel)instance;
+            that.PickedGroup = (global::ImageOrganizer.Model.Group)Value;
         }
         private object get_19_MainPageViewModel_SelectedGroup(object instance)
         {
@@ -1396,23 +1396,23 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlMember.Getter = get_15_MainPageViewModel_MessageBoardText;
                 xamlMember.Setter = set_15_MainPageViewModel_MessageBoardText;
                 break;
+            case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.SelectedPicture":
+                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
+                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "SelectedPicture", "ImageOrganizer.GUI.PictureForView");
+                xamlMember.Getter = get_16_MainPageViewModel_SelectedPicture;
+                xamlMember.Setter = set_16_MainPageViewModel_SelectedPicture;
+                break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.CurrentPictureTitle":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "CurrentPictureTitle", "String");
-                xamlMember.Getter = get_16_MainPageViewModel_CurrentPictureTitle;
-                xamlMember.Setter = set_16_MainPageViewModel_CurrentPictureTitle;
+                xamlMember.Getter = get_17_MainPageViewModel_CurrentPictureTitle;
+                xamlMember.Setter = set_17_MainPageViewModel_CurrentPictureTitle;
                 break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.PickedGroup":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
                 xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "PickedGroup", "ImageOrganizer.Model.Group");
-                xamlMember.Getter = get_17_MainPageViewModel_PickedGroup;
-                xamlMember.Setter = set_17_MainPageViewModel_PickedGroup;
-                break;
-            case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.SelectedPicture":
-                userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "SelectedPicture", "ImageOrganizer.GUI.PictureForView");
-                xamlMember.Getter = get_18_MainPageViewModel_SelectedPicture;
-                xamlMember.Setter = set_18_MainPageViewModel_SelectedPicture;
+                xamlMember.Getter = get_18_MainPageViewModel_PickedGroup;
+                xamlMember.Setter = set_18_MainPageViewModel_PickedGroup;
                 break;
             case "ImageOrganizer.GUI.ViewModels.MainPageViewModel.SelectedGroup":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.GUI.ViewModels.MainPageViewModel");

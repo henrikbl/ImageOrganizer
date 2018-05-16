@@ -61,12 +61,7 @@
                    RelativePanel.AlignLeftWithPanel="True"
                    RelativePanel.AlignRightWithPanel="True"
                    Height="150">
-            <!-- interface for Local -->
-            <RelativePanel x:Name="LocalInterface"
-                           RelativePanel.AlignLeftWithPanel="True"
-                           RelativePanel.AlignRightWithPanel="True"
-                           Visibility="Visible">
-                
+
                 <TextBlock x:Name="FolderPath"
                            Text="{Binding PathToFolder}"
                            RelativePanel.AlignTopWithPanel="True"
@@ -74,11 +69,18 @@
                            Margin="8,8,0,0"
                            Width="200"/>
 
+                <!-- interface for Local -->
+            <RelativePanel x:Name="LocalInterface"
+                           RelativePanel.Below="FolderPath"
+                           RelativePanel.AlignLeftWithPanel="True"
+                           RelativePanel.AlignRightWithPanel="True"
+                           Visibility="Visible">
+                
                 <Button x:Name="BrowseForFolder"
                         Content="Browse"
                         Command="{x:Bind ViewModel.FindFolderCommand}"
                         RelativePanel.AlignRightWithPanel="True"
-                        RelativePanel.Below="FolderPath"
+                        RelativePanel.AlignTopWithPanel="True"
                         Margin="8,8,0,0"/>
 
             </RelativePanel>
@@ -176,12 +178,24 @@
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.AlignBottomWithPanel="True">
 
+
             <TextBlock x:Name="messageBoard"
-                       Text="{Binding MessageBoardText}"
+                       Text="Message Board:"
                        Margin="8,8,0,0"
                        RelativePanel.AlignTopWithPanel="True"
                        RelativePanel.AlignLeftWithPanel="true"/>
-            <!--SelectedItem="{x:Bind ViewModel.SelectedPicture, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" -->
+            
+            <Border Margin="8"
+                    Padding="8"
+                    BorderThickness="1"
+                    BorderBrush="Black"
+                    RelativePanel.Below="messageBoard"
+                    RelativePanel.AlignLeftWithPanel="True">
+                
+                    <TextBlock x:Name="messageBoardmessage"
+                               Text="{Binding MessageBoardText}"/>
+            </Border>
+
             <FlipView x:Name="imageBlock" ItemsSource="{Binding PictureList}"
                    SelectedItem="{x:Bind ViewModel.SelectedPicture, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"

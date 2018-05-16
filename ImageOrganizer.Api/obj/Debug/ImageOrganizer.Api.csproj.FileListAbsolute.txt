@@ -51,8 +51,8 @@ C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\Image
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Api\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Api\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Api\bin\Microsoft.AI.Web.xml
-C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Api\obj\Debug\ImageOrganizer.Api.csprojResolveAssemblyReference.cache
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Api\obj\Debug\ImageOrganizer.Api.csproj.CoreCompileInputs.cache
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Api\obj\Debug\ImageOrganizer.Api.csproj.CopyComplete
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Api\obj\Debug\ImageOrganizer.Api.dll
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Api\obj\Debug\ImageOrganizer.Api.pdb
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Api\obj\Debug\ImageOrganizer.Api.csprojAssemblyReference.cache

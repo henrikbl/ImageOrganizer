@@ -131,8 +131,8 @@ namespace ImageOrganizer.GUI.ViewModels
 
         public MainPageViewModel()
         {
-            _PathToFolder = "Directory";
-            _MessageBoardText = "Message board";
+            _PathToFolder = string.Empty;
+            _MessageBoardText = ".....";
 
             PictureList = new ObservableCollection<PictureForView>();
         }
@@ -166,19 +166,10 @@ namespace ImageOrganizer.GUI.ViewModels
         {
             string title = SelectedPicture.Title;
 
-            try
-            {
-                await DataSource.Pictures.Instance.DeletePicture(SelectedPicture.PictureId);
+            await DataSource.Pictures.Instance.DeletePicture(SelectedPicture.PictureId);
 
-                PictureList.Remove(PictureList.Where(i => i.PictureId == SelectedPicture.PictureId).Single());
-
-                MessageBoardText = String.Format("Picture {0} was deleted from the database!", title);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            PictureList.Remove(PictureList.Where(i => i.PictureId == SelectedPicture.PictureId).Single());
+            MessageBoardText = String.Format("Picture {0} was deleted from the database!", title);
         }
 
         // Update picture in database
@@ -187,17 +178,9 @@ namespace ImageOrganizer.GUI.ViewModels
             Picture picture = new Picture(CurrentPictureTitle, SelectedPicture.base64ImageString);
             picture.PictureId = SelectedPicture.PictureId;
 
-            try
-            {
-                await DataSource.Pictures.Instance.UpdatePicture(picture);
+            await DataSource.Pictures.Instance.UpdatePicture(picture);
 
-                MessageBoardText = String.Format("Title of current picture was changed to {0}", picture.Title);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            MessageBoardText = String.Format("Title of current picture was changed to {0}", picture.Title);
         }
 
         // Add picture to database and group.
@@ -209,19 +192,10 @@ namespace ImageOrganizer.GUI.ViewModels
             {
                 int selectedGroupId = SelectedGroup.GroupId;
 
-                try
-                {
-                    await DataSource.Pictures.Instance.AddPicture(picture);
+                await DataSource.Pictures.Instance.AddPicture(picture);
+                await DataSource.Pictures.Instance.AddPictureToGroup(Pictures.CurrentPictureId, selectedGroupId);
 
-                    await DataSource.Pictures.Instance.AddPictureToGroup(Pictures.CurrentPictureId, selectedGroupId);
-
-                    MessageBoardText = String.Format("Yay....{0} is added to {1}!", picture.Title, SelectedGroup.Name); 
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
+                MessageBoardText = String.Format("Yay....{0} is added to {1}!", picture.Title, SelectedGroup.Name); 
             }
             
             else

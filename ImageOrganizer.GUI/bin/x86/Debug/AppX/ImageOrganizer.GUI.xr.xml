@@ -62,6 +62,13 @@
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="Width" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="Child" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.FlipView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="SelectedItem" />

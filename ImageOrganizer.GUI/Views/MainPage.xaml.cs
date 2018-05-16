@@ -1,8 +1,6 @@
 ﻿using ImageOrganizer.Model;
 using System;
-using Windows.Storage;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media.Imaging;
 
 namespace ImageOrganizer.GUI.Views
 {
@@ -23,17 +21,9 @@ namespace ImageOrganizer.GUI.Views
             var result = await AddGroupContentDialog.ShowAsync();
             if(result == ContentDialogResult.Primary)
             {
-                try
+                if (await DataSource.Groups.Instance.AddGroup(group))
                 {
-                    if(await DataSource.Groups.Instance.AddGroup(group))
-                    {
-                        ViewModel.GroupList.Add(group);
-                    }
-                }
-                catch (Exception)
-                {
-
-                    throw;
+                    ViewModel.GroupList.Add(group);
                 }
             }
         }
@@ -58,7 +48,7 @@ namespace ImageOrganizer.GUI.Views
             ChooseGroupMenu.IsEnabled = false;
             AddPictureButton.Command = ViewModel.UpdatePictureCommand;
             AddPictureButton.Content = "Update";
-            FolderPath.Text = "Directory";
+            FolderPath.Text = string.Empty;
         }
     }
 }

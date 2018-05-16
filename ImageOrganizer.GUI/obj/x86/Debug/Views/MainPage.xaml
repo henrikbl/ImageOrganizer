@@ -39,58 +39,60 @@
                        Padding="8">
 
             <!-- choose what part of the view is visible -->
-            <StackPanel x:ConnectionId='10' x:Name="RadiobuttonPanel"
+            <StackPanel x:ConnectionId='11' x:Name="RadiobuttonPanel"
                         RelativePanel.AlignTopWithPanel="True"
                         Orientation="Horizontal"
                         RelativePanel.AlignHorizontalCenterWithPanel="True">
-                <RadioButton x:ConnectionId='24' x:Name="LocalRadioButton"
+                <RadioButton x:ConnectionId='25' x:Name="LocalRadioButton"
                              Content="Local"
                              Margin="8,8,0,0"
                              HorizontalAlignment="Left"
                                                                
                              />
-                <RadioButton x:ConnectionId='25' x:Name="DatabaseRadioButton"
+                <RadioButton x:ConnectionId='26' x:Name="DatabaseRadioButton"
                              Content="Database"
                              Margin="0,8,8,0"
                              HorizontalAlignment="Right"
                                                                   />
             </StackPanel>
 
-        <RelativePanel x:ConnectionId='11' x:Name="ChangableInterface"
+        <RelativePanel x:ConnectionId='12' x:Name="ChangableInterface"
                    RelativePanel.Below="RadiobuttonPanel"
                    RelativePanel.AlignLeftWithPanel="True"
                    RelativePanel.AlignRightWithPanel="True"
                    Height="150">
-            <!-- interface for Local -->
-            <RelativePanel x:ConnectionId='18' x:Name="LocalInterface"
-                           RelativePanel.AlignLeftWithPanel="True"
-                           RelativePanel.AlignRightWithPanel="True"
-                           Visibility="Visible">
-                
-                <TextBlock x:ConnectionId='22' x:Name="FolderPath"
+
+                <TextBlock x:ConnectionId='19' x:Name="FolderPath"
                            Text="{Binding PathToFolder}"
                            RelativePanel.AlignTopWithPanel="True"
                            RelativePanel.AlignLeftWithPanel="True"
                            Margin="8,8,0,0"
                            Width="200"/>
 
-                <Button x:ConnectionId='23' x:Name="BrowseForFolder"
+                <!-- interface for Local -->
+            <RelativePanel x:ConnectionId='20' x:Name="LocalInterface"
+                           RelativePanel.Below="FolderPath"
+                           RelativePanel.AlignLeftWithPanel="True"
+                           RelativePanel.AlignRightWithPanel="True"
+                           Visibility="Visible">
+                
+                <Button x:ConnectionId='24' x:Name="BrowseForFolder"
                         Content="Browse"
                                                                       
                         RelativePanel.AlignRightWithPanel="True"
-                        RelativePanel.Below="FolderPath"
+                        RelativePanel.AlignTopWithPanel="True"
                         Margin="8,8,0,0"/>
 
             </RelativePanel>
             
 
             <!-- Interface for Database-->
-            <RelativePanel x:ConnectionId='19' x:Name="DatabaseInterface"
+            <RelativePanel x:ConnectionId='21' x:Name="DatabaseInterface"
                            RelativePanel.AlignLeftWithPanel="True"
                            RelativePanel.AlignRightWithPanel="True"
                            Visibility="Collapsed">
 
-                <ComboBox x:ConnectionId='20' x:Name="PicturelistFromGroup"
+                <ComboBox x:ConnectionId='22' x:Name="PicturelistFromGroup"
                                                                     
                           SelectedItem="{Binding PickedGroup, Mode=TwoWay}"
                           DisplayMemberPath="Name"
@@ -99,7 +101,7 @@
                           RelativePanel.AlignTopWithPanel="True"
                           RelativePanel.AlignLeftWithPanel="True"/>
 
-                <Button x:ConnectionId='21' x:Name="DeletePictureButton"
+                <Button x:ConnectionId='23' x:Name="DeletePictureButton"
                         Content="Delete Picture"
                                                                          
                         RelativePanel.AlignHorizontalCenterWithPanel="True"
@@ -111,12 +113,12 @@
         </RelativePanel>
 
             <!-- Panel for manipulating picture- and group-properties-->
-            <RelativePanel x:ConnectionId='12' x:Name="AddPicturePanel"
+            <RelativePanel x:ConnectionId='13' x:Name="AddPicturePanel"
                            RelativePanel.Below="ChangableInterface"
                            RelativePanel.AlignLeftWithPanel="True"
                            RelativePanel.AlignRightWithPanel="True">
 
-                <TextBox x:ConnectionId='14' x:Name="PictureName"
+                <TextBox x:ConnectionId='15' x:Name="PictureName"
                          Width="200"
                          Text="{Binding CurrentPictureTitle, Mode=TwoWay}"
                          PlaceholderText="Title"
@@ -124,7 +126,7 @@
                          Margin="8,8,0,0"
                          RelativePanel.AlignTopWithPanel="True"/>
 
-                <Button x:ConnectionId='15' x:Name="AddPictureButton"
+                <Button x:ConnectionId='16' x:Name="AddPictureButton"
                         Content="Add Picture"
                                                                       
                         RelativePanel.AlignHorizontalCenterWithPanel="True"
@@ -132,7 +134,7 @@
                         HorizontalAlignment="Center"
                         Margin="8,8,8,30"/>
 
-                <ComboBox x:ConnectionId='16' x:Name="ChooseGroupMenu"
+                <ComboBox x:ConnectionId='17' x:Name="ChooseGroupMenu"
                                                                     
                           SelectedItem="{Binding SelectedGroup, Mode=TwoWay}"
                           DisplayMemberPath="Name"
@@ -142,7 +144,7 @@
                           RelativePanel.AlignLeftWithPanel="True"
                           IsEnabled="True"/>
 
-                <Button x:ConnectionId='17' x:Name="CreateGroup"
+                <Button x:ConnectionId='18' x:Name="CreateGroup"
                         Content="New group"
                                                        
                         Margin="8,8,8,0"
@@ -152,7 +154,7 @@
             </RelativePanel>
 
             <!-- "Create new group" content dialog-->
-            <ContentDialog x:ConnectionId='13' x:Name="AddGroupContentDialog"
+            <ContentDialog x:ConnectionId='14' x:Name="AddGroupContentDialog"
                            PrimaryButtonText="Create" IsPrimaryButtonEnabled="{Binding IsValid}"
                            SecondaryButtonText="Cancel" IsSecondaryButtonEnabled="True">
                 <ContentDialog.TitleTemplate>
@@ -176,12 +178,24 @@
                        RelativePanel.AlignRightWithPanel="True"
                        RelativePanel.AlignBottomWithPanel="True">
 
+
             <TextBlock x:ConnectionId='8' x:Name="messageBoard"
-                       Text="{Binding MessageBoardText}"
+                       Text="Message Board:"
                        Margin="8,8,0,0"
                        RelativePanel.AlignTopWithPanel="True"
                        RelativePanel.AlignLeftWithPanel="true"/>
-            <!--SelectedItem="{x:Bind ViewModel.SelectedPicture, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" -->
+            
+            <Border Margin="8"
+                    Padding="8"
+                    BorderThickness="1"
+                    BorderBrush="Black"
+                    RelativePanel.Below="messageBoard"
+                    RelativePanel.AlignLeftWithPanel="True">
+                
+                    <TextBlock x:ConnectionId='10' x:Name="messageBoardmessage"
+                               Text="{Binding MessageBoardText}"/>
+            </Border>
+
             <FlipView x:ConnectionId='9' x:Name="imageBlock" ItemsSource="{Binding PictureList}"
                                                                                                                       
                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch"

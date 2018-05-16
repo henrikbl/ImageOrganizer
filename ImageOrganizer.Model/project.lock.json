@@ -14565,8 +14565,7 @@
     ".NETPlatform,Version=v5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\hen_b\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
+    "C:\\Users\\hen_b\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
@@ -14577,13 +14576,9 @@
       "packagesPath": "C:\\Users\\hen_b\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\hen_b\\Documents\\Henrik\\Skole\\6.semester\\dotNet\\Projects\\MyProject\\ImageOrganizer\\ImageOrganizer.Model\\obj\\",
       "projectStyle": "ProjectJson",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
-      ],
       "configFilePaths": [
         "C:\\Users\\hen_b\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
