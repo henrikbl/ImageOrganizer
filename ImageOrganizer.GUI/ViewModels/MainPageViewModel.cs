@@ -15,7 +15,7 @@ using Windows.Storage.Search;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage.Streams;
 using ImageOrganizer.GUI.DataSource;
-
+using System.Net.Http;
 
 namespace ImageOrganizer.GUI.ViewModels
 {
@@ -131,7 +131,7 @@ namespace ImageOrganizer.GUI.ViewModels
 
         public MainPageViewModel()
         {
-            _PathToFolder = string.Empty;
+            _PathToFolder = "Directory";
             _MessageBoardText = ".....";
 
             PictureList = new ObservableCollection<PictureForView>();
@@ -166,10 +166,22 @@ namespace ImageOrganizer.GUI.ViewModels
         {
             string title = SelectedPicture.Title;
 
-            await DataSource.Pictures.Instance.DeletePicture(SelectedPicture.PictureId);
+            try
+            {
+                await DataSource.Pictures.Instance.DeletePicture(SelectedPicture.PictureId);
 
-            PictureList.Remove(PictureList.Where(i => i.PictureId == SelectedPicture.PictureId).Single());
-            MessageBoardText = String.Format("Picture {0} was deleted from the database!", title);
+                PictureList.Remove(PictureList.Where(i => i.PictureId == SelectedPicture.PictureId).Single());
+                MessageBoardText = $"Picture {title} was deleted from the database!";
+            }
+            catch (HttpRequestException)
+            {
+                MessageBoardText = "oops...seems like there is something wrong with the connection!";
+            }
+            catch(Exception)
+            {
+                MessageBoardText = "hmm...something went wrong.";
+            }
+            
         }
 
         // Update picture in database
@@ -178,9 +190,21 @@ namespace ImageOrganizer.GUI.ViewModels
             Picture picture = new Picture(CurrentPictureTitle, SelectedPicture.base64ImageString);
             picture.PictureId = SelectedPicture.PictureId;
 
-            await DataSource.Pictures.Instance.UpdatePicture(picture);
+            try
+            {
+                await DataSource.Pictures.Instance.UpdatePicture(picture);
 
-            MessageBoardText = String.Format("Title of current picture was changed to {0}", picture.Title);
+                MessageBoardText = $"Title of current picture was changed to {picture.Title}";
+            }
+            catch (HttpRequestException)
+            {
+                MessageBoardText = "oops...seems like there is something wrong with the connection!";
+            }
+            catch(Exception)
+            {
+                MessageBoardText = "hmm...something went wrong.";
+            }
+            
         }
 
         // Add picture to database and group.
@@ -188,20 +212,32 @@ namespace ImageOrganizer.GUI.ViewModels
         {
             var picture = new Picture(CurrentPictureTitle, SelectedPicture.base64ImageString);
 
-            if (SelectedGroup != null)
+            try
             {
-                int selectedGroupId = SelectedGroup.GroupId;
+                if (SelectedGroup != null)
+                {
+                    int selectedGroupId = SelectedGroup.GroupId;
 
-                await DataSource.Pictures.Instance.AddPicture(picture);
-                await DataSource.Pictures.Instance.AddPictureToGroup(Pictures.CurrentPictureId, selectedGroupId);
+                    await DataSource.Pictures.Instance.AddPicture(picture);
+                    await DataSource.Pictures.Instance.AddPictureToGroup(Pictures.CurrentPictureId, selectedGroupId);
 
-                MessageBoardText = String.Format("Yay....{0} is added to {1}!", picture.Title, SelectedGroup.Name); 
+                    MessageBoardText = $"Yay....{picture.Title} is added to {SelectedGroup.Name}!";
+                }
+
+                else
+                {
+                    MessageBoardText = "Oops.. you did not set a group to add picture to!";
+                }
             }
-            
-            else
+            catch (HttpRequestException)
             {
-                MessageBoardText = "Oops.. you did not set a group to add picture to!";
-            }       
+                MessageBoardText = "oops...seems like there is something wrong with the connection!";
+            }
+            catch (Exception)
+            {
+                MessageBoardText = "hmm...something went wrong.";
+            }
+
         }
 
         // Folder picker method which creates a list of storagefiles with .png, .jpg and .jpeg extensions.
@@ -251,55 +287,85 @@ namespace ImageOrganizer.GUI.ViewModels
         {
             PictureList.Clear();
 
-            Picture[] list = await DataSource.Pictures.Instance.GetPictures(id);
-
-            for(int i = 0; i < list.Length; i++)
+            try
             {
-                BitmapImage image = await ConvertToBitmapImageAsync(list[i].base64ImageString);
-                PictureForView forView = new PictureForView(list[i], image);
-                
-                PictureList.Add(forView);
+                Picture[] list = await DataSource.Pictures.Instance.GetPictures(id);
+
+                for (int i = 0; i < list.Length; i++)
+                {
+                    BitmapImage image = await ConvertToBitmapImageAsync(list[i].base64ImageString);
+                    PictureForView forView = new PictureForView(list[i], image);
+
+                    PictureList.Add(forView);
+                }
             }
+            catch (HttpRequestException)
+            {
+                MessageBoardText = "oops...seems like there is something wrong with the connection!";
+            }
+            catch(Exception)
+            {
+                MessageBoardText = "hmm...something went wrong.";
+            }
+            
          }
 
         // Convert image to a base64String. Method is found at https://blogs.msdn.microsoft.com/msgulfcommunity/2014/11/02/c-encoding-and-decoding-base-64-strings/
         public async Task<string> ConvertToBase64StringAsync(StorageFile file)
         {
-            var bitmapImage = new BitmapImage();
-            var stream = (FileRandomAccessStream)await file.OpenAsync(FileAccessMode.Read);
+            try
+            {
+                var bitmapImage = new BitmapImage();
+                var stream = (FileRandomAccessStream)await file.OpenAsync(FileAccessMode.Read);
 
-            bitmapImage.SetSource(stream);
+                bitmapImage.SetSource(stream);
 
-            Byte[] pictureAttachment = new Byte[0];
-            var reader = new DataReader(stream.GetInputStreamAt(0));
-            pictureAttachment = new Byte[stream.Size];
+                Byte[] pictureAttachment = new Byte[0];
+                var reader = new DataReader(stream.GetInputStreamAt(0));
+                pictureAttachment = new Byte[stream.Size];
 
-            await reader.LoadAsync((uint)stream.Size);
-            reader.ReadBytes(pictureAttachment);
+                await reader.LoadAsync((uint)stream.Size);
+                reader.ReadBytes(pictureAttachment);
 
-            string imageAsBase64String = Convert.ToBase64String(pictureAttachment);
-            return imageAsBase64String;
+                string imageAsBase64String = Convert.ToBase64String(pictureAttachment);
+                return imageAsBase64String;
+            }
+            catch (Exception)
+            {
+                MessageBoardText = "Something is wrong with this file";
+                return string.Empty;
+            }
+            
         }
 
         // Convert base64String to BitmapImage. Method found at https://social.msdn.microsoft.com/Forums/sqlserver/en-US/09a07285-c03d-42e9-901f-e7ded45944b7/wp81chow-to-convert-base64-string-to-image-or-bitmap-image-in-windows-phone-81-store-app?forum=wpdevelop
         public async Task<BitmapImage> ConvertToBitmapImageAsync(string base64String)
         {
-            var byteArray = Convert.FromBase64String(base64String);
-            var stream = new InMemoryRandomAccessStream();
+            try
+            {
+                var byteArray = Convert.FromBase64String(base64String);
+                var stream = new InMemoryRandomAccessStream();
 
-            var dataWriter = new DataWriter(stream);
-            dataWriter.WriteBytes(byteArray);
-            await dataWriter.StoreAsync();
-            stream.Seek(0);
+                var dataWriter = new DataWriter(stream);
+                dataWriter.WriteBytes(byteArray);
+                await dataWriter.StoreAsync();
+                stream.Seek(0);
 
-            BitmapImage image = new BitmapImage();
-            image.SetSource(stream);
+                BitmapImage image = new BitmapImage();
+                image.SetSource(stream);
 
-            return image;
+                return image;
+            }
+            catch (Exception)
+            {
+                MessageBoardText = "Something is wrong with this file";
+                return null;
+            }
+            
         }
 
         // Method for updating UI elements using INotifyPropertyChanged
-        private void NotifyPropertyChanged([CallerMemberName] String propertyName="")
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName="")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }

@@ -22,37 +22,22 @@ namespace ImageOrganizer.GUI.DataSource
                 BaseAddress = new Uri(baseUri)
             };
         }
-        
+
         // Retrieve list of groups from the database.
         public async Task<Group[]> GetGroups()
         {
-            try
-            {
-                var json = await client.GetStringAsync("groups").ConfigureAwait(false);
-                Group[] groups = JsonConvert.DeserializeObject<Group[]>(json);
-                return groups;
-            }
-            catch (Exception)
-            {
-                throw;
-            }     
+
+            var json = await client.GetStringAsync("groups").ConfigureAwait(false);
+            Group[] groups = JsonConvert.DeserializeObject<Group[]>(json);
+            return groups;
         }
 
         // Add a group to database
         public async Task<bool> AddGroup(Group group)
         {
-            try
-            {
-                string objectBody = JsonConvert.SerializeObject(group);
-                var response = await client.PostAsync("groups", new StringContent(objectBody, Encoding.UTF8, "application/json")).ConfigureAwait(false);
-                return response.IsSuccessStatusCode;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            
+            string objectBody = JsonConvert.SerializeObject(group);
+            var response = await client.PostAsync("groups", new StringContent(objectBody, Encoding.UTF8, "application/json")).ConfigureAwait(false);
+            return response.IsSuccessStatusCode;
         }
         
     }

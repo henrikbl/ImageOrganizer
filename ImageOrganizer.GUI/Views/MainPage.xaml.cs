@@ -35,8 +35,10 @@ namespace ImageOrganizer.GUI.Views
             DatabaseInterface.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
 
             ChooseGroupMenu.IsEnabled = true;
+            DeletePictureButton.IsEnabled = false;
             AddPictureButton.Command = ViewModel.AddPictureCommand;
             AddPictureButton.Content = "Add Picture";
+            
         }
 
         // Configure the interface for database files usage.
@@ -46,9 +48,10 @@ namespace ImageOrganizer.GUI.Views
             DatabaseInterface.Visibility = Windows.UI.Xaml.Visibility.Visible;
 
             ChooseGroupMenu.IsEnabled = false;
+            DeletePictureButton.IsEnabled = true;
             AddPictureButton.Command = ViewModel.UpdatePictureCommand;
             AddPictureButton.Content = "Update";
-            FolderPath.Text = string.Empty;
+            ViewModel.PathToFolder = "Directory";
         }
     }
 }

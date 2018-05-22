@@ -56,31 +56,31 @@
                              Checked="DatabaseRadioButton_Checked"/>
             </StackPanel>
 
-        <RelativePanel x:Name="ChangableInterface"
+            <RelativePanel x:Name="ChangableInterface"
                    RelativePanel.Below="RadiobuttonPanel"
                    RelativePanel.AlignLeftWithPanel="True"
                    RelativePanel.AlignRightWithPanel="True"
                    Height="150">
 
-                <TextBlock x:Name="FolderPath"
+                <!-- interface for Local -->
+            <RelativePanel x:Name="LocalInterface"
+                           RelativePanel.AlignTopWithPanel="True"
+                           RelativePanel.AlignLeftWithPanel="True"
+                           RelativePanel.AlignRightWithPanel="True"
+                           Visibility="Visible">
+
+                    <TextBlock x:Name="FolderPath"
                            Text="{Binding PathToFolder}"
                            RelativePanel.AlignTopWithPanel="True"
                            RelativePanel.AlignLeftWithPanel="True"
                            Margin="8,8,0,0"
-                           Width="200"/>
+                           Width="220"/>
 
-                <!-- interface for Local -->
-            <RelativePanel x:Name="LocalInterface"
-                           RelativePanel.Below="FolderPath"
-                           RelativePanel.AlignLeftWithPanel="True"
-                           RelativePanel.AlignRightWithPanel="True"
-                           Visibility="Visible">
-                
-                <Button x:Name="BrowseForFolder"
+                    <Button x:Name="BrowseForFolder"
                         Content="Browse"
                         Command="{x:Bind ViewModel.FindFolderCommand}"
-                        RelativePanel.AlignRightWithPanel="True"
-                        RelativePanel.AlignTopWithPanel="True"
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.Below="FolderPath"
                         Margin="8,8,0,0"/>
 
             </RelativePanel>
@@ -100,14 +100,6 @@
                           PlaceholderText="Get pictures from..."
                           RelativePanel.AlignTopWithPanel="True"
                           RelativePanel.AlignLeftWithPanel="True"/>
-
-                <Button x:Name="DeletePictureButton"
-                        Content="Delete Picture"
-                        Command="{x:Bind ViewModel.DeletePictureCommand}"
-                        RelativePanel.AlignHorizontalCenterWithPanel="True"
-                        RelativePanel.Below="PicturelistFromGroup"
-                        RelativePanel.AlignRightWithPanel="True"
-                        Margin="8,8,8,8"/>
 
             </RelativePanel>
         </RelativePanel>
@@ -129,9 +121,8 @@
                 <Button x:Name="AddPictureButton"
                         Content="Add Picture"
                         Command="{x:Bind ViewModel.AddPictureCommand}"
-                        RelativePanel.AlignHorizontalCenterWithPanel="True"
                         RelativePanel.Below="PictureName"
-                        HorizontalAlignment="Center"
+                        RelativePanel.AlignLeftWithPanel="True"
                         Margin="8,8,8,30"/>
 
                 <ComboBox x:Name="ChooseGroupMenu"
@@ -148,9 +139,9 @@
                         Content="New group"
                         Click="{x:Bind CreateNewGroup}"
                         Margin="8,8,8,0"
-                        RelativePanel.RightOf="ChooseGroupMenu"
-                        RelativePanel.Below="AddPictureButton"
-                        RelativePanel.AlignRightWithPanel="True"/>
+                        RelativePanel.Below="ChooseGroupMenu"
+                        RelativePanel.AlignLeftWithPanel="True"/>
+                
             </RelativePanel>
 
             <!-- "Create new group" content dialog-->
@@ -168,6 +159,14 @@
 
                 </StackPanel>
             </ContentDialog>
+
+            <Button x:Name="DeletePictureButton"
+                        Content="Delete Picture"
+                        Command="{x:Bind ViewModel.DeletePictureCommand}"
+                        RelativePanel.AlignLeftWithPanel="True"
+                        RelativePanel.AlignBottomWithPanel="True"
+                        Margin="8,8,8,8"
+                        IsEnabled="False"/>
 
         </RelativePanel>
         
