@@ -1,6 +1,9 @@
 ﻿using ImageOrganizer.Model;
 using System;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Navigation;
 
 namespace ImageOrganizer.GUI.Views
 {
@@ -10,6 +13,12 @@ namespace ImageOrganizer.GUI.Views
         {
             InitializeComponent();
             NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            SetTitleBarBackgroundColor();
         }
 
         // Method is placed in code-behind to get access to the content dialog so the datacontext can be set.
@@ -52,6 +61,13 @@ namespace ImageOrganizer.GUI.Views
             AddPictureButton.Command = ViewModel.UpdatePictureCommand;
             AddPictureButton.Content = "Update";
             ViewModel.PathToFolder = "Directory";
+        }
+
+        // Sets the background color for the titlebar 
+        private void SetTitleBarBackgroundColor()
+        {
+            var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.BackgroundColor = Colors.DarkSeaGreen;
         }
     }
 }

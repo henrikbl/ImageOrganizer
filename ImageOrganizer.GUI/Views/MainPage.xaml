@@ -23,7 +23,7 @@
                    d:DataContext="{StaticResource DesignTimeData}">
 
         <controls:PageHeader x:Name="pageHeader" Content="Organizer"
-                             Background="LightSeaGreen"
+                             Background="SeaGreen"
                              HorizontalContentAlignment="Center"
                              RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
@@ -34,8 +34,7 @@
                        RelativePanel.AlignLeftWithPanel="True"
                        RelativePanel.Below="pageHeader"
                        RelativePanel.AlignBottomWithPanel="True"
-                       BorderBrush="Black"
-                       BorderThickness="1"
+                       Background="LightGray"
                        Padding="8">
 
             <!-- choose what part of the view is visible -->
@@ -78,6 +77,7 @@
 
                     <Button x:Name="BrowseForFolder"
                         Content="Browse"
+                        Background="MediumSeaGreen"
                         Command="{x:Bind ViewModel.FindFolderCommand}"
                         RelativePanel.AlignLeftWithPanel="True"
                         RelativePanel.Below="FolderPath"
@@ -120,6 +120,7 @@
 
                 <Button x:Name="AddPictureButton"
                         Content="Add Picture"
+                        Background="MediumSeaGreen"
                         Command="{x:Bind ViewModel.AddPictureCommand}"
                         RelativePanel.Below="PictureName"
                         RelativePanel.AlignLeftWithPanel="True"
@@ -137,6 +138,7 @@
 
                 <Button x:Name="CreateGroup"
                         Content="New group"
+                        Background="MediumSeaGreen"
                         Click="{x:Bind CreateNewGroup}"
                         Margin="8,8,8,0"
                         RelativePanel.Below="ChooseGroupMenu"
@@ -147,6 +149,7 @@
             <!-- "Create new group" content dialog-->
             <ContentDialog x:Name="AddGroupContentDialog"
                            PrimaryButtonText="Create" IsPrimaryButtonEnabled="{Binding IsValid}"
+                           Background="LightGray"
                            SecondaryButtonText="Cancel" IsSecondaryButtonEnabled="True">
                 <ContentDialog.TitleTemplate>
                     <DataTemplate>
@@ -162,6 +165,7 @@
 
             <Button x:Name="DeletePictureButton"
                         Content="Delete Picture"
+                        Background="MediumSeaGreen"
                         Command="{x:Bind ViewModel.DeletePictureCommand}"
                         RelativePanel.AlignLeftWithPanel="True"
                         RelativePanel.AlignBottomWithPanel="True"
@@ -172,6 +176,7 @@
         
         <!--This panel contains the image viewing with navigation-->
         <RelativePanel x:Name="imageView"
+                       Background="Black"
                        RelativePanel.RightOf="Menu"
                        RelativePanel.Below="pageHeader"
                        RelativePanel.AlignRightWithPanel="True"
@@ -181,36 +186,41 @@
             <TextBlock x:Name="messageBoard"
                        Text="Message Board:"
                        Margin="8,8,0,0"
+                       Foreground="WhiteSmoke"
                        RelativePanel.AlignTopWithPanel="True"
                        RelativePanel.AlignLeftWithPanel="true"/>
             
             <Border Margin="8"
                     Padding="8"
-                    BorderThickness="1"
-                    BorderBrush="Black"
                     RelativePanel.Below="messageBoard"
                     RelativePanel.AlignLeftWithPanel="True">
                 
                     <TextBlock x:Name="messageBoardmessage"
+                               Foreground="WhiteSmoke"
                                Text="{Binding MessageBoardText}"/>
             </Border>
 
             <FlipView x:Name="imageBlock" ItemsSource="{Binding PictureList}"
                    SelectedItem="{x:Bind ViewModel.SelectedPicture, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   BorderBrush="WhiteSmoke"
+                   BorderThickness="1"
                    RelativePanel.AlignBottomWithPanel="True"
                    RelativePanel.AlignTopWithPanel="True"
                    RelativePanel.AlignLeftWithPanel="True"
                    RelativePanel.AlignRightWithPanel="True"
-                   Margin="50,100,50,100">
+                   Margin="50,100,50,75">
                 <FlipView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Vertical">
-                            <TextBlock x:Name="currentTitle" Text="{Binding Title}" Margin="0,0,0,8" TextAlignment="Center"/>
-                            <Image Source="{Binding Image}" 
-                                   Width="480"
-                                   Height="300" 
-                                   Stretch="Uniform"/>
+                            <TextBlock x:Name="currentTitle"
+                                       Foreground="WhiteSmoke"
+                                       Text="{Binding Title}" 
+                                       Margin="0,0,0,8" 
+                                       TextAlignment="Center"/>
+                            <Image x:Name="image"
+                                   Source="{Binding Image}"
+                                   Margin="8,0,8,8"
+                                   MaxHeight="{Binding ElementName=imageBlock, Path=ActualHeight}"/>
                         </StackPanel>
                     </DataTemplate>
                 </FlipView.ItemTemplate>

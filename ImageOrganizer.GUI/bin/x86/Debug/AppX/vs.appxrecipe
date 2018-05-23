@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-20T11:44:02.249</Modified>
+      <Modified>2018-05-23T19:11:45.310</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\ImageOrganizer.GUI.exe">
       <PackagePath>entrypoint\ImageOrganizer.GUI.exe</PackagePath>
-      <Modified>2018-05-20T11:44:00.721</Modified>
+      <Modified>2018-05-23T19:11:44.156</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\.nuget\packages\microsoft.csharp\4.3.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -533,7 +533,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Model\bin\Debug\ImageOrganizer.Model.dll">
       <PackagePath>ImageOrganizer.Model.dll</PackagePath>
-      <Modified>2018-05-16T14:55:03.156</Modified>
+      <Modified>2018-05-23T17:09:46.687</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -575,19 +575,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\ImageOrganizer.GUI.xr.xml">
       <PackagePath>ImageOrganizer.GUI.xr.xml</PackagePath>
-      <Modified>2018-05-18T17:04:59.069</Modified>
+      <Modified>2018-05-23T19:11:43.847</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2018-05-20T11:44:00.407</Modified>
+      <Modified>2018-05-23T19:11:43.870</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\Styles\Custom.xbf">
       <PackagePath>Styles\Custom.xbf</PackagePath>
-      <Modified>2018-05-20T11:44:00.407</Modified>
+      <Modified>2018-05-23T19:11:43.869</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\Views\MainPage.xbf">
       <PackagePath>Views\MainPage.xbf</PackagePath>
-      <Modified>2018-05-20T11:44:00.407</Modified>
+      <Modified>2018-05-23T19:11:43.870</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -628,11 +628,11 @@
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-20T11:17:43.365</Modified>
+      <Modified>2018-05-23T17:44:45.368</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\Core\ImageOrganizer.GUI.exe">
       <PackagePath>ImageOrganizer.GUI.exe</PackagePath>
-      <Modified>2018-05-20T11:44:02.237</Modified>
+      <Modified>2018-05-23T19:11:45.297</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
