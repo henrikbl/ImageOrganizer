@@ -23,7 +23,7 @@
                    d:DataContext="{StaticResource DesignTimeData}">
 
         <controls:PageHeader x:ConnectionId='5' x:Name="pageHeader" Content="Organizer"
-                             Background="SeaGreen"
+                             Background="#00897B"
                              HorizontalContentAlignment="Center"
                              RelativePanel.AlignLeftWithPanel="True"
                              RelativePanel.AlignRightWithPanel="True"
@@ -77,7 +77,7 @@
 
                     <Button x:ConnectionId='24' x:Name="BrowseForFolder"
                         Content="Browse"
-                        Background="MediumSeaGreen"
+                        Background="#4EBAAA"
                                                                       
                         RelativePanel.AlignLeftWithPanel="True"
                         RelativePanel.Below="FolderPath"
@@ -120,7 +120,7 @@
 
                 <Button x:ConnectionId='17' x:Name="AddPictureButton"
                         Content="Add Picture"
-                        Background="MediumSeaGreen"
+                        Background="#4EBAAA"
                                                                       
                         RelativePanel.Below="PictureName"
                         RelativePanel.AlignLeftWithPanel="True"
@@ -138,7 +138,7 @@
 
                 <Button x:ConnectionId='19' x:Name="CreateGroup"
                         Content="New group"
-                        Background="MediumSeaGreen"
+                        Background="#4EBAAA"
                                                        
                         Margin="8,8,8,0"
                         RelativePanel.Below="ChooseGroupMenu"
@@ -165,7 +165,7 @@
 
             <Button x:ConnectionId='15' x:Name="DeletePictureButton"
                         Content="Delete Picture"
-                        Background="MediumSeaGreen"
+                        Background="#4EBAAA"
                                                                          
                         RelativePanel.AlignLeftWithPanel="True"
                         RelativePanel.AlignBottomWithPanel="True"

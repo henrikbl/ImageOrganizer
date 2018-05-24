@@ -67,7 +67,7 @@ namespace ImageOrganizer.GUI.Views
         private void SetTitleBarBackgroundColor()
         {
             var titleBar = ApplicationView.GetForCurrentView().TitleBar;
-            titleBar.BackgroundColor = Colors.DarkSeaGreen;
+            titleBar.BackgroundColor = Color.FromArgb(0, 0, 91, 79);
         }
     }
 }
