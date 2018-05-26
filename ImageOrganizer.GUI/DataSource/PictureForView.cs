@@ -16,7 +16,7 @@ namespace ImageOrganizer.GUI
         /// <param name="picture">The picture.</param>
         /// <param name="image">The image.</param>
         public PictureForView(Picture picture, BitmapImage image)
-            : base(picture.Title, picture.base64ImageString)
+            : base(picture.Title, picture.Base64ImageString)
         {
             this.PictureId = picture.PictureId;
             this.Image = image;

@@ -5,4 +5,5 @@ C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\Image
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Model\obj\Debug\ImageOrganizer.Model.csproj.CopyComplete
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Model\obj\Debug\ImageOrganizer.Model.dll
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Model\obj\Debug\ImageOrganizer.Model.pdb
-C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Model\obj\Debug\ImageOrganizer.Model.csprojAssemblyReference.cache
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Model\bin\Debug\ImageOrganizer.Model.dll.CodeAnalysisLog.xml
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.Model\bin\Debug\ImageOrganizer.Model.dll.lastcodeanalysissucceeded

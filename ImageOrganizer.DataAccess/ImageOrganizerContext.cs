@@ -54,17 +54,20 @@ namespace ImageOrganizer.DataAccess
         /// </remarks>
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            if(modelBuilder != null)
+            {
+                modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
-            modelBuilder.Entity<Group>()
-                .HasMany(a => a.Pictures)
-                .WithMany(b => b.Groups)
-                .Map(m =>
-                {
-                    m.ToTable("PictureGroup");
-                    m.MapLeftKey("GroupId");
-                    m.MapRightKey("PictureId");
-                });
+                modelBuilder.Entity<Group>()
+                    .HasMany(a => a.Pictures)
+                    .WithMany(b => b.Groups)
+                    .Map(m =>
+                    {
+                        m.ToTable("PictureGroup");
+                        m.MapLeftKey("GroupId");
+                        m.MapRightKey("PictureId");
+                    });
+            }
         }
     }
 }

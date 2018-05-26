@@ -235,3 +235,5 @@ C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\Image
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\obj\x86\Debug\Microsoft.Xaml.Interactivity.pri.xml
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\obj\x86\Debug\Template10Library.pri.xml
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\ImageOrganizer.GUI.exe.CodeAnalysisLog.xml
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.GUI\bin\x86\Debug\ImageOrganizer.GUI.exe.lastcodeanalysissucceeded

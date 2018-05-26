@@ -119,10 +119,28 @@ namespace ImageOrganizer.GUI.ViewModels
             }
         }
 
+        /// <summary>
+        /// The group list
+        /// </summary>
         ObservableCollection<Group> groupList;
+        /// <summary>
+        /// Gets or sets the group list.
+        /// </summary>
+        /// <value>
+        /// The group list.
+        /// </value>
         public ObservableCollection<Group> GroupList { get { return groupList; } set { Set(ref groupList, value); } }
 
+        /// <summary>
+        /// The picture list
+        /// </summary>
         ObservableCollection<PictureForView> pictureList;
+        /// <summary>
+        /// Gets or sets the picture list.
+        /// </summary>
+        /// <value>
+        /// The picture list.
+        /// </value>
         public ObservableCollection<PictureForView> PictureList { get { return pictureList; } set { Set(ref pictureList, value); } }
 
 #pragma warning disable CS0108 // Member hides inherited member; missing new keyword
@@ -137,6 +155,13 @@ namespace ImageOrganizer.GUI.ViewModels
             PictureList = new ObservableCollection<PictureForView>();
         }
 
+        /// <summary>
+        /// Called when [navigated to asynchronous].
+        /// </summary>
+        /// <param name="parameter">The parameter.</param>
+        /// <param name="mode">The mode.</param>
+        /// <param name="state">The state.</param>
+        /// <returns></returns>
         public override async Task OnNavigatedToAsync(object parameter, NavigationMode mode, IDictionary<string, object> state)
         {
             if(GroupList == null)
@@ -187,7 +212,7 @@ namespace ImageOrganizer.GUI.ViewModels
         // Update picture in database
         public async Task UpdatePictureAsync()
         {
-            Picture picture = new Picture(CurrentPictureTitle, SelectedPicture.base64ImageString);
+            Picture picture = new Picture(CurrentPictureTitle, SelectedPicture.Base64ImageString);
             picture.PictureId = SelectedPicture.PictureId;
 
             try
@@ -210,7 +235,7 @@ namespace ImageOrganizer.GUI.ViewModels
         // Add picture to database and group.
         public async Task AddPictureAsync()
         {
-            var picture = new Picture(CurrentPictureTitle, SelectedPicture.base64ImageString);
+            var picture = new Picture(CurrentPictureTitle, SelectedPicture.Base64ImageString);
 
             try
             {
@@ -293,7 +318,7 @@ namespace ImageOrganizer.GUI.ViewModels
 
                 for (int i = 0; i < list.Length; i++)
                 {
-                    BitmapImage image = await ConvertToBitmapImageAsync(list[i].base64ImageString);
+                    BitmapImage image = await ConvertToBitmapImageAsync(list[i].Base64ImageString);
                     PictureForView forView = new PictureForView(list[i], image);
 
                     PictureList.Add(forView);
@@ -339,11 +364,11 @@ namespace ImageOrganizer.GUI.ViewModels
         }
 
         // Convert base64String to BitmapImage. Method found at https://social.msdn.microsoft.com/Forums/sqlserver/en-US/09a07285-c03d-42e9-901f-e7ded45944b7/wp81chow-to-convert-base64-string-to-image-or-bitmap-image-in-windows-phone-81-store-app?forum=wpdevelop
-        public async Task<BitmapImage> ConvertToBitmapImageAsync(string base64String)
+        public async Task<BitmapImage> ConvertToBitmapImageAsync(string value)
         {
             try
             {
-                var byteArray = Convert.FromBase64String(base64String);
+                var byteArray = Convert.FromBase64String(value);
                 var stream = new InMemoryRandomAccessStream();
 
                 var dataWriter = new DataWriter(stream);
@@ -392,7 +417,7 @@ namespace ImageOrganizer.GUI.ViewModels
         public bool CanExecute(object parameter)
         {
             return true;
-        }
+        } 
 
         public void Execute(object parameter)
         {

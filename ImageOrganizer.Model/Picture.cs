@@ -48,11 +48,11 @@ namespace ImageOrganizer.Model
         /// Initializes a new instance of the <see cref="Picture"/> class.
         /// </summary>
         /// <param name="title">The title.</param>
-        /// <param name="base64ImageString">The base64 image string.</param>
-        public Picture(string title, string base64ImageString)
+        /// <param name="value">The base64 image string.</param>
+        public Picture(string title, string value)
         {
             this.Title = title;
-            this.base64ImageString = base64ImageString;
+            this.Base64ImageString = value;
         }
 
 
@@ -97,7 +97,7 @@ namespace ImageOrganizer.Model
         /// <value>
         /// The file directory.
         /// </value>
-        public string base64ImageString { get; set; }
+        public string Base64ImageString { get; set; }
 
         /// <summary>
         /// Gets or sets the groups.

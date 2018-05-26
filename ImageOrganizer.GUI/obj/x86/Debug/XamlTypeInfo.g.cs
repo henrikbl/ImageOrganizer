@@ -595,7 +595,7 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 userType.Activator = Activate_23_Picture;
                 userType.AddMemberName("PictureId");
                 userType.AddMemberName("Title");
-                userType.AddMemberName("base64ImageString");
+                userType.AddMemberName("Base64ImageString");
                 userType.AddMemberName("Groups");
                 userType.AddMemberName("IsValid");
                 xamlType = userType;
@@ -1062,15 +1062,15 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
             var that = (global::ImageOrganizer.Model.Picture)instance;
             that.Title = (global::System.String)Value;
         }
-        private object get_26_Picture_base64ImageString(object instance)
+        private object get_26_Picture_Base64ImageString(object instance)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
-            return that.base64ImageString;
+            return that.Base64ImageString;
         }
-        private void set_26_Picture_base64ImageString(object instance, object Value)
+        private void set_26_Picture_Base64ImageString(object instance, object Value)
         {
             var that = (global::ImageOrganizer.Model.Picture)instance;
-            that.base64ImageString = (global::System.String)Value;
+            that.Base64ImageString = (global::System.String)Value;
         }
         private object get_27_Picture_Groups(object instance)
         {
@@ -1456,11 +1456,11 @@ namespace ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo
                 xamlMember.Getter = get_25_Picture_Title;
                 xamlMember.Setter = set_25_Picture_Title;
                 break;
-            case "ImageOrganizer.Model.Picture.base64ImageString":
+            case "ImageOrganizer.Model.Picture.Base64ImageString":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Picture");
-                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "base64ImageString", "String");
-                xamlMember.Getter = get_26_Picture_base64ImageString;
-                xamlMember.Setter = set_26_Picture_base64ImageString;
+                xamlMember = new global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlMember(this, "Base64ImageString", "String");
+                xamlMember.Getter = get_26_Picture_Base64ImageString;
+                xamlMember.Setter = set_26_Picture_Base64ImageString;
                 break;
             case "ImageOrganizer.Model.Picture.Groups":
                 userType = (global::ImageOrganizer.GUI.ImageOrganizer_GUI_XamlTypeInfo.XamlUserType)GetXamlTypeByName("ImageOrganizer.Model.Picture");

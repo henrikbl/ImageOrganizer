@@ -12,3 +12,5 @@ C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\Image
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\obj\Debug\ImageOrganizer.DataAccess.dll
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\obj\Debug\ImageOrganizer.DataAccess.pdb
 C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\obj\Debug\ImageOrganizer.DataAccess.csprojAssemblyReference.cache
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\ImageOrganizer.DataAccess.dll.CodeAnalysisLog.xml
+C:\Users\hen_b\Documents\Henrik\Skole\6.semester\dotNet\Projects\MyProject\ImageOrganizer\ImageOrganizer.DataAccess\bin\Debug\ImageOrganizer.DataAccess.dll.lastcodeanalysissucceeded
